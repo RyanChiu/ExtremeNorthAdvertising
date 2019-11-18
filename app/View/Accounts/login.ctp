@@ -8,7 +8,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 <table style="border:0;width:100%;">
 	<tr>
 		<td align="right">
-			<b><font style="color:#0066ff;margin-left:145px;" size="2">USER:</font></b>
+			<b><font style="color:black;margin:0 5px 0 105px;" size="2">USER</font></b>
 		</td>
 		<td align="left">
 			<?php
@@ -21,7 +21,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 	</tr>
 	<tr>
 		<td align="right">
-			<b><font style="color:#0066ff;margin-left:145px;" size="2">PASS:</font></b>
+			<b><font style="color:black;margin:0 5px 0 105px;" size="2">PASS</font></b>
 		</td>
 		<td align="left">
 			<?php
@@ -34,7 +34,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 	</tr>
 	<tr>
 		<td align="right">
-			<b><font style="color:#0066ff;margin-left:145px;" size="2">VERIFY HUMAN:</font></b>
+			<b><font style="color:black;margin:0 5px 0 105px;" size="2">VERIFY HUMAN</font></b>
 		</td>
 		<td align="left">
 			<div style="float:left;margin-right:10px;">
@@ -96,7 +96,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 		<br/>
 		<div style="width:100%;height:35px;text-align:center;">
 		<?php
-		echo $this->Form->submit('ENTER', array('style' => 'border:0;width:150px;color:#0066ff;font-size:16px;background:white;text-decoration:underline;'));
+		echo $this->Form->submit('ENTER', array('style' => 'border:1px;width:110px;height:32px;color:black;font-size:16px;font-weight:bold;background:#0077aa;'));
 		?>
 		</div>
 		</td>

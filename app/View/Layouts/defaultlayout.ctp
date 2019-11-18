@@ -60,13 +60,13 @@ echo $scripts_for_layout;
 		<!-- Start Border-->
 		<div id="border">
 			<!-- Start Header -->
-			<div class="header" style="align-text:center">
+			<div class="header" style="align-text:center;margin-bottom:-32px;">
 				<div>
 				<?php 
 				echo $this->Html->image(
-					'GLOBALNETTXT.jpg', 
+					'ENAtxt.png', 
 					array(
-						'style' => 'border:0px;width:100%;height:90px;'
+						'style' => 'border:0px;width:100%;'
 					)
 				);
 				?>
@@ -661,17 +661,12 @@ echo $scripts_for_layout;
 		<!-- End Border -->
 		<!-- Start Footer -->
 		<div id="footer">
-			<div style="background:black;color:white;padding:6px;">
-			Our affiliate program is based on a years of success in the adult industry advertising. 
-			Our understanding of the affilaite needs, Years of marketing experience has allowed us 
-			to create the most advanced Internet affiliate program in the industry. 
-			<a href="www.globalnetadvertising.com">www.globalnetadvertising.com</a> takes affiliate 
-			marketing programs to the next level.
-			</div>
-			<div style="background:white;color:black;font-size:1;font-weight:bold;padding-bottom:12px;">
+			<div style="background:black;color:white;font-size:1;font-weight:bold;">
 			<center>
+			.......................................~'~...................................
 				<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/>
-				Copyright &copy; 2016 <a href="www.globalnetadvertising.com">www.globalnetadvertising.com</a> All Rights Reserved.
+				Copyright &copy; 2019 <a href="www.ExtremeNorthAdvertising.com">www.ExtremeNorthAdvertising.com</a> All Rights Reserved.
+			<br/>.......................................~'~...................................
 			</center>
 			</div>
 		</div>
@@ -731,9 +726,9 @@ echo $scripts_for_layout;
 				YOUR
 				<?php echo '"' . implode("\", \"", $excludedsites) . '"'; ?>
 				LINKS HAVE BEEN SUSPENDED, PLEASE CONTACT <a
-					href="mailto:SUPPORT@GlobalNetAdvertising.com"><font color="red">THE 
+					href="mailto:SUPPORT@ExtremeNorthAdvertising.com"><font color="red">THE 
 						GLOBALNETADVERTISING SUPPORT</font> </a> FOR MORE INFO.<br /> <a
-					href="mailto:SUPPORT@GlobalNetAdvertising.com"><font color="red">SUPPORT@GlobalNetAdvertising.com</font>
+					href="mailto:SUPPORT@ExtremeNorthAdvertising.com"><font color="red">SUPPORT@ExtremeNorthAdvertising.com</font>
 				</a>
 			</p>
 			<div style="margin: 12px 2px 2px 2px; font-weight: bolder;">REASONS
