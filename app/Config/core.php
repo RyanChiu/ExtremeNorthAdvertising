@@ -105,8 +105,8 @@
  * thus not recommended for production applications.
  */
 	//Configure::write('App.baseUrl', env('SCRIPT_NAME'));
-	Configure::write('App.base', '/GNA');
-	Configure::write('App.baseUrl', '/GNA');
+	Configure::write('App.base', '/ENA');
+	Configure::write('App.baseUrl', '/ENA');
 
 /**
  * To configure CakePHP to use a particular domain URL
@@ -223,12 +223,12 @@
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs20160824WwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs20160824WenaiR2G0FgaC9mi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657201608246749683645');
+	Configure::write('Security.cipherSeed', '76859309657201608246769683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
