@@ -58,18 +58,18 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Manager's Cell NO. : </td>
+		<td>Skype / Telegram : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.mancellphone', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.skypetelegram', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
 	<tr>
-		<td>User for this Team : </td>
+		<td>User : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -102,51 +102,51 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Street Name &amp; Number : </td>
+		<td>Bank Name BDO : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.street', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.banknamebdo', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr>
-		<td>City : </td>
+		<td>Account Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.city', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.bankaccount', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr>
-		<td>State &amp; Zip : </td>
+		<td>Account # : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.state', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.banknum', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr>
-		<td>Country : </td>
+		<td>SWIFT Code : </td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->select('Company.country', $cts, array('style' => 'width:390px;'));
+		echo $this->Form->input('Company.swiftcode', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
 	<tr>
-		<td>Seller Notes : </td>
+		<td>Routing # : </td>
 		<td>
 		<?php
-		echo $this->Form->input('Company.agentnotes', array('label' => '', 'rows' => '9', 'cols' => '60'));
+		echo $this->Form->input('Company.routingnum', array('label' => '', 'style' => 'width:390px;'));
 		?>
 		</td>
 	</tr>
