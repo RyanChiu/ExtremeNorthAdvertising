@@ -309,6 +309,6 @@ jQuery(document).ready(function() {
 		'showCloseButton': true,
 		'modal': false
 	});
-	jQuery("a#tips_link").click();
+	//jQuery("a#tips_link").click();
 })
 </script>
