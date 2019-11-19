@@ -65,12 +65,12 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 	$conn = new zmysqlConn();
 	$sql = "select a.*, g.companyid, b.id as 'typeid' 
 		from agent_site_mappings a, sites s, accounts n, types b, agents g, companies m 
-		where a.siteid = s.id and a.siteid = b.siteid and s.abbr = '$bname' 
+		where a.siteid = s.id and a.siteid = b.siteid and s.abbr = 'blds' 
 			and a.agentid = g.id and g.companyid = m.id
 			and a.agentid = n.id and n.username = '$agent'
 		ORDER BY typeid";
 	$rs = mysql_query($sql, $conn->dblink);
-	$chsfrombbr = explode(",", NES_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
+	$chsfrombbr = explode(",", LCDS_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
 	$i = 0;
 	$chs_exist = false;
 	while ($r = mysql_fetch_assoc($rs)) {

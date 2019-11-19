@@ -1,4 +1,8 @@
 <?php 
+/**
+ * this driver is for the new site from BBR, it'll be named "cams3" (keep diff from "cams2")
+ */
+
 include "../app/vendors/extrakits.inc.php";
 include "../app/vendors/zmysqlConn.class.php";
 
@@ -9,7 +13,7 @@ $now = new DateTime("now", new DateTimeZone($tz));
 /*
  * just log every POST/GET at the very beginning
 */
-$logpath = "./logs/in.log";
+$logpath = "./logs/in01.log";
 $from = "from ip: $ip";
 $ending =  " [" . $ip . "/" . $now->format("Y-m-d H:i:s") . "($tz)]\n";
 error_log("######\n", 3, $logpath);
@@ -19,6 +23,7 @@ if (empty($_POST) && empty($_GET)) {
 		3,
 		$logpath
 	);
+	echo "nothing posted";
 } else {
 	if(!empty($_POST)) {
 		error_log(
@@ -54,12 +59,12 @@ if (true || $ip == "66.180.199.11" || $ip == "127.0.0.1") {
 	$conn = new zmysqlConn();
 	$sql = "select a.*, g.companyid, b.id as 'typeid' 
 		from agent_site_mappings a, sites s, accounts n, types b, agents g, companies m 
-		where a.siteid = s.id and a.siteid = b.siteid and s.abbr = 'cams2' 
+		where a.siteid = s.id and a.siteid = b.siteid and s.abbr = 'cams3' 
 			and a.agentid = g.id and g.companyid = m.id
 			and a.agentid = n.id and n.username = '$agent'
 		ORDER BY typeid";
 	$rs = mysql_query($sql, $conn->dblink);
-	$chsfrombbr = explode(",", CAMS2_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
+	$chsfrombbr = explode(",", HPC_CHS);;// !!! MUST MAKE SURE ABOUT THIS ARRAY WITH BBR
 	$i = 0;
 	$chs_exist = false;
 	while ($r = mysql_fetch_assoc($rs)) {
@@ -151,7 +156,7 @@ if (!empty($err)) {
 	error_log(
 		$from . "\n" . $err . $ending,
 		3,
-		"./logs/err_" . $time . ".log"
+		"./logs/err_" . $time . "_01.log"
 	);
 }
 
