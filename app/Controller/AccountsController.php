@@ -1127,7 +1127,7 @@ class AccountsController extends AppController {
 			if (empty($this->request->data['Account']['originalpwd']) || $this->request->data['Account']['password'] != $this->request->data['Account']['originalpwd']) {
 				//$this->request->data['Account']['password'] = '';
 				//$this->request->data['Account']['originalpwd'] = '';
-				$this->Session->setFlash('The passwords don\'t match to each other, please try again(and do not left it blank).' . print_r($this->request->data, true));
+				$this->Session->setFlash('The passwords don\'t match to each other, please try again(and do not left it blank).');// . print_r($this->request->data, true));
 				return;
 			}
 			
