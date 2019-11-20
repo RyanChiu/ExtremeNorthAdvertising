@@ -51,6 +51,21 @@ table th a:hover {
 	text-decoration: none !important;
 }
 
+table td a:link {
+	color: /*#718ABE*/blue;
+	text-decoration: underline;
+}
+
+table td a:visited {
+	color: /*#718ABE*/blue;
+	text-decoration: underline;
+}
+
+table td a:hover {
+	color: /*#718ABE*/blue;
+	text-decoration: none !important;
+}
+
 tfoot th, tfoot td {
 	font-size: 85%;
 }

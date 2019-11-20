@@ -289,22 +289,22 @@ ul#daily-links li a:hover {
 }
 
 a:link {
-	color: /*#006600*/ #9696cd;
+	color: /*#006600*/ #0099ff;
 	text-decoration: underline;
 }
 
 a:active {
-	color: /*#006600*/ #9696cd;
+	color: /*#006600*/ #0099ff;
 	text-decoration: underline;
 }
 
 a:visited {
-	color: /*#006600*/ #9696cd;
+	color: /*#006600*/ #0099ff;
 	text-decoration: underline;
 }
 
 a:hover {
-	color: /*#006600*/ #9696cd;
+	color: /*#006600*/ #0099ff;
 	text-decoration: none;
 }
 
