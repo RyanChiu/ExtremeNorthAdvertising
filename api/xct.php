@@ -9,7 +9,7 @@ $now = new DateTime("now", new DateTimeZone($tz));
 /*
  * just log every POST/GET at the very beginning
 */
-$logpath = "./logs/in.log";
+$logpath = "./logs/xct.log";
 $from = "from ip: $ip";
 $ending =  " [" . $ip . "/" . $now->format("Y-m-d H:i:s") . "($tz)]\n";
 error_log("######\n", 3, $logpath);
@@ -151,7 +151,7 @@ if (!empty($err)) {
 	error_log(
 		$from . "\n" . $err . $ending,
 		3,
-		"./logs/err_" . $time . ".log"
+		"./logs/err_" . $time . "_xct.log"
 	);
 }
 
