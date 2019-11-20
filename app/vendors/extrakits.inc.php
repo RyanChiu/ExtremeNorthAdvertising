@@ -344,7 +344,7 @@
 			$affid = (isset($_GET['affid']) ? trim($_GET['affid']) : (isset($_POST['affid']) ? trim($_POST['affid']) : ''));
 			if (!empty($trxid)) {
 				$type = 'sale';
-				//$agent = $affid;
+				$agent = $affid;
 			}
 			$conn = new zmysqlConn();
 			$sql = "select a.*, g.companyid, b.id as 'typeid' 
