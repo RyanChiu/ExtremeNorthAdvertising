@@ -408,7 +408,7 @@ class AccountsController extends AppController {
 		 * for the "selling contestants" stuff
 		 */
 		//avoid those data which are not in types
-		$conds['startdate'] = '0000-00-00';
+		$conds['startdate'] = '0001-01-01';
 		$conds['enddate'] = date('Y-m-d');
 		$rs = $this->Top10->find('all',
 			array(
@@ -1801,7 +1801,7 @@ class AccountsController extends AppController {
 			$selagent = $this->request->data['ViewOnlineLog']['agentid'];
 		} else {
 			if ($id != -1) {
-				$startdate = '0000-00-00';
+				$startdate = '0001-01-01';
 				$enddate = date('Y-m-d', mktime (0,0,0,date("m"), date("d") ,date("Y") + 1));
 				$inip = '';
 				$selagent = $id;
