@@ -61,7 +61,7 @@ echo $scripts_for_layout;
 		<div id="border">
 			<!-- Start Header -->
 			<div class="header">
-				<div style="height:23px;background:black;"></div>
+				<div style="height:23px;background:#3c3c3c;"></div>
 				<div style="text-align:center;width:100%;">
 					<?php 
 					echo $this->Html->image(
@@ -678,10 +678,10 @@ echo $scripts_for_layout;
 	<?php
 	if (in_array($userinfo['role'], array(0, 1, 2)) && !$this->Session->check('switch_pass')) {
 	?>
-	<div style="display: none">
+	<div style="display:none">
 		<a id="attentions_link" href="#attentions_for_agents">show attentions</a>
 	</div>
-	<div style="display: none">
+	<div style="display:none">
 		<div id="attentions_for_agents" style="width: 800px;">
 		<!--  
 		<p class="p-blink" style="font:italic bolder 24px/100% Georgia;color:red;margin:0px 0px 6px 0px;">
