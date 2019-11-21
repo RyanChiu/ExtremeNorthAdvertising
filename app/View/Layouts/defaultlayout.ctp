@@ -574,15 +574,15 @@ echo $scripts_for_layout;
 						<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
 					</center>
 					<div class="content-top">
-						<div style="float:left;text-align:left;padding:39px 0 0 13px;position:relative;height:0;width:0;font-weight:bold;color:red;">
+						<div style="float:left;text-align:left;padding:39px 0 0 13px;position:relative;height:0;width:0;font-weight:bold;color:black;">
 							<?php
 							echo "USER:" . $userinfo['username'];
 							?>
 						</div>
 						<div
-							style="float: right; text-align: right; padding: 6px 20px 0px 0px;">
+							style="float:right;text-align:right;padding:6px 20px 0px 0px;">
 							<input type="text" value="" id="iptClock"
-								style="width: 240px; text-align: right; border: 0px; background: transparent; font-family: Arial; font-weight: bold; color: #ffffff;"
+								style="width:240px;text-align:right;border:0;background:transparent;font-family:Arial;font-weight:bold;color:black;"
 								readonly="readonly"
 								onmouseover="jQuery('#divTimezoneTip').slideDown();"
 								onmouseout="jQuery('#divTimezoneTip').slideUp();" />
@@ -590,7 +590,7 @@ echo $scripts_for_layout;
 							<div><a href="https://www.dateandtime.com">https://www.dateandtime.com</a></div>
 						</div>
 						<div
-							style="float: right; margin: 6px 6px 0px 0px; display: none; color: white;"
+							style="float:right;margin:6px 6px 0px 0px;display:none;color:black;"
 							id="divTimezoneTip">
 							<script language="javascript">
 				        	document.write("Your timezone: " + calculate_time_zone() + "");

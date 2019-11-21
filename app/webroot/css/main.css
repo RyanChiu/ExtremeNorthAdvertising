@@ -215,7 +215,8 @@ img.float {
 /* ------------------------- Start Headings ---------------------*/
 h1 {
 	font-size: 16px;
-	color: #0099ff;
+	/*color: #0099ff;*/
+	color: black;
 }
 /* ------------------------- End Headings ---------------------*/
 input {
@@ -331,7 +332,7 @@ a:hover {
 }
 /*for search label*/
 .search-label {
-	background: /*#E6EDF5*/ #cccccc;
+	background: /*#E6EDF5*/ #aaaaaa;
 	color: /*#4F76A3*/ black;
 	font-size: 100% !important;
 	font-weight: bold;
@@ -367,12 +368,7 @@ table thead tr th a.desc {
 	background: url(../img/sort_desc.png) no-repeat right;
 	padding-right: 16px;
 }
-/*for AmericanWebLink ONLY*/
-.cci-textlogo {
-	float: left;
-	vertical-align: bottom;
-	line-height: 120px;
-}
+
 /*for all the buttons (including submits)*/
 .button {
 	display: block;

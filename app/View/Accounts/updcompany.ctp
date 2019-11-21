@@ -11,7 +11,7 @@ echo $this->Form->create(
 <table style="width:100%;border:0;">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
-		<td width="222">Team Name : </td>
+		<td width="222" class="search-label">Team Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -25,7 +25,7 @@ echo $this->Form->create(
 		-->
 	</tr>
 	<tr>
-		<td>Manager's First Name : </td>
+		<td class="search-label">Manager's First Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -36,7 +36,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Manager's Last Name : </td>
+		<td class="search-label">Manager's Last Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -47,7 +47,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Manager's Email : </td>
+		<td class="search-label">Manager's Email : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -58,7 +58,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Skype / Telegram : </td>
+		<td class="search-label">Skype / Telegram : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -69,7 +69,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>User : </td>
+		<td class="search-label">User : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -80,7 +80,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Pass : </td>
+		<td class="search-label">Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -91,7 +91,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Confirm Pass : </td>
+		<td class="search-label">Confirm Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -102,7 +102,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Bank Name BDO : </td>
+		<td class="search-label">Bank Name BDO : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -112,7 +112,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Account Name : </td>
+		<td class="search-label">Account Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -122,7 +122,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Account # : </td>
+		<td class="search-label">Account # : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -132,7 +132,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>SWIFT Code : </td>
+		<td class="search-label">SWIFT Code : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -143,7 +143,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Routing # : </td>
+		<td class="search-label">Routing # : </td>
 		<td>
 		<?php
 		echo $this->Form->input('Company.routingnum', array('label' => '', 'style' => 'width:390px;'));
@@ -151,7 +151,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Associated Sites: </td>
+		<td class="search-label">Associated Sites: </td>
 		<td>
 		<?php
 		$selsites = array_diff($sites, $exsites);
@@ -190,7 +190,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td class="search-label">
 		<label id="labelUAS">Activated</label>
 		<?php
 		echo $this->Form->checkbox(

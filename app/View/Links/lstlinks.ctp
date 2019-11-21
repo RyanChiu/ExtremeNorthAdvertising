@@ -32,18 +32,24 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 </caption>
 <tr>
 	<td width="31%" align="right">
-	<?php
-	echo $this->Form->input('Site.id',
-		array('options' => $sites, 'style' => 'width:170px;', 'label' => 'Site:', 'type' => 'select')
-	);
-	?>
+		<div style="float:left;font-weight:bold;padding-left:12px;">Site:</div>
+		<div style="float:right;">
+		<?php
+		echo $this->Form->input('Site.id',
+			array('options' => $sites, 'style' => 'width:230px;', 'label' => '', 'type' => 'select')
+		);
+		?>
+		</div>
 	</td>
 	<td width="40%" align="center">
-	<?php
-	echo $this->Form->input('ViewAgent.id',
-		array('options' => $sags, 'style' => 'width:290px;', 'label' => 'Seller:', 'type' => 'select')
-	);
-	?>
+		<div style="float:left;font-weight:bold;padding-left:12px;">Seller:</div>
+		<div style="float:right;">
+		<?php
+		echo $this->Form->input('ViewAgent.id',
+			array('options' => $sags, 'style' => 'width:290px;', 'label' => '', 'type' => 'select')
+		);
+		?>
+		</div>
 	</td>
 	<td width="29%">
 	<?php

@@ -23,7 +23,7 @@ if ($userinfo['role'] == 1) {
 <table style="width:100%">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
-		<td width="248px">Team : </td>
+		<td width="248px" class="search-label">Team : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -59,7 +59,7 @@ if ($userinfo['role'] == 1) {
 		-->
 	</tr>
 	<tr>
-		<td>First Name : </td>
+		<td class="search-label">First Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -74,7 +74,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Last Name : </td>
+		<td class="search-label">Last Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -89,7 +89,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Email : </td>
+		<td class="search-label">Email : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -104,7 +104,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>User : </td>
+		<td class="search-label">User : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -119,7 +119,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Pass : </td>
+		<td class="search-label">Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -130,7 +130,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Confirm Pass : </td>
+		<td class="search-label">Confirm Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -211,7 +211,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr> 
-		<td>Associated Sites: </td> 
+		<td class="search-label">Associated Sites: </td> 
 		<td> 
 		<?php 
 		$selsites = array_diff($sites, $exsites); 
@@ -249,7 +249,7 @@ if ($userinfo['role'] == 1) {
 		</td> 
 	</tr>
 	<tr>
-		<td>
+		<td class="search-label">
 		<label id="labelUAS">Activated</label>
 		<?php
 		if ($userinfo['role'] == 2) {//means an agent

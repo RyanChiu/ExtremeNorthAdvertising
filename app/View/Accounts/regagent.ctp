@@ -28,7 +28,7 @@ if ($userinfo['role'] == 1) {
 <table style="width:100%;border:0;">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
-		<td width="248">Team : </td>
+		<td width="248" class="search-label">Team : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -58,7 +58,7 @@ if ($userinfo['role'] == 1) {
 		-->
 	</tr>
 	<tr>
-		<td>First Name : </td>
+		<td class="search-label">First Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -69,7 +69,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Last Name : </td>
+		<td class="search-label">Last Name : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -80,7 +80,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Email : </td>
+		<td class="search-label">Email : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -91,8 +91,8 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>
-		<div style="float:left">Username : </div>
+		<td class="search-label">
+		<div style="float:left">User : </div>
 		<div style="float:left; display: none;">
 		<?php
 		echo '('
@@ -117,7 +117,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Password : </td>
+		<td class="search-label">Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -128,7 +128,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Confirm Password : </td>
+		<td class="search-label">Confirm Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -202,7 +202,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>Associated Sites: </td>
+		<td class="search-label">Associated Sites: </td>
 		<td>
 		<?php
 		$selsites = array_diff($sites, $exsites);
@@ -218,7 +218,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td class="search-label">
 		<?php
 		echo $this->Form->input('Account.status', array('type' => 'hidden', 'value' => '-1'));//the default status if unapproved
 		?>

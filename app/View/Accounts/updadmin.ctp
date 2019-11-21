@@ -13,7 +13,7 @@ echo $this->Form->create(
 <table style="width:100%">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
-		<td>Password : </td>
+		<td class="search-label">Pass : </td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -24,7 +24,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Confirm password :</td>
+		<td class="search-label">Confirm pass :</td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -35,7 +35,7 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td>Email Address :</td>
+		<td class="search-label">Email Address :</td>
 		<td>
 		<div style="float:left">
 		<?php
