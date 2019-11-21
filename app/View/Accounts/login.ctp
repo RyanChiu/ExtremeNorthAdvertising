@@ -99,7 +99,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 			echo $this->Form->submit(
 				'ENTER',
 				array(
-					'style' => 'border:1px;width:110px;height:32px;color:black;font-size:16px;font-weight:bold;background:#ff802b;'
+					'style' => 'border:1px;width:110px;height:32px;color:black;font-size:16px;font-weight:bold;background:#ff802b;border-radius:5px;'
 				)
 			);
 		?>
