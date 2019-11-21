@@ -55,21 +55,22 @@ echo $scripts_for_layout;
 
 ?>
 </head>
-<body bgcolor="#ffffff">
+<body style="background:white;">
 	<div class="wrapper">
 		<!-- Start Border-->
 		<div id="border">
 			<!-- Start Header -->
-			<div class="header" style="align-text:center;margin-bottom:-32px;">
-				<div>
-				<?php 
-				echo $this->Html->image(
-					'ENAtxt.png', 
-					array(
-						'style' => 'border:0px;width:100%;'
-					)
-				);
-				?>
+			<div class="header">
+				<div style="height:23px;background:black;"></div>
+				<div style="text-align:center;width:100%;">
+					<?php 
+					echo $this->Html->image(
+						'HEADER.png', 
+						array(
+							'style' => 'border:0px;width:460px;'
+						)
+					);
+					?>
 				</div>
 			</div>
 			<!-- End Header -->
@@ -661,7 +662,7 @@ echo $scripts_for_layout;
 		<!-- End Border -->
 		<!-- Start Footer -->
 		<div id="footer">
-			<div style="background:black;color:white;font-size:1;font-weight:bold;">
+			<div style="color:white;font-size:1;font-weight:bold;">
 			<center>
 			.......................................~'~...................................
 				<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/>

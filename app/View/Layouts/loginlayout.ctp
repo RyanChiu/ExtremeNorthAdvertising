@@ -15,7 +15,7 @@ echo $scripts_for_layout;
 
 ?>
 </head>
-<body style="background:black;">
+<body style="background:white;">
 	<div class="wrapper">
 		<!-- Start Border-->
 		<div id="border">
@@ -24,31 +24,23 @@ echo $scripts_for_layout;
 			</div>
 			
 			<!-- Start log in table layout -->
-			<table style="border:0;background:black;border-spacing:0;">
+			<table style="border:0;background:#3c3c3c;border-spacing:0;width:100%;">
 				<tbody>
 					<tr>
-						<td style="color:#dd5566;text-align:center;font-size:19px;">
-						.....................~'~...................<br/>
-<font color="#005599">Extreme North Advertising</font> takes affiliate marketing programs to the next level.<br/><br/>
-Our affiliate program is based on a years of success in adult industry advertising.<br/><br/>
-Our understanding of affilaite needs, & years of marketing experience has allowed our group to create one of most advanced Internet affiliate program in the industry 
-<br/>.....................~'~...................
+						<td colspan="2" style="height:23px;">
 						</td>
-						<td>
+					</tr>
+					<tr>
+						<td colspan="2" style="vertical-align:middle;text-align:center;background:white;">
 							<?php 
 							echo $this->Html->image(
-								'northpolelights.jpg', array('style' => 'border:0;width:730px;')
+								'HEADER.png', array('style' => 'border:0;width:460px;')
 							);
 							?>
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2" style="vertical-align:middle;text-align:center;">
-							<?php 
-							echo $this->Html->image(
-								'ENAtxt.png', array('style' => 'border:0;width:921px;')
-							);
-							?>
+						<td colspan="2" style="height:23px;">
 						</td>
 					</tr>
 					<tr>
@@ -64,7 +56,7 @@ Our understanding of affilaite needs, & years of marketing experience has allowe
 		<!-- End Border -->
 		<!-- Start Footer -->
 		<div id="footer">
-			<div style="background:black;color:white;font-size:1;font-weight:bold;">
+			<div style="color:white;font-size:1;font-weight:bold;">
 			<center>
 			.......................................~'~...................................
 				<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/>

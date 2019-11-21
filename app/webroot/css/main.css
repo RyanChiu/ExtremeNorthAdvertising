@@ -34,6 +34,7 @@ body {
 	margin: 0;
 	padding: 0;
 	/*background-image: url(../img/main/header.png);*/
+	background: white;
 	min-height: 115px;
 }
 /* ------------------------ End Header -----------------*/
@@ -237,6 +238,7 @@ select {
 	vertical-align: middle;
 	line-height: 16px;
 	/*background-image: url(../img/main/footer.png);*/
+	background: #ffc901;
 	min-height: 33px;
 }
 
