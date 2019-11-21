@@ -80,7 +80,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 		?>
 		</td>
 		<td>
-		<?php echo $this->Form->submit('Update', array('style' => 'width:112px;')); ?>
+		<?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'button')); ?>
 		</td>
 	</tr>
 </table>

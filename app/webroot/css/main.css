@@ -370,6 +370,7 @@ table thead tr th a.desc {
 }
 
 /*for all the buttons (including submits)*/
+/*
 .button {
 	display: block;
 	width: 115px;
@@ -380,8 +381,8 @@ table thead tr th a.desc {
 	border-radius: 5px;
 	color: black;
 	font-weight: bold;
-	}
-/*
+}
+*/
 .button {
 	background: url(../img/btn_bg.png);
 	font-weight: bold;
@@ -389,8 +390,8 @@ table thead tr th a.desc {
 	height: 23px;
 	border-style: outset;
 	border-color: gray;
+	border-radius: 5px;
 }
-*/
 /*for main menu item*/
 #maimmenu {
 	color: red;

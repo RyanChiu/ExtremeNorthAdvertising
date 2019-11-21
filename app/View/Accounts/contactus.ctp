@@ -50,7 +50,7 @@ echo $this->Form->create(null, array('controller' => 'accounts', 'action' => 'co
 		</td>
 		<td>
 		<?php
-		echo $this->Form->submit('Send', array('style' => 'width:100px;'));
+		echo $this->Form->submit('Send', array('style' => 'width:100px;', 'class' => 'button'));
 		if (empty($userinfo)) {
 			echo '<div style="margin-top:6px;">'
 				. $this->Html->link(

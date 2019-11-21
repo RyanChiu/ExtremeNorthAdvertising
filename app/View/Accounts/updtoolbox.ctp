@@ -26,7 +26,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 	</tr>
 	<tr>
 		<td></td>
-		<td><?php echo $this->Form->submit('Update', array('style' => 'width:112px;')); ?></td>
+		<td><?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'button')); ?></td>
 	</tr>
 </table>
 <?php

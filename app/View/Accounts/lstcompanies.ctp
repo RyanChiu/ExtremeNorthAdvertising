@@ -27,10 +27,10 @@ echo $this->Form->create(
 		<?php echo $this->Form->input('ViewCompany.username', array('label' => '', 'style' => 'width:260px;')); ?>
 		</div>
 		<div style="float:left;width:112px;">
-		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;')); ?>
+		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'button')); ?>
 		</div>
 		<div style="float:left;">
-		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:64px;', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
+		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:64px;', 'class' => 'button', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
 		</div>
 		</td>
 	</tr>
@@ -91,7 +91,7 @@ echo $this->Form->button('Add Team',
 	array(
 		'onclick' => 'javascript:location.href=\''
 			. $this->Html->url(array('controller' => 'accounts', 'action' => 'regcompany')) . '\'',
-		'style' => 'width:160px;'
+		'style' => 'width:160px;', 'class' => 'button'
 	)
 );
 ?>

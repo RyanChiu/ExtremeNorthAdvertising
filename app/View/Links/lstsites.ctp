@@ -9,7 +9,7 @@ $userinfo = $this->Session->read('Auth.User.Account');
 		array(
 			'onclick' => 'javascript:location.href=\''
 				. $this->Html->url(array('controller' => 'links', 'action' => 'addsite')) . '\'',
-			'style' => 'width:160px;'
+			'style' => 'width:160px;', 'class' => 'button'
 		)
 	);
 	?>

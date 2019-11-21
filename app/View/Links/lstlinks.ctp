@@ -51,9 +51,9 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 		?>
 		</div>
 	</td>
-	<td width="29%">
+	<td width="29%" style="text-align:center;">
 	<?php
-	echo $this->Form->submit('Generate Link Codes', array('style' => 'width:180px;'));
+	echo $this->Form->submit('Generate Link Codes', array('style' => 'width:180px;', 'class' => 'button'));
 	?>
 	</td>
 </tr>

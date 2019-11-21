@@ -108,7 +108,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 		</td>
 		<td colspan="6">
 		<?php
-		echo $this->Form->submit('Search', array('style' => 'width:110px;'));
+		echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'button'));
 		?>
 		</td>
 	</tr>

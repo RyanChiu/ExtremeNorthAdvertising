@@ -309,7 +309,7 @@ echo $this->Form->create(
 		<?php
 		echo $this->Form->submit('Load Stats',
 			array(
-				'style' => 'width:160px;',
+				'style' => 'width:160px;', 'class' => 'button',
 				'onclick' => 'javascript:if (jQuery("#StatsSiteid").val() == -1) {alert("Please choose a site, or the stats will not be loaded.");return false;} else return true;'
 			)
 		);

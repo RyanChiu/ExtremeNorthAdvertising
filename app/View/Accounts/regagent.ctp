@@ -231,6 +231,7 @@ if ($userinfo['role'] == 1) {
 					'default' => 'default',
 					'div' => array('style' => 'float:left;margin-right:15px;'),
 					'style' => 'width:112px;',
+					'class' => 'button',
 					'onclick' => 'javascript:__changeAction(\'frmReg\', \''
 						. $this->Html->url(array('controller' => 'accounts', 'action' => 'regagent', 'id' => -1))
 						. '\');' 
@@ -240,6 +241,7 @@ if ($userinfo['role'] == 1) {
 				array(
 					'div' => array('style' => 'float:left;margin-right:15px;'),
 					'style' => 'width:112px;',
+					'class' => 'button',
 					'onclick' => 'javascript:__changeAction(\'frmReg\', \''
 						. $this->Html->url(array('controller' => 'accounts', 'action' => 'regagent'))
 						. '\');'

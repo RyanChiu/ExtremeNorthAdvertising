@@ -179,6 +179,7 @@ echo $this->Form->create(
 				'default' => 'default',
 				'div' => array('style' => 'float:left;margin-right:15px;'),
 				'style' => 'width:112px;',
+				'class' => 'button',
 				'onclick' => 'javascript:__changeAction("frmReg", "'
 					. $this->Html->url(array('controller' => 'accounts', 'action' => 'regcompany', 'id' => -1))
 					. '");' 
@@ -188,6 +189,7 @@ echo $this->Form->create(
 			array(
 				'div' => array('style' => 'float:left;margin-right:15px;'),
 				'style' => 'width:112px;',
+				'class' => 'button',
 				'onclick' => 'javascript:__changeAction("frmReg", "'
 					. $this->Html->url(array('controller' => 'accounts', 'action' => 'regcompany'))
 					. '");'

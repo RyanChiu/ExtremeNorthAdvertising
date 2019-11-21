@@ -110,10 +110,10 @@ echo $this->Form->create(
 		<td colspan="2"></td>
 		<td colspan="2">
 		<div style="float:left;width:112px;">
-		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;')) ?>
+		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'button')) ?>
 		</div>
 		<div style="float:left;">
-		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:96px;', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
+		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:96px;', 'class' => 'button', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
 		</div>
 		</td>
 	</tr>
@@ -181,7 +181,7 @@ if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an of
 		array(
 			'onclick' => 'javascript:location.href=\'' .
 				$this->Html->url(array('controller' => 'accounts', 'action' => 'regagent')) . '\'',
-			'style' => 'width:160px;'
+			'style' => 'width:160px;', 'class' => 'button'
 		)
 	);
 }
