@@ -96,7 +96,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 		<br/>
 		<div style="width:100%;height:35px;text-align:center;">
 		<?php
-		echo $this->Form->submit('ENTER', array('style' => 'border:1px;width:110px;height:32px;color:black;font-size:16px;font-weight:bold;background:#0077aa;'));
+		echo $this->Form->submit('ENTER', array('style' => 'border:1px;width:110px;height:32px;color:black;font-size:16px;font-weight:bold;background:#ff802b;'));
 		?>
 		</div>
 		</td>
