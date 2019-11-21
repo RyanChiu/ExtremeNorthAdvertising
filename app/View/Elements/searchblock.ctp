@@ -64,7 +64,7 @@ echo $this->Form->create(
 </thead>
 <tr>
 	<td>
-		<div style="float:left;width:90px;">
+		<div style="float:left;width:90px;" class="search-div">
 			<b>Site:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -107,7 +107,7 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="float:left;width:90px;">
+		<div style="float:left;width:90px;" class="search-div">
 			<b>Type:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -128,7 +128,7 @@ echo $this->Form->create(
 		<?php
 		if ($userinfo['role'] == 0) {//means an administrator
 		?>
-		<div style="float:left;width:90px;">
+		<div style="float:left;width:90px;" class="search-div">
 			<b>Office:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -219,7 +219,7 @@ echo $this->Form->create(
 				}
 			});
 		</script>
-		<div style="float:left;width:60px;">
+		<div style="float:left;width:60px;" class="search-div">
 			<b>Agent:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -241,7 +241,7 @@ echo $this->Form->create(
 		else if ($userinfo['role'] == 1) {//means an office
 			echo $this->Form->input('Stats.companyid', array('type' => 'hidden', 'value' => $userinfo['id']));
 		?>
-		<div style="float:left;width:60px;">
+		<div style="float:left;width:60px;" class="search-div">
 			<b>Agent:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -263,7 +263,7 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="float:left;width:90px;">
+		<div style="float:left;width:90px;" class="search-div">
 			<b>Start Date:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -272,7 +272,7 @@ echo $this->Form->create(
 			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:158px;', 'value' => $startdate));
 		?>
 		</div>
-		<div style="float:left;width:90px;">
+		<div style="float:left;width:90px;" class="search-div">
 			<b>End Date:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
@@ -281,7 +281,7 @@ echo $this->Form->create(
 			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:158px', 'value' => $enddate));
 		?>
 		</div>
-		<div style="float:left;width:60px;">
+		<div style="float:left;width:60px;" class="search-div">
 			<b>Period:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">

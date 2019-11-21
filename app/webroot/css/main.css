@@ -337,6 +337,16 @@ a:hover {
 	font-size: 100% !important;
 	font-weight: bold;
 }
+/*for search div*/
+.search-div {
+	background: /*#E6EDF5*/ #aaaaaa;
+	color: /*#4F76A3*/ black;
+	font-size: 100% !important;
+	font-weight: bold;
+	padding: 3px 0 0 3px;
+	margin-right: 1px;
+	height:18px;
+}
 /*for jQuery floatingmessage*/
 #message_box {
 	position: absolute;
