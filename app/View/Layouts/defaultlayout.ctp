@@ -770,7 +770,7 @@ echo $scripts_for_layout;
 				'overlayColor': '#0A0A0A',
 				'modal': true
 			});
-			jQuery("a#attentions_link").click();
+			//jQuery("a#attentions_link").click();
 		});
 	</script>
 	<?php
