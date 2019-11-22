@@ -82,6 +82,7 @@ if (($argc - 1) == 2) {
 	/**
 	 * all the remote agent creat stuff should be in this "if" zone
 	 */
+	/*
 	if ($siteid == 7 || $siteid == 9) {//means siteid 7 or 9 will call the api which could add the agents to the remote server
 		$sql = "select distinct username from view_agents"
 		. " where username not in (select distinct username from view_mappings where siteid = '$siteid')";
@@ -109,6 +110,7 @@ if (($argc - 1) == 2) {
 		// close cURL resource, and free up system resources
 		curl_close($ch);
 	}
+	*/
 	if ($campaignids[0] == "__SAME__") {
 		/*insert agent username as campaign id into agent_site_mappings table.*/
 		$sql = sprintf('insert into agent_site_mappings (siteid, agentid, campaignid)'
