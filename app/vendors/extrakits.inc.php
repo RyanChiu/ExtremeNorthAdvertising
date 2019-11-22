@@ -9,6 +9,8 @@
 	define("XCT_CHS", "0,1");
 	define("LCDS_CHS", "2,3");
 	define("HPC_CHS", "4,5");
+	define("IINDS_CHS", "6,7");
+	define("MAXI_CHS", "8,9");
 	/*
 	 * routines area
 	 */
