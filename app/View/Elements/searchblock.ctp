@@ -37,14 +37,14 @@ echo $this->Form->create(
 		onclick='javascript:__changeAction("frmStats", "<?php echo $this->Html->url(array('controller' => 'stats', 'action' => 'statscompany')); ?>");return true;'
 		<?php echo $bywhat == 1 ? 'checked' : ''; ?>
 		/>
-		<label for="viewbycompany">View By Office</label>
+		<label for="viewbycompany">View By Team</label>
 		</div>
 		<div style="float:left;margin-right:50px;">
 		<input type="radio" name="viewby" id="viewbyagent" style="width:10px;border:0px;"
 		onclick='javascript:__changeAction("frmStats", "<?php echo $this->Html->url(array('controller' => 'stats', 'action' => 'statsagent')); ?>");return true;'
 		<?php echo $bywhat == 2 ? 'checked' : ''; ?>
 		/>
-		<label for="viewbyagent">View By Agent</label>
+		<label for="viewbyagent">View By Seller</label>
 		</div>
 		<?php
 		if ($userinfo['role'] == 0) {
@@ -129,7 +129,7 @@ echo $this->Form->create(
 		if ($userinfo['role'] == 0) {//means an administrator
 		?>
 		<div style="float:left;width:90px;" class="search-div">
-			<b>Office:</b>
+			<b>Team:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
 			<input id="iptComs" type="text"
@@ -220,7 +220,7 @@ echo $this->Form->create(
 			});
 		</script>
 		<div style="float:left;width:60px;" class="search-div">
-			<b>Agent:</b>
+			<b>Seller:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
 		<?php
@@ -242,7 +242,7 @@ echo $this->Form->create(
 			echo $this->Form->input('Stats.companyid', array('type' => 'hidden', 'value' => $userinfo['id']));
 		?>
 		<div style="float:left;width:60px;" class="search-div">
-			<b>Agent:</b>
+			<b>Seller:</b>
 		</div>
 		<div style="float:left;margin-right:20px;">
 		<?php
