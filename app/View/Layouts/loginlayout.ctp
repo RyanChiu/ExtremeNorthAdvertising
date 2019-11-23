@@ -56,13 +56,11 @@ echo $scripts_for_layout;
 		<!-- End Border -->
 		<!-- Start Footer -->
 		<div id="footer">
-			<div style="color:white;font-size:16px;font-weight:bold;">
 			<center>
 				<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/><br/>
 				Copyright &copy; 2019 <a href="www.ExtremeNorthAdvertising.com">www.ExtremeNorthAdvertising.com</a> All Rights Reserved.
 				<br/><br/>
 			</center>
-			</div>
 		</div>
 		<!-- End Footer -->
 	</div>

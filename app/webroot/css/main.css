@@ -232,8 +232,9 @@ select {
 }
 
 #footer {
-	font-size: 12px;
 	clear: both;
+	color: #fff9c1;
+	font-size: 16px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	text-align: left;
 	vertical-align: middle;
