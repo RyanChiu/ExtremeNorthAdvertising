@@ -1,7 +1,7 @@
 <?php
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
-<h1>Sites</h1>
+<h5>Sites</h5>
 <table style="width:100%">
 	<caption>
 	<?php

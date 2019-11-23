@@ -3,7 +3,7 @@
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
 <div style="float:left;">
-<div style="float:left;"><h1>Home</h1></div>
+<div style="float:left;"><h5>Home</h5></div>
 <div style="float:left;margin-left:10px;">
 <?php
 if (false && $userinfo['role'] == 0) {

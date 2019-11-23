@@ -1,22 +1,24 @@
+<h5>
 <?php
 switch ($bywhat) {
 	case 0:
-		echo '<h1>Stats (By Date)</h1>';
+		echo 'Stats (By Date)';
 		break;
 	case 1:
-		echo '<h1>Stats (By Team)</h1>';
+		echo 'Stats (By Team)';
 		break;
 	case 2:
-		echo '<h1>Stats (By Seller)</h1>';
+		echo 'Stats (By Seller)';
 		break;
 	case 3:
-		echo '<h1>Stats (Details)</h1>';
+		echo 'Stats (Details)';
 		break;
 	default:
-		echo '<h1>No such stats</h1>';
+		echo 'No such stats';
 		break;
 }
 ?>
+</h5>
 
 <?php
 //echo $this->element('timezoneblock');

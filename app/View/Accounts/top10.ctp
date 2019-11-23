@@ -1,4 +1,4 @@
-<h1>Top 10</h1>
+<h5>Top 10</h5>
 
 <?php
 echo $this->element('timezoneblock');

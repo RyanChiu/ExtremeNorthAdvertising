@@ -1,4 +1,4 @@
-<h1>New members</h1>
+<h5>New members</h5>
 <?php
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>

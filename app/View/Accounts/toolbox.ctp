@@ -1,6 +1,6 @@
-<h1>
+<h5>
 <?php echo $rs['Site']['sitename'] . ' Affiliate'; ?>
-</h1>
+</h5>
 <?php
 /*
 echo '<br/>';

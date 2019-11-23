@@ -3,7 +3,7 @@ $userinfo = $this->Session->read('Auth.User.Account');
 //echo print_r($userinfo, true);
 //echo '<br/>';
 ?>
-<h1>Get Help</h1>
+<h5>Get Help</h5>
 <?php
 echo $this->Form->create(null, array('controller' => 'accounts', 'action' => 'contactus'));
 ?>

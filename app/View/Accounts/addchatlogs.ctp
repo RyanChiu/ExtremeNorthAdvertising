@@ -3,7 +3,7 @@ $userinfo = $this->Session->read('Auth.User.Account');
 //echo print_r($userinfo, true);
 //echo '<br/>';
 ?>
-<h1>Submit Chat Logs</h1>
+<h5>Submit Chat Logs</h5>
 
 <?php
 echo $this->element('timezoneblock');

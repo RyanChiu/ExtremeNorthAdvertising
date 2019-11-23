@@ -1,4 +1,4 @@
-<h1>Teams</h1>
+<h5>Teams</h5>
 <?php
 //echo '<br/>';
 //echo print_r($rs, true);

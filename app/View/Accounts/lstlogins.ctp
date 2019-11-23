@@ -5,7 +5,7 @@ echo $this->Html->scriptBlock(
 );
 ?>
 
-<h1>Log in/out Logs</h1>
+<h5>Log in/out Logs</h5>
 
 <?php
 //echo $this->element('timezoneblock');
