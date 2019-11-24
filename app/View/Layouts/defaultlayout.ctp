@@ -20,10 +20,6 @@ echo $this->Html->css('main');
 /*for tables*/
 echo $this->Html->css('tables');
 
-/*for bootstrape*/
-echo $this->Html->css('../bootstrap4.3.1/css/bootstrap.min');
-echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.min');
-
 /*for jQuery datapicker*/
 echo $this->Html->css('jQuery/Datepicker/dp_gray');
 echo $this->Html->script('jQuery/Datepicker/jquery-1.3.2.min');
