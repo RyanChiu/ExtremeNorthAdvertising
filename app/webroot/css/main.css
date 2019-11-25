@@ -213,17 +213,7 @@ img.float {
 /* ------------------------ End Main Columns -----------------*/
 
 /* ------------------------- Start Headings ---------------------*/
-h1 {
-	font-size: 16px;
-	/*color: #0099ff;*/
-	color: black;
-}
-h5 {
-	font-size: 16px;
-	/*color: #0099ff;*/
-	color: black;
-	text-decoration: underline;
-}
+
 /* ------------------------- End Headings ---------------------*/
 input {
 	border: 1px solid /*#8ECE5F*/ #c3c3c3;

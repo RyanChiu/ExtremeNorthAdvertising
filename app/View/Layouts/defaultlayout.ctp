@@ -20,10 +20,17 @@ echo $this->Html->css('main');
 /*for tables*/
 echo $this->Html->css('tables');
 
+/*for bootstrap 3*/
+echo $this->Html->css('../bootstrap4.3.1/css/bootstrap.min');
+echo $this->Html->script('jquery-3.3.1.min');
+echo $this->Html->script('popper.min');
+echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.bundle.min');
+echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.min');
+
 /*for jQuery datapicker*/
 echo $this->Html->css('jQuery/Datepicker/dp_gray');
-echo $this->Html->script('jQuery/Datepicker/jquery-1.3.2.min');
-echo $this->Html->script('jQuery/Datepicker/jquery-ui-1.7.custom.min');
+//echo $this->Html->script('jQuery/Datepicker/jquery-1.3.2.min');
+echo $this->Html->script('jquery-ui.min');
 
 ?>
 
@@ -44,8 +51,8 @@ echo $this->Html->script('TinyDropdown/script');
 echo $this->Html->script('ckeditor/ckeditor');
 
 /*for fancybox*/
-echo $this->Html->css('fancybox/jquery.fancybox-1.3.3', null, array('media' => 'screen'));
-echo $this->Html->script('fancybox/jquery.fancybox-1.3.3.pack');
+echo $this->Html->css('jquery.fancybox.min');
+echo $this->Html->script('jquery.fancybox.min');
 
 /*for AJAX*/
 echo $this->Html->script('ajax/prototype');
