@@ -565,7 +565,7 @@ class StatsController extends AppController {
 						$i++;
 					}
 					if (!$isin) {
-						$crumbs[$group == 1 ? 'Day' : ($group == 2 ? 'Office' : ($group == 3 ? 'Agent' : ''))] = $cururl;
+						$crumbs[$group == 1 ? 'Day' : ($group == 2 ? 'Team' : ($group == 3 ? 'Seller' : ''))] = $cururl;
 					}
 					$this->Session->write('crumbs_stats', $crumbs);
 				} else {
@@ -643,7 +643,7 @@ class StatsController extends AppController {
 			);
 			$this->Session->write('crumbs_stats',
 				array(
-					$group == 1 ? 'Day' : ($group == 2 ? 'Office' : ($group == 3 ? 'Agent' : '')) => array(
+					$group == 1 ? 'Day' : ($group == 2 ? 'Team' : ($group == 3 ? 'Seller' : '')) => array(
 						'controller' => 'stats',
 						'action' => $group == 1 ? 'statsdate' : ($group == 2 ? 'statscompany' : ($group == 3 ? 'statsagent' : '')),
 						'startdate' => $startdate, 'enddate' => $enddate,
