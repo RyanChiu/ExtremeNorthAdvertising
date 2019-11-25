@@ -17,9 +17,6 @@ echo $this->Form->create(
 );
 ?>
 <table style="width:100%;border:0;">
-	<caption>
-	<?php echo $this->Html->image('iconSearch.png', array('style' => 'width:16px;height:16px;')) . 'Search'; ?>
-	</caption>
 	<tr>
 		<td class="search-label" style="width:105px;">User:</td>
 		<td>
@@ -39,7 +36,6 @@ echo $this->Form->create(
 echo $this->Form->end();
 ?>
 </div>
-<br/>
 
 <?php
 /*showing the results*/
@@ -85,6 +81,7 @@ function __checkAll() {
 }
 </script>
 
+<br/>
 <div style="margin-bottom:3px">
 <?php
 echo $this->Form->button('Add Team',
@@ -96,8 +93,8 @@ echo $this->Form->button('Add Team',
 );
 ?>
 </div>
-<table style="width:100%">
-<thead>
+<table style="width:100%" class="table">
+<thead class="thead-light">
 <tr>
 	<th><b>
 	<?php
@@ -253,7 +250,7 @@ echo $this->Html->link(
 </div>
 
 <!-- ~~~~~~~~~~~~~~~~~~~the floating message box for "inform selected"~~~~~~~~~~~~~~~~~~~ -->
-<div id="message_box">
+<div id="message_box" style="display:none;">
 	<table style="width:100%">
 	<thead><tr><th>
 		<div style="float:left">Please enter your notes below.</div>

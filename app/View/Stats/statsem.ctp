@@ -55,7 +55,7 @@ $userinfo = $this->Session->read('Auth.User.Account');
 $_show_pay_ = ($userinfo['role'] == 0);
 if (!empty($rs)) {
 ?>
-<table style="width:100%">
+<table style="width:100%" class="table">
 	<caption>
 	<font style="color:red;">
 	<?php
@@ -117,7 +117,7 @@ if (!empty($rs)) {
     ?>
     </font>
 	</caption>
-	<thead>
+	<thead class="thead-light">
 	<tr>
 		<th><!-- numbered --></th>
 		<?php
