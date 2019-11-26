@@ -2,6 +2,30 @@
 	<b><font color="red"><?php echo $this->Session->flash('auth'); ?> </font> </b>
 	<font color="red"><?php echo $this->Session->flash(); ?> </font>
 </center>
+
+<center>
+	<?php 
+	echo $this->Html->image(
+		'JAMES_SANTIAGO.jpg', 
+		array(
+			'class' => 'img-thumbnail',
+			'style' => 'width:160px;;'
+		)
+	);
+	?>
+	<div class="container-fluid">
+		<font class="text-secondary font-weight-bold">Affiliate Mannager</font>
+	</div>
+	<div class="container-fluid">
+		<font class="text-dark font-weight-bold">JAMES SANTIAGO</font>
+	</div>
+	<div class="container-fluid">
+		<a href="mailto:jamesclarksantiago@gmail.com">jamesclarksantiago@gmail.com</a>
+	</div>
+	<div class="container-fluid" style="min-height:36px;">
+	</div>
+</center>
+
 <?php
 echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 'action' => 'login')));
 ?>
