@@ -15,7 +15,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 					'label' => 'USER',
 					'id' => 'iptUsername',
 					'class' => 'form-control form-control-lg', 
-					'placeholder' => 'USER NAME'
+					//'placeholder' => 'USER NAME'
 				)
 			);
 			?>
@@ -30,7 +30,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 				array(
 					'label' => 'PASS', 
 					'class' => 'form-control form-control-lg',
-					'placeholder' => 'Password',
+					//'placeholder' => 'Password',
 					'type' => 'password'
 				)
 			);
@@ -45,7 +45,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 				array(
 					'label' => 'I AM HUMAN', 
 					'class' => 'form-control form-control-lg',
-					'placeholder' => 'Validation code'
+					//'placeholder' => 'Validation code'
 				)
 			);
 			?>
