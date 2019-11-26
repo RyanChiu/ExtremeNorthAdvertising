@@ -1,0 +1,11 @@
+.zLoginTitle {
+	font-size:21px;
+	font-weight:bold;
+	color:#2ececb;
+}
+.zDivCenter {
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

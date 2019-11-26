@@ -6,74 +6,83 @@
 echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 'action' => 'login')));
 ?>
 <div class="container">
-	<div class="form-row">
-		<div class="form-group col-lg-6">
-			<?php
-			echo $this->Form->input(
-				'Account.username', 
-				array(
-					'label' => 'USER',
-					'id' => 'iptUsername',
-					'class' => 'form-control form-control-lg', 
-					//'placeholder' => 'USER NAME'
-				)
-			);
-			?>
-		</div>
+	<div class="form-row w-100">
+		<label for="iptUsername" class="col-sm-3 text-right zLoginTitle">USER</label>
+		<?php
+		echo $this->Form->input(
+			'Account.username', 
+			array(
+				'label' => false,
+				'div' => array('class' => 'col-sm-6'),
+				'id' => 'iptUsername',
+				'class' => 'form-control', 
+				//'placeholder' => 'USER NAME'
+			)
+		);
+		?>
+	</div>
+	<div class="form-row w-100">
+		<label for="iptPassword" class="col-sm-3 text-right zLoginTitle">PASS</label>
+		<?php
+		echo $this->Form->input(
+			'Account.password', 
+			array(
+				'label' => false,
+				'div' => array('class' => 'col-sm-6'),
+				'id' => 'iptPassword',
+				'class' => 'form-control',
+				//'placeholder' => 'Password',
+				'type' => 'password'
+			)
+		);
+		?>
 		<script type="text/javascript">
 		jQuery("#AccountUsername").focus();
 		</script>
-		<div class="form-group col-lg-6">
-			<?php
-			echo $this->Form->input(
-				'Account.password', 
-				array(
-					'label' => 'PASS', 
-					'class' => 'form-control form-control-lg',
-					//'placeholder' => 'Password',
-					'type' => 'password'
-				)
-			);
-			?>
-		</div>
 	</div>
-	<div class="form-row">
-		<div class="form-group col-lg-6">
-			<?php
-			echo $this->Form->input(
-				'Account.vcode', 
+	<div class="form-row w-100">
+		<label for="iptVcode" class="col-sm-3 text-right zLoginTitle">A HUMAN</label>
+		<?php
+		echo $this->Form->input(
+			'Account.vcode', 
+			array(
+				'label' => false,
+				'div' => array('class' => 'col-sm-6'),
+				'id' => 'iptVcode',
+				'class' => 'form-control',
+				//'placeholder' => 'Validation code'
+			)
+		);
+		?>
+	</div>
+	<div class="form-row w-100">
+		<div class="container-fluid text-center">
+		<?php
+		echo $this->Html->link(
+			$this->Html->image(array('controller' => 'accounts', 'action' => 'phpcaptcha'),
 				array(
-					'label' => 'I AM HUMAN', 
-					'class' => 'form-control form-control-lg',
-					//'placeholder' => 'Validation code'
+					'class' => 'rounded-pill',
+					'style' => 'width:125px;',
+					'id' => 'imgVcodes', 
+					'onclick' => 'javascript:__chgVcodes();'
 				)
-			);
-			?>
+			),
+			'#',
+			array(
+				'escape' => false, 
+				'title' => 'Click to try another one.(By entering this code you help yourself prevent spam and fake login.)'
+			),
+			false
+		);
+		?>
 		</div>
-		<div class="form-group col-md-6">
-			<script type="text/javascript">
-			function __chgVcodes() {
-				document.getElementById("imgVcodes").src =
-					"<?php echo $this->Html->url(array('controller' => 'accounts', 'action' => 'phpcaptcha')); ?>"
-					+ "?" + Math.random();
-			}
-			</script>
-			<br/>
-			<?php
-			echo $this->Html->link(
-				$this->Html->image(array('controller' => 'accounts', 'action' => 'phpcaptcha'),
-					array(
-						'style' => 'width:120px; height:65; border: 1px solid #222222; margin-top:8px;', 
-						'id' => 'imgVcodes', 
-						'onclick' => 'javascript:__chgVcodes();'
-					)
-				),
-				'#',
-				array('escape' => false, 'title' => 'Click to try another one.(By entering this code you help yourself prevent spam and fake login.)'),
-				false
-			);
-			?>
-		</div>
+		<script type="text/javascript">
+		function __chgVcodes() {
+			document.getElementById("imgVcodes").src =
+				"<?php echo $this->Html->url(array('controller' => 'accounts', 'action' => 'phpcaptcha')); ?>"
+				+ "?" + Math.random();
+		}
+		</script>
 	</div>
 	<center>
 	<?php

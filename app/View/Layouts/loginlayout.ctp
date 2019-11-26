@@ -13,12 +13,14 @@ echo $this->Html->script('popper.min');
 //echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.bundle.min');
 echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.min');
 
+echo $this->Html->css("mine");
+
 echo $scripts_for_layout;
 
 ?>
 </head>
 <body style="background:white;">
-<div class="container-fluid bg-warning" style="min-height:18px;"></div>
+	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-secondary">
 		<div style="text-align:center;width:100%;">
