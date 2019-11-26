@@ -263,11 +263,16 @@ echo $scripts_for_layout;
 				<?php
 					echo $this->Html->link('LOGOUT',
 						array('controller' => 'accounts', 'action' => 'logout'),
-						array('class' => 'nav-link float-right', 'escape' => false),
+						array('class' => 'nav-link', 'escape' => false),
 						false
 					);
 				?>
 			</li>
+		</div>
+		<div class="badge badge-secondary" style="width:5rem;">
+			<?php
+			echo $userinfo['username'];
+			?>
 		</div>
 	</nav>
 	<div class="container-fluid">
@@ -275,11 +280,6 @@ echo $scripts_for_layout;
 			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
 		</center>
 		<div>
-			<div style="float:left;text-align:left;padding:39px 0 0 13px;position:relative;height:0;width:0;font-weight:bold;color:black;">
-				<?php
-				echo "USER:" . $userinfo['username'];
-				?>
-			</div>
 			<div
 				style="float:right;text-align:right;padding:6px 20px 0px 0px;">
 				<input type="text" value="" id="iptClock"
