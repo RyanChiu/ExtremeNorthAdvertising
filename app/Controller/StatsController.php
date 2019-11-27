@@ -130,7 +130,7 @@ class StatsController extends AppController {
 	function ___prepconstparms_4statsby_only(
 		&$sites, &$types, &$coms, &$ags, &$periods
 	) {
-		$periods = array('0' => '-CHOOSE PAYOUT PERIOD-');
+		$periods = array('0' => 'Pick Period');
 		$periods += array(date('Y-m-d') . ',' . date('Y-m-d') => 'TODAY');
 		$periods += array(
 			date('Y-m-d', mktime(0,0,0,date("m"), date("d") - 1, date("Y")))
@@ -245,7 +245,7 @@ class StatsController extends AppController {
 				'order' => 'sitename'
 			)
 		);
-		$sites = array('-1' => '-CHOOSE A SITE-') + $sites;
+		$sites = array('-1' => 'Pick Offer') + $sites;
 		
 		$types = $this->Type->find('list',
 			array(

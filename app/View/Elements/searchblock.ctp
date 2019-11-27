@@ -21,7 +21,7 @@ echo $this->Form->create(
 	)
 );
 ?>
-<table style="width:100%">
+<table class='w-100'>
 <thead>
 <tr>
 	<th>
@@ -64,10 +64,11 @@ echo $this->Form->create(
 </thead>
 <tr>
 	<td>
-		<div style="float:left;width:90px;" class="search-div">
-			<b>Site:</b>
+	<div class="container-fluid row w-100">
+		<div class="float-left bg-transparent" style="width:110px;">
+			<b>Offer:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div class="float-left">
 		<?php
 		echo $this->Form->input('Stats.siteid',
 			array('label' => '',
@@ -107,10 +108,10 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="float:left;width:90px;" class="search-div">
-			<b>Type:</b>
+		<div class="float-left bg-transparent" style="width:110px;">
+			<b>Link Type:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div class="float-left" style="margin-right:20px;">
 		<?php
 		echo $this->Form->input('Stats.typeid',
 			array('label' => '', 'options' => $types,
@@ -124,17 +125,17 @@ echo $this->Form->create(
 		<div id="divTypeidLoading" style="float:left;width:160px;margin-right:20px;display:none;">
 		<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div class="float-left" style="margin-right:20px;">
 		<?php
 		if ($userinfo['role'] == 0) {//means an administrator
 		?>
-		<div style="float:left;width:90px;" class="search-div">
+		<div style="width:110px;" class="float-left bg-transparent">
 			<b>Team:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 			<input id="iptComs" type="text"
 				readonly="readonly"
-				style="width:158px;cursor:default;"
+				style="width:160px;cursor:default;"
 				<?php
 				$selcomnames = array();
 				if (empty($selcoms) || count($selcoms) == count($coms)) {
@@ -153,7 +154,7 @@ echo $this->Form->create(
 			echo $this->Form->select('Stats.companyid',
 				$coms,
 				array(
-					'style' => 'width:160px;height:90px;',
+					'style' => 'width:160px;',
 					'multiple' => 'multiple',
 					'value' => (empty($selcoms) ? 0 : $selcoms),
 				)
@@ -219,10 +220,10 @@ echo $this->Form->create(
 				}
 			});
 		</script>
-		<div style="float:left;width:60px;" class="search-div">
+		<div style="width:110px;" class="float-left bg-transparent">
 			<b>Seller:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
 			echo $this->Form->input('Stats.agentid',
 				array('label' => '',
@@ -241,10 +242,10 @@ echo $this->Form->create(
 		else if ($userinfo['role'] == 1) {//means an office
 			echo $this->Form->input('Stats.companyid', array('type' => 'hidden', 'value' => $userinfo['id']));
 		?>
-		<div style="float:left;width:60px;" class="search-div">
+		<div style="width:60px;" class="float-left bg-transparent">
 			<b>Seller:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
 			echo $this->Form->input('Stats.agentid',
 				array('label' => '', 'options' => $ags, 'type' => 'select', 'selected' => $selagent, 'style' => 'width:160px;'));
@@ -263,28 +264,28 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="float:left;width:90px;" class="search-div">
+		<div style="width:110px;" class="float-left bg-transparent">
 			<b>Start Date:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
 		echo $this->Form->input('Stats.startdate',
-			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:158px;', 'value' => $startdate));
+			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:160px;', 'value' => $startdate));
 		?>
 		</div>
-		<div style="float:left;width:90px;" class="search-div">
+		<div style="width:110px;" class="float-left bg-transparent">
 			<b>End Date:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
 		echo $this->Form->input('Stats.enddate',
-			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:158px', 'value' => $enddate));
+			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:160px', 'value' => $enddate));
 		?>
 		</div>
-		<div style="float:left;width:60px;" class="search-div">
-			<b>Period:</b>
+		<div style="width:110px;" class="float-left bg-transparent">
+			<b>Pay Period:</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
 		echo $this->Form->input('Stats.period',
 			array(
@@ -292,7 +293,7 @@ echo $this->Form->create(
 				'label' => '', 'type' => 'select',
 				'options' => $periods,
 				'selected' => 0,
-				'style' => 'width:190px;',
+				'style' => 'width:160px;',
 				'onchange' => 'javascript:__zSetFromTo("selPeriod", "datepicker_start", "datepicker_end");'
 			)
 		);
@@ -302,14 +303,14 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="float:left;width:90px;">
+		<div style="width:110px;" class="float-left">
 			<b>&nbsp;</b>
 		</div>
-		<div style="float:left;margin-right:20px;">
+		<div style="margin-right:20px;" class="float-left">
 		<?php
-		echo $this->Form->submit('Load Stats',
+		echo $this->Form->submit('G O',
 			array(
-				'style' => 'width:160px;', 'class' => 'button',
+				'style' => 'width:160px;font-weight:bold;', 'class' => 'btn btn-secondary text-dark',
 				'onclick' => 'javascript:if (jQuery("#StatsSiteid").val() == -1) {alert("Please choose a site, or the stats will not be loaded.");return false;} else return true;'
 			)
 		);
