@@ -9,7 +9,6 @@ if ($userinfo['role'] == 1) {
 	$title = 'Request For New Seller';
 }
 ?>
-<h5><?php echo $title; ?></h5>
 <?php
 echo $this->Form->create(
 	null, 

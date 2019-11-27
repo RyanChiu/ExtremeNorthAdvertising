@@ -9,8 +9,6 @@ echo $this->Html->scriptBlock(
 $userinfo = $this->Session->read('Auth.User.Account');
 //echo str_replace("\n", "<br>", print_r($rs[0], true));
 ?>
-<h5>Click Logs</h5>
-
 <?php
 //echo $this->element('timezoneblock');
 ?>

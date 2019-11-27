@@ -1,4 +1,3 @@
-<h5>Campaigns</h5>
 <?php
 /*
 $str = print_r($rs, true);

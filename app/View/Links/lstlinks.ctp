@@ -3,7 +3,6 @@
 App::import('Vendor', 'extrakits');
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
-<h5>Link Codes</h5>
 <!--  
 <small>(You're from:<?php //echo __getclientip(); ?>, and you'll be <?php //echo __isblocked(__getclientip()) ? 'blocked.' : 'passed.'; ?>)</small>
 -->

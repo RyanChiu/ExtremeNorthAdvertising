@@ -1,4 +1,3 @@
-<h5>Request Changes Just Sent ...</h5>
 <?php
 //echo '<br/>' . print_r($data, true);
 $userinfo = $this->Session->read('Auth.Account');

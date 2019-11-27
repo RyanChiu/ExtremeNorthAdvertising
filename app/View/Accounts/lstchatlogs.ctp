@@ -10,7 +10,6 @@ $userinfo = $this->Session->read('Auth.User.Account');
 //echo print_r($userinfo, true);
 //echo '<br/>';
 ?>
-<h5>Chat Logs</h5>
 
 <?php
 //echo $this->element('timezoneblock');

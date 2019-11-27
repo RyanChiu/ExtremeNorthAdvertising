@@ -2,15 +2,9 @@
 //echo print_r($rs, true);
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
-<div style="float:left;"><h5>Home</h5></div>
-
-<br/>
-
 <?php
 //echo $this->element('timezoneblock');
 ?>
-
-<br/>
 <table style="width:100%">
 <!-- <tr class="odd"> -->
 <tr>

@@ -1,4 +1,3 @@
-<h5>Add An Alert</h5>
 <?php
 //echo print_r($results, true);
 $userinfo = $this->Session->read('Auth.User.Account');

@@ -1,6 +1,5 @@
-<h5>
-<?php echo $rs['Site']['sitename'] . ' Affiliate'; ?>
-</h5>
+(<?php echo $rs['Site']['sitename'] . ' Affiliate'; ?>)
+
 <?php
 /*
 echo '<br/>';

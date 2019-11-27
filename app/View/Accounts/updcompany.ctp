@@ -1,4 +1,3 @@
-<h5>Update A Team</h5>
 <?php
 $userinfo = $this->Session->read('Auth.User.Account');
 echo $this->Form->create(

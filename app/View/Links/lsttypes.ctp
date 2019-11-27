@@ -1,4 +1,3 @@
-<h5>Types</h5>
 <br/>
 <table style="width:100%">
 <caption>Host Name:<?php if (!empty($rs)) echo $rs[0]['ViewType']['hostname']; ?></caption>

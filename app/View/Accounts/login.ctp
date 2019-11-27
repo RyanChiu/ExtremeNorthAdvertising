@@ -86,7 +86,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 			$this->Html->image(array('controller' => 'accounts', 'action' => 'phpcaptcha'),
 				array(
 					'class' => 'rounded-pill',
-					'style' => 'width:125px;',
+					'style' => 'width:125px;margin:2px 0 3px 0;',
 					'id' => 'imgVcodes', 
 					'onclick' => 'javascript:__chgVcodes();'
 				)
@@ -113,7 +113,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 	echo $this->Form->submit(
 		'E N T E R',
 		array(
-			'class' => 'btn-lg btn-warning btn-block',
+			'class' => 'btn-lg btn-info btn-block',
 			'style' => 'max-width:640px;font-weight:bold;font-size:23px;'
 		)
 	);

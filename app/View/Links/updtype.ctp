@@ -1,5 +1,3 @@
-<h5>Update Type</h5>
-<br/>
 <?php
 //echo print_r($results, true);
 $userinfo = $this->Session->read('Auth.User.Account');

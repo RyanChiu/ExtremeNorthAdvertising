@@ -1,4 +1,3 @@
-<h5>Teams</h5>
 <?php
 //echo '<br/>';
 //echo print_r($rs, true);
@@ -6,35 +5,34 @@
 <?php
 /*searching part*/
 ?>
-<div style="width:100%;margin-top:5px;" id="search">
-<?php
-echo $this->Form->create(
-	null, 
-	array(
-		"url" => array('controller' => 'accounts', 'action' => 'lstcompanies'), '
-		id' => 'frmSearch'
-	)
-);
-?>
-<table style="width:100%;border:0;">
-	<tr>
-		<td class="search-label" style="width:105px;">User:</td>
-		<td>
-		<div style="float:left;width:275px;">
+
+<div class="container-fluid">
+	<?php
+	echo $this->Form->create(
+		null, 
+		array(
+			"url" => array('controller' => 'accounts', 'action' => 'lstcompanies'), '
+			id' => 'frmSearch'
+		)
+	);
+	?>
+	<div class="form-row">
+		<div class="form-group col-lg-1">
+		User:
+		</div>
+		<div class="form-group col-lg-3">
 		<?php echo $this->Form->input('ViewCompany.username', array('label' => '', 'style' => 'width:260px;')); ?>
 		</div>
-		<div style="float:left;width:112px;">
+		<div class="form-group col-lg-3">
 		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'button')); ?>
 		</div>
-		<div style="float:left;">
+		<div class="form-group col-lg-3">
 		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:64px;', 'class' => 'button', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
 		</div>
-		</td>
-	</tr>
-</table>
-<?php
-echo $this->Form->end();
-?>
+	</div>
+	<?php
+	echo $this->Form->end();
+	?>
 </div>
 
 <?php

@@ -1,4 +1,3 @@
-<h5>A New Team</h5>
 <?php
 echo $this->Form->create(
 	null, 

@@ -10,7 +10,6 @@ if ($userinfo['role'] == 1) {
 	$title = 'Request For Updating Seller';
 }
 ?>
-<h5><?php echo $title; ?></h5>
 <?php
 echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 'action' => $action)));
 if ($userinfo['role'] == 1) {

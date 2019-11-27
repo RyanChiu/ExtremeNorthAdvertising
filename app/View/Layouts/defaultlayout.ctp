@@ -269,12 +269,80 @@ echo $scripts_for_layout;
 				?>
 			</li>
 		</div>
-		<div class="badge badge-secondary" style="width:5rem;">
-			<?php
-			echo $userinfo['username'];
-			?>
-		</div>
 	</nav>
+	<div class="container-fluid">
+	<div class="text-left">
+		<?php
+		$title_for_page = "";
+		if (strpos($this->request->here, 'lstcompanies') !== false) {
+			$title_for_page = "Teams";
+		} else if (strpos($this->request->here, 'lstagents') !== false) {
+			$title_for_page = "Sellers";
+		} else if (strpos($this->request->here, 'lstnewmembers') !== false) {
+			$title_for_page = "New members";
+		} else if (strpos($this->request->here, 'lstlinks') !== false) {
+			$title_for_page = "Link Codes";
+		} else if (strpos($this->request->here, 'statscompany') !== false) {
+			$title_for_page = "Stats";
+		} else if (strpos($this->request->here, 'lstchatlogs') !== false) {
+			$title_for_page = "Chat Logs";
+		} else if (strpos($this->request->here, 'lstclickouts') !== false) {
+			$title_for_page = "Click Logs";
+		} else if (strpos($this->request->here, 'lstlogins') !== false) {
+			$title_for_page = "Log in/out Logs";
+		} else if (strpos($this->request->here, 'contactus') !== false) {
+			$title_for_page = "Get Help";
+		} else if (strpos($this->request->here, 'updadmin') !== false) {
+			$title_for_page = "Profile";
+		} else if (strpos($this->request->here, 'updcompany') !== false) {
+			$title_for_page = "Profile";
+		} else if (strpos($this->request->here, 'updagent') !== false) {
+			$title_for_page = "Profile";
+		} else if (strpos($this->request->here, 'regcompany') !== false) {
+			$title_for_page = "New Team";
+		} else if (strpos($this->request->here, 'regagent') !== false) {
+			$title_for_page = "New Seller";
+		} else if (strpos($this->request->here, 'requestchg') !== false) {
+			$title_for_page = "Request Changes Just Sent ...";
+		} else if (strpos($this->request->here, 'addnews') !== false) {
+			$title_for_page = "Add Alert";
+		} else if (strpos($this->request->here, 'updalerts') !== false) {
+			$title_for_page = "Update Pop Up";
+		} else if (strpos($this->request->here, 'updtoolbox') !== false) {
+			$title_for_page = "Leads";
+		} else if (strpos($this->request->here, 'addchatlogs') !== false) {
+			$title_for_page = "Submit Chat Log";
+		} else if (strpos($this->request->here, 'addsite') !== false) {
+			$title_for_page = "Add Site";
+		} else if (strpos($this->request->here, 'lstcampaigns') !== false) {
+			$title_for_page = "Campaigns";
+		} else if (strpos($this->request->here, 'lstclickouts') !== false) {
+			$title_for_page = "Click Logs";
+		} else if (strpos($this->request->here, 'lstlinks') !== false) {
+			$title_for_page = "Link Codes";
+		} else if (strpos($this->request->here, 'lstsites') !== false) {
+			$title_for_page = "Sites";
+		} else if (strpos($this->request->here, 'lsttypes') !== false) {
+			$title_for_page = "Types";
+		} else if (strpos($this->request->here, 'updsite') !== false) {
+			$title_for_page = "Update Site";
+		} else if (strpos($this->request->here, 'updtype') !== false) {
+			$title_for_page = "Update Type";
+		} else if (strpos($this->request->here, 'stats') !== false) {
+			$title_for_page = "Stats";
+		} else {
+			$title_for_page = "HOME";
+		}
+
+		echo $title_for_page;
+		?>
+	</div>
+	<div class="badge badge-secondary text-left" style="width:5rem;">
+		<?php
+		echo $userinfo['username'];
+		?>
+	</div>
+	</div>
 	<div class="container-fluid">
 		<center>
 			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
