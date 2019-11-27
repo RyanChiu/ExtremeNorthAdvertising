@@ -1,7 +1,8 @@
 <?php 
 $this->Js->JqueryEngine->jQueryObject = 'jQuery';
 echo $this->Html->scriptBlock(
-		array('inline' => false)
+	'',
+	array('inline' => false)
 );
 ?>
 

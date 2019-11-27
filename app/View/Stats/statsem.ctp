@@ -70,8 +70,8 @@ if (!empty($rs)) {
 	&nbsp;&nbsp;&nbsp;
 	<?php
 	echo '(';
-	echo 'Site:' . $sites[$selsite];
-	echo ', Type:' . $types[$seltype];
+	echo 'Site:' . (is_array($sites) ? $sites[$selsite] : "");
+	echo ', Type:' . (is_array($types) ? $types[$seltype] : "");
 	if ($userinfo['role'] == 0) {//means an administrator
 		echo ', Team:';
 		if (!empty($selcoms) && $selcoms[0] != 0) {
