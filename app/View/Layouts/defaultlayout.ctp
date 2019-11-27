@@ -442,9 +442,10 @@ echo $scripts_for_layout;
 	</div>
 	<div class="container-fluid bg-secondary text-white">
 		<center>
-			<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/>
-			Copyright &copy; 2019 <a href="www.ExtremeNorthAdvertising.com">www.ExtremeNorthAdvertising.com</a> All Rights Reserved.
-			<br/><br/>
+			De Kleetlaan 12a 2331 Diegem Brussels Belgium EU
+			Copyright &copy; 2019 All Rights, Reserved.<BR/>
+			<a href="https://www.ExtremeNorthAdvertising.com">https://www.ExtremeNorthAdvertising.com</a> 
+			<br/>
 		</center>
 	</div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>

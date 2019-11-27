@@ -45,8 +45,9 @@ echo $scripts_for_layout;
 	</div>
 	<div class="container-fluid fixed-bottom bg-secondary text-white">
 		<center>
-			<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium<br/>
-			Copyright &copy; 2019 <a href="www.ExtremeNorthAdvertising.com">www.ExtremeNorthAdvertising.com</a> All Rights Reserved.
+			<br/>De Kleetlaan 12a 2331 Diegem Brussels Belgium EU
+			Copyright &copy; 2019 All Rights Reserved.<br/>
+			<a href="www.ExtremeNorthAdvertising.com">www.ExtremeNorthAdvertising.com</a> 
 			<br/><br/><br/>
 		</center>
 	</div>
