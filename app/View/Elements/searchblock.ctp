@@ -68,7 +68,7 @@ echo $this->Form->create(
 		<div class="float-left bg-transparent" style="width:110px;">
 			<b>Offer:</b>
 		</div>
-		<div class="float-left">
+		<div class="float-left" style="margin-right:20px;">
 		<?php
 		echo $this->Form->input('Stats.siteid',
 			array('label' => '',
@@ -104,10 +104,6 @@ echo $this->Form->create(
 		));
 		?>
 		</div>
-	</td>
-</tr>
-<tr>
-	<td>
 		<div class="float-left bg-transparent" style="width:110px;">
 			<b>Link Type:</b>
 		</div>
@@ -125,6 +121,10 @@ echo $this->Form->create(
 		<div id="divTypeidLoading" style="float:left;width:160px;margin-right:20px;display:none;">
 		<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
 		</div>
+	</td>
+</tr>
+<tr>
+	<td>
 		<div class="float-left" style="margin-right:20px;">
 		<?php
 		if ($userinfo['role'] == 0) {//means an administrator
