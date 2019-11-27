@@ -65,8 +65,14 @@ echo $scripts_for_layout;
 			?>
 		</div>
 	</div>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">ENA</a>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">		
+		<?php
+		echo $this->Html->link('HOME',
+			array('controller' => 'accounts', 'action' => 'index'),
+			array('class' => 'navbar-brand', 'escape' => false), 
+			false
+		);
+		?>
 		<button class="navbar-toggler" 
 			type="button" 
 			data-toggle="collapse" 
@@ -78,71 +84,78 @@ echo $scripts_for_layout;
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<?php
-					echo $this->Html->link('HOME',
-						array('controller' => 'accounts', 'action' => 'index'),
-						array('class' => 'nav-link', 'escape' => false), 
+				if ($role == 0) {//means an administrator
+					echo $this->Html->link('<span><font>TEAMS</font></span>',
+						array('controller' => 'accounts', 'action' => 'lstcompanies', 'id' => -1),
+						array('class' => 'nav-link', 'escape' => false),
 						false
 					);
+				}
 				?>
 			</li>
 			<li class="nav-item">
 				<?php
-					if ($role == 0) {//means an administrator
-						echo $this->Html->link('<span><font>TEAM</font></span>',
-							array('controller' => 'accounts', 'action' => 'lstcompanies', 'id' => -1),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
+				if ($role == 0) {//means an administrator
+					echo $this->Html->link('SELLERS',
+						array('controller' => 'accounts', 'action' => 'lstagents', 'id' => -1),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
+				if ($role == 1) {//means an office
+					echo $this->Html->link('SELLERS',
+						array('controller' => 'accounts', 'action' => 'lstagents', 'id' => $userinfo['id']),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
 				?>
 			</li>
 			<li class="nav-item">
 				<?php
-					if ($role == 0) {//means an administrator
-						echo $this->Html->link('SELLER',
-							array('controller' => 'accounts', 'action' => 'lstagents', 'id' => -1),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
-					if ($role == 1) {//means an office
-						echo $this->Html->link('SELLER',
-							array('controller' => 'accounts', 'action' => 'lstagents', 'id' => $userinfo['id']),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
+				if ($role == 0) {//means an administrator
+					echo $this->Html->link('STAFF',
+						array('controller' => 'accounts', 'action' => 'lstnewmembers'),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
 				?>
 			</li>
-			<li class="nav-item">
-				<?php
-					if ($role == 0) {//means an administrator
-						echo $this->Html->link('NEW MEMBERS',
-							array('controller' => 'accounts', 'action' => 'lstnewmembers'),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
-				?>
-			</li>
-			<li class="nav-item">
-				<?php
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" 
+					href="#" id="navbarDropdownSite" 
+					role="button" data-toggle="dropdown" 
+					aria-haspopup="true" 
+					aria-expanded="false">
+				SITES
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownSite">
+					<?php
 					echo $this->Html->link('LINKS',
 						array('controller' => 'links', 'action' => 'lstlinks'),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'dropdown-item', 'escape' => false), 
 						false
 					);
-				?>
+					if ($role == 0) {
+						echo $this->Html->link('Config Site',
+							array('controller' => 'links', 'action' => 'updsite'),
+							array('class' => 'dropdown-item', 'escape' => false), 
+							false
+						);
+					}
+					?>
+				</div>
 			</li>
 			<li class="nav-item">
 				<?php
-					echo $this->Html->link('STATS',
-						array('controller' => 'stats', 'action' => 'statscompany', 'clear' => -2),
-						array('class' => 'nav-link', 'escape' => false),
-						false
-					);
+				echo $this->Html->link('STATS',
+					array('controller' => 'stats', 'action' => 'statscompany', 'clear' => -2),
+					array('class' => 'nav-link', 'escape' => false),
+					false
+				);
 				?>
 			</li>
 			<li class="nav-item dropdown">
@@ -155,23 +168,23 @@ echo $scripts_for_layout;
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<?php
-						if ($role == 2) {
-							echo $this->Html->link('Submit Chat Log',
-								array('controller' => 'accounts', 'action' => 'addchatlogs'),
-								array('class' => 'dropdown-item', 'escape' => false), 
-								false
-							);
-						}
-						echo $this->Html->link('Chat Log',
-							array('controller' => 'accounts', 'action' => 'lstchatlogs', 'id' => -1),
+					if ($role == 2) {
+						echo $this->Html->link('Submit Chat Log',
+							array('controller' => 'accounts', 'action' => 'addchatlogs'),
 							array('class' => 'dropdown-item', 'escape' => false), 
 							false
 						);
-						echo $this->Html->link('Click Log',
-							array('controller' => 'links', 'action' => 'lstclickouts', 'id' => -1),
-							array('class' => 'dropdown-item', 'escape' => false), 
-							false
-						);
+					}
+					echo $this->Html->link('Chat Log',
+						array('controller' => 'accounts', 'action' => 'lstchatlogs', 'id' => -1),
+						array('class' => 'dropdown-item', 'escape' => false), 
+						false
+					);
+					echo $this->Html->link('Click Log',
+						array('controller' => 'links', 'action' => 'lstclickouts', 'id' => -1),
+						array('class' => 'dropdown-item', 'escape' => false), 
+						false
+					);
 					?>
 					<div class="dropdown-divider"></div>
 					<?php
@@ -185,53 +198,56 @@ echo $scripts_for_layout;
 					?>
 				</div>
 			</li>
+			<!--
 			<li class="nav-item">
 				<?php
-					echo $this->Html->link('GET HELP',
-						array('controller' => 'accounts', 'action' => 'contactus'),
+				/*
+				echo $this->Html->link('GET HELP',
+					array('controller' => 'accounts', 'action' => 'contactus'),
+					array('class' => 'nav-link', 'escape' => false),
+					false
+				);*/
+				?>
+			</li>
+			-->
+			<li class="nav-item">
+				<?php
+				if ($role == 0) {//means an administrator
+					echo $this->Html->link('ME',
+						array('controller' => 'accounts', 'action' => 'updadmin'),
 						array('class' => 'nav-link', 'escape' => false),
 						false
 					);
+				}
+				if ($role == 1) {//means an office
+					echo $this->Html->link('ME',
+						array('controller' => 'accounts', 'action' => 'updcompany', 'id' => $userinfo['id']),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
+				if ($role == 2) {//means an agent
+					echo $this->Html->link('ME',
+						array('controller' => 'accounts', 'action' => 'updagent', 'id' => $userinfo['id']),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
 				?>
 			</li>
 			<li class="nav-item">
 				<?php
-					if ($role == 0) {//means an administrator
-						echo $this->Html->link('PROFILE',
-							array('controller' => 'accounts', 'action' => 'updadmin'),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
-					if ($role == 1) {//means an office
-						echo $this->Html->link('PROFILE',
-							array('controller' => 'accounts', 'action' => 'updcompany', 'id' => $userinfo['id']),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
-					if ($role == 2) {//means an agent
-						echo $this->Html->link('PROFILE',
-							array('controller' => 'accounts', 'action' => 'updagent', 'id' => $userinfo['id']),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
-				?>
-			</li>
-			<li class="nav-item">
-				<?php
-					if ($role == 0) {//means an administrator
-						echo $this->Html->link('ALERTS',
-							array('controller' => 'accounts', 'action' => 'addnews'),
-							array('class' => 'nav-link', 'escape' => false),
-							false
-						);
-					}
+				if ($role == 0) {//means an administrator
+					echo $this->Html->link('ALERTS',
+						array('controller' => 'accounts', 'action' => 'addnews'),
+						array('class' => 'nav-link', 'escape' => false),
+						false
+					);
+				}
 				?>
 			</li>
 			<?php
-			if (in_array($userinfo['id'], array(1, 2))) {//HARD CODE: means an administrator whoes id is 1 or 2
+			if (FALSE && in_array($userinfo['id'], array(1, 2))) {//HARD CODE: means an administrator whoes id is 1 or 2
 			?>
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" 
@@ -261,13 +277,14 @@ echo $scripts_for_layout;
 			?>
 			<li class="nav-item">
 				<?php
-					echo $this->Html->link('LOGOUT',
+					echo $this->Html->link('LEAVE',
 						array('controller' => 'accounts', 'action' => 'logout'),
 						array('class' => 'nav-link', 'escape' => false),
 						false
 					);
 				?>
 			</li>
+			</ul>
 		</div>
 	</nav>
 	<div class="container-fluid">
