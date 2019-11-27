@@ -111,10 +111,11 @@ echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 
 	<center>
 	<?php
 	echo $this->Form->submit(
-		'E N T E R',
+		//'E N T E R',
+		'ENTER.png',
 		array(
 			'class' => 'btn-lg btn-info btn-block',
-			'style' => 'max-width:640px;font-weight:bold;font-size:23px;'
+			'style' => 'max-width:640px;max-height:64px;'
 		)
 	);
 	?>
