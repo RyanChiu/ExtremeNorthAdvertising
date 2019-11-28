@@ -1,7 +1,7 @@
 <?php
 if ($this->Paginator->hasPage(null, 2)) {
 ?>
-<table>
+<table class="table-sm">
 <tr>
 <td>
 <!-- Shows the page numbers -->

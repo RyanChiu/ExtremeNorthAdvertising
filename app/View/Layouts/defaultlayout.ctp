@@ -293,93 +293,91 @@ echo $scripts_for_layout;
 		</div>
 	</nav>
 	<div class="container-fluid">
-	<div class="text-left font-weight-bold">
-		<?php
-		$title_for_page = "";
-		if (strpos($this->request->here, 'lstcompanies') !== false) {
-			$title_for_page = "Teams";
-		} else if (strpos($this->request->here, 'lstagents') !== false) {
-			$title_for_page = "Sellers";
-		} else if (strpos($this->request->here, 'lstnewmembers') !== false) {
-			$title_for_page = "New members";
-		} else if (strpos($this->request->here, 'lstlinks') !== false) {
-			$title_for_page = "Link Codes";
-		} else if (strpos($this->request->here, 'statscompany') !== false) {
-			$title_for_page = "Stats";
-		} else if (strpos($this->request->here, 'lstchatlogs') !== false) {
-			$title_for_page = "Chat Logs";
-		} else if (strpos($this->request->here, 'lstclickouts') !== false) {
-			$title_for_page = "Click Logs";
-		} else if (strpos($this->request->here, 'lstlogins') !== false) {
-			$title_for_page = "Log in/out Logs";
-		} else if (strpos($this->request->here, 'contactus') !== false) {
-			$title_for_page = "Get Help";
-		} else if (strpos($this->request->here, 'updadmin') !== false) {
-			$title_for_page = "Profile";
-		} else if (strpos($this->request->here, 'updcompany') !== false) {
-			$title_for_page = "Profile";
-		} else if (strpos($this->request->here, 'updagent') !== false) {
-			$title_for_page = "Profile";
-		} else if (strpos($this->request->here, 'regcompany') !== false) {
-			$title_for_page = "New Team";
-		} else if (strpos($this->request->here, 'regagent') !== false) {
-			$title_for_page = "New Seller";
-		} else if (strpos($this->request->here, 'requestchg') !== false) {
-			$title_for_page = "Request Changes Just Sent ...";
-		} else if (strpos($this->request->here, 'addnews') !== false) {
-			$title_for_page = "Add Alert";
-		} else if (strpos($this->request->here, 'updalerts') !== false) {
-			$title_for_page = "Update Pop Up";
-		} else if (strpos($this->request->here, 'updtoolbox') !== false) {
-			$title_for_page = "Leads";
-		} else if (strpos($this->request->here, 'addchatlogs') !== false) {
-			$title_for_page = "Submit Chat Log";
-		} else if (strpos($this->request->here, 'addsite') !== false) {
-			$title_for_page = "Add Site";
-		} else if (strpos($this->request->here, 'lstcampaigns') !== false) {
-			$title_for_page = "Campaigns";
-		} else if (strpos($this->request->here, 'lstclickouts') !== false) {
-			$title_for_page = "Click Logs";
-		} else if (strpos($this->request->here, 'lstlinks') !== false) {
-			$title_for_page = "Link Codes";
-		} else if (strpos($this->request->here, 'lstsites') !== false) {
-			$title_for_page = "Sites";
-		} else if (strpos($this->request->here, 'lsttypes') !== false) {
-			$title_for_page = "Types";
-		} else if (strpos($this->request->here, 'updsite') !== false) {
-			$title_for_page = "Update Site";
-		} else if (strpos($this->request->here, 'updtype') !== false) {
-			$title_for_page = "Update Type";
-		} else if (strpos($this->request->here, 'stats') !== false) {
-			$title_for_page = "Stats";
-		} else {
-			$title_for_page = "HOME";
-		}
+		<div class="float-left">
+			<div class="text-left font-weight-bold">
+				<?php
+				$title_for_page = "";
+				if (strpos($this->request->here, 'lstcompanies') !== false) {
+					$title_for_page = "Teams";
+				} else if (strpos($this->request->here, 'lstagents') !== false) {
+					$title_for_page = "Sellers";
+				} else if (strpos($this->request->here, 'lstnewmembers') !== false) {
+					$title_for_page = "New members";
+				} else if (strpos($this->request->here, 'lstlinks') !== false) {
+					$title_for_page = "Link Codes";
+				} else if (strpos($this->request->here, 'statscompany') !== false) {
+					$title_for_page = "Stats";
+				} else if (strpos($this->request->here, 'lstchatlogs') !== false) {
+					$title_for_page = "Chat Logs";
+				} else if (strpos($this->request->here, 'lstclickouts') !== false) {
+					$title_for_page = "Click Logs";
+				} else if (strpos($this->request->here, 'lstlogins') !== false) {
+					$title_for_page = "Log in/out Logs";
+				} else if (strpos($this->request->here, 'contactus') !== false) {
+					$title_for_page = "Get Help";
+				} else if (strpos($this->request->here, 'updadmin') !== false) {
+					$title_for_page = "Profile";
+				} else if (strpos($this->request->here, 'updcompany') !== false) {
+					$title_for_page = "Profile";
+				} else if (strpos($this->request->here, 'updagent') !== false) {
+					$title_for_page = "Profile";
+				} else if (strpos($this->request->here, 'regcompany') !== false) {
+					$title_for_page = "New Team";
+				} else if (strpos($this->request->here, 'regagent') !== false) {
+					$title_for_page = "New Seller";
+				} else if (strpos($this->request->here, 'requestchg') !== false) {
+					$title_for_page = "Request Changes Just Sent ...";
+				} else if (strpos($this->request->here, 'addnews') !== false) {
+					$title_for_page = "Add Alert";
+				} else if (strpos($this->request->here, 'updalerts') !== false) {
+					$title_for_page = "Update Pop Up";
+				} else if (strpos($this->request->here, 'updtoolbox') !== false) {
+					$title_for_page = "Leads";
+				} else if (strpos($this->request->here, 'addchatlogs') !== false) {
+					$title_for_page = "Submit Chat Log";
+				} else if (strpos($this->request->here, 'addsite') !== false) {
+					$title_for_page = "Add Site";
+				} else if (strpos($this->request->here, 'lstcampaigns') !== false) {
+					$title_for_page = "Campaigns";
+				} else if (strpos($this->request->here, 'lstclickouts') !== false) {
+					$title_for_page = "Click Logs";
+				} else if (strpos($this->request->here, 'lstlinks') !== false) {
+					$title_for_page = "Link Codes";
+				} else if (strpos($this->request->here, 'lstsites') !== false) {
+					$title_for_page = "Sites";
+				} else if (strpos($this->request->here, 'lsttypes') !== false) {
+					$title_for_page = "Types";
+				} else if (strpos($this->request->here, 'updsite') !== false) {
+					$title_for_page = "Update Site";
+				} else if (strpos($this->request->here, 'updtype') !== false) {
+					$title_for_page = "Update Type";
+				} else if (strpos($this->request->here, 'stats') !== false) {
+					$title_for_page = "Stats";
+				} else {
+					$title_for_page = "HOME";
+				}
 
-		echo $title_for_page;
-		?>
-	</div>
-	<div class="rounded-pill d-inline-flex bg-secondary text-left text-white font-weight-bold p-2">
-		<div class="float-left"><i class="icon-user"></i></div><?php echo '&nbsp' . $userinfo['username'];?>
-	</div>
-	</div>
-	<div class="container-fluid">
-		<center>
-			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
-		</center>
-		<div>
-			<div
-				style="float:right;text-align:right;padding:6px 20px 0px 0px;">
+				echo $title_for_page;
+				?>
+			</div>
+			<div class="rounded-pill d-inline-flex bg-secondary text-left text-white font-weight-bold px-2 pb-1">
+				<div class="text-left"><i class="icon-user"></i></div><?php echo '&nbsp' . $userinfo['username'];?>
+			</div>
+		</div>
+
+		<div class="float-right m-0" style="font-size:12px;">
+			<div class="float-right text-right">
 				<input type="text" value="" id="iptClock"
-					style="width:240px;text-align:right;border:0;background:transparent;font-family:Arial;font-weight:bold;color:black;"
+					class="text-right text-dark font-weight-bold bg-transparent"
+					style="width:240px;border:0;"
 					readonly="readonly"
 					onmouseover="jQuery('#divTimezoneTip').slideDown();"
 					onmouseout="jQuery('#divTimezoneTip').slideUp();" />
 				<div><font color="red">EST-EDT: Stats Time zone</font></div>
 				<div><a href="https://www.dateandtime.com">https://www.dateandtime.com</a></div>
 			</div>
-			<div
-				style="float:right;margin:6px 6px 0px 0px;display:none;color:black;"
+			<div class="float-right mr-2 text-dark"
+				style="display:none;"
 				id="divTimezoneTip">
 				<script language="javascript">
 				document.write("Your timezone: " + calculate_time_zone() + "");
@@ -437,6 +435,12 @@ echo $scripts_for_layout;
 			__zShowClock();
 			</script>
 		</div>
+
+	</div>
+	<div class="container-fluid p-0">
+		<center>
+			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
+		</center>
 		<div>
 
 			<?php echo $content_for_layout; ?>

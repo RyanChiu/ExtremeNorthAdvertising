@@ -1,4 +1,5 @@
 <?php
+/*
 switch ($bywhat) {
 	case 0:
 		echo '(By Date)';
@@ -16,6 +17,7 @@ switch ($bywhat) {
 		echo '(No such stats)';
 		break;
 }
+*/
 ?>
 
 <?php
@@ -26,7 +28,7 @@ switch ($bywhat) {
 //echo print_r($rs, true);
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
-<br/>
+
 <?php
 	echo $this->element(
 		'searchblock', 
@@ -46,16 +48,14 @@ $userinfo = $this->Session->read('Auth.User.Account');
 		)
 	); 
 ?>
-<br/>
 
 <?php
 // $_show_pay_ = ($userinfo['role'] == 0 && in_array($userinfo['id'], array(1, 2, 3)));
 $_show_pay_ = ($userinfo['role'] == 0);
 if (!empty($rs)) {
 ?>
-<table style="width:100%" class="table">
-	<caption>
-	<font style="color:red;">
+<div>
+	<div class="text-danger mt-2">
 	<?php
 	if ($startdate != $enddate) {
 	?>
@@ -94,9 +94,8 @@ if (!empty($rs)) {
     <?php
 	}
     ?>
-    </font>
-    <br/>
-    <font style="font-size:12px;font-weight:lighter;">
+    </div>
+
     <?php
     if ($this->Session->check('crumbs_stats')) {
 		$crumbs = $this->Session->read('crumbs_stats');
@@ -113,10 +112,12 @@ if (!empty($rs)) {
 	    echo $this->Html->getCrumbs(" >> ");
     }
     ?>
-    </font>
-	</caption>
-	<thead class="thead-light">
-	<tr>
+
+</div>
+<div class="table-responsive">
+<table class="table-sm table-striped w-100">
+	<thead>
+	<tr class="bg-dark">
 		<th><!-- numbered --></th>
 		<?php
 		switch ($bywhat) {
@@ -275,7 +276,7 @@ if (!empty($rs)) {
 		$pagetotals['earnings'] += $r['ViewTStats']['earnings'];
 	?>
 	<tr<?php echo ($i % 2 == 0 ? '' : ' class="odd"'); ?>>
-		<td><font size="1"><?php echo ($i + 1 + $limit * ($this->Paginator->current() - 1)); ?></font></td>
+		<td><?php echo ($i + 1 + $limit * ($this->Paginator->current() - 1)); ?></td>
 		<?php
 		switch ($bywhat) {
 			case 0:
@@ -606,11 +607,14 @@ if (!empty($rs)) {
 	</tr>
 	-->
 </table>
+</div>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div>
 <?php
 echo $this->element('paginationblock');
 ?>
+</div>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <?php
 } else {
