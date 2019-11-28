@@ -359,10 +359,8 @@ echo $scripts_for_layout;
 		echo $title_for_page;
 		?>
 	</div>
-	<div class="rounded-pill bg-secondary text-left text-white font-weight-bold pl-2 pb-1" style="width:7rem;">
-		<?php
-		echo '<i class="icon-user"></i> ' . $userinfo['username'];
-		?>
+	<div class="rounded-pill d-inline-flex bg-secondary text-left text-white font-weight-bold p-2">
+		<div class="float-left"><i class="icon-user"></i></div><?php echo '&nbsp' . $userinfo['username'];?>
 	</div>
 	</div>
 	<div class="container-fluid">
