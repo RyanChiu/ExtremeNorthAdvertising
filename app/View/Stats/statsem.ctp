@@ -144,7 +144,7 @@ if (!empty($rs)) {
 		<th <?php echo !in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php echo $this->ExPaginator->sort('ViewTStats.uniques', 'Uniques'); ?>
 		</th>
-		<th <?php echo $selsite != 7 ? '' : 'class="naClassHide"'; ?>>
+		<th <?php echo in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php echo $this->ExPaginator->sort('ViewTStats.signups', 'Free*'); ?>
 		</th>
 		<th class="naClassHide">
@@ -156,7 +156,7 @@ if (!empty($rs)) {
 			echo '<br/><font size="1">(for revise)</font>';
 		?>
 		</th>
-		<th <?php echo $selsite == 2 ? '' : 'class="naClassHide"'; ?>>
+		<th <?php echo in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php
 			echo $this->ExPaginator->sort('ViewTStats.chargebacks', 'Frauds');
 		?>
@@ -171,71 +171,71 @@ if (!empty($rs)) {
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type10', (count($typesv) > 10 ? $typesv[10] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 9 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type9', (count($typesv) > 9 ? $typesv[9] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 8 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type8', (count($typesv) > 8 ? $typesv[8] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 7 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type7', (count($typesv) > 7 ? $typesv[7] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 6 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type6', (count($typesv) > 6 ? $typesv[6] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 5 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type5', (count($typesv) > 5 ? $typesv[5] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 4 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type4', (count($typesv) > 4 ? $typesv[4] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 3 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type3', (count($typesv) > 3 ? $typesv[3] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 2 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type2', (count($typesv) > 2 ? $typesv[2] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo count($typesv) > 1 ? '' : 'class="naClassHide"'; ?>>
 		<?php
 		echo $this->ExPaginator->sort('ViewTStats.sales_type1', (count($typesv) > 1 ? $typesv[1] : 'N/A'))
 		?>
-		<br/><i style="font-size:12px;">Sale</i>
+		
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? 'class="naClassHide"' : ''; // just do not show for the some site?>>
-		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Net'); ?>
-		<br/><i style="font-size:12px;">Sale</i>
+		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Tot sale'); ?>
+		
 		</th>
 		<?php
 		if ($_show_pay_) {
 		?>
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.earnings', 'Earnings'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Payouts'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.earnings', 'Earn'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Pay'); ?></th>
 		<?php
 		} else if ($userinfo['role'] == -1) {
 		?>
@@ -376,17 +376,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Page Total</td>';
+				echo '<td class="totals" align="right">Page Tot</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Page Total</td>';
+				echo '<td class="totals" align="right">Page Tot</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Page Total</td>';
+				echo '<td class="totals" align="right">Page Tot</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Page Total</td>';
+				echo '<td class="totals" align="right">Page Tot</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
@@ -429,17 +429,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Overall Total</td>';
+				echo '<td class="totals" align="right">Over all Tot</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Overall Total</td>';
+				echo '<td class="totals" align="right">Over all Tot</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Overall Total</td>';
+				echo '<td class="totals" align="right">Over all Tot</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Overall Total</td>';
+				echo '<td class="totals" align="right">Over all Tot</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
@@ -482,17 +482,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Unique to Sale Ratio</td>';
+				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Unique to Sale Ratio</td>';
+				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Unique to Sale Ratio</td>';
+				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Unique to Sale Ratio</td>';
+				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
@@ -542,6 +542,7 @@ if (!empty($rs)) {
 		}
 		?>
 	</tr>
+	<!--
 	<tr>
 		<td class="totals"></td>
 		<?php
@@ -576,7 +577,6 @@ if (!empty($rs)) {
 		}
 		?>
 		</td>
-		<!--<td class="totals"></td>-->
 		<td class="totals"></td>
 		<td class="totals"></td>
 		<td class="totals"></td>
@@ -604,6 +604,7 @@ if (!empty($rs)) {
 		}
 		?>
 	</tr>
+	-->
 </table>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->

@@ -12,3 +12,6 @@
 .zMaxWidth {
 	max-width: 950px;
 }
+.naClassHide {
+	display: none;
+}
