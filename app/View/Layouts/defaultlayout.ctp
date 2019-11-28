@@ -130,7 +130,7 @@ echo $scripts_for_layout;
 					role="button" data-toggle="dropdown" 
 					aria-haspopup="true" 
 					aria-expanded="false">
-				SITES
+				LINKS
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownSite">
 					<?php
