@@ -25,6 +25,9 @@ echo $this->Html->script('popper.min');
 //echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.bundle.min');
 echo $this->Html->script('../bootstrap4.3.1/js/bootstrap.min');
 
+/*for Font Awesome 3*/
+echo $this->Html->css('../fontawesome3.2.1/css/font-awesome.min');
+
 /*for jQuery datapicker*/
 echo $this->Html->css('jQuery/Datepicker/dp_gray');
 echo $this->Html->script('jquery-ui.min');
@@ -67,9 +70,9 @@ echo $scripts_for_layout;
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">		
 		<?php
-		echo $this->Html->link('HOME',
+		echo $this->Html->link('<i class="icon-home"></i>' . 'HOME',
 			array('controller' => 'accounts', 'action' => 'index'),
-			array('class' => 'navbar-brand', 'escape' => false), 
+			array('class' => 'navbar-brand font-weight-bold', 'escape' => false), 
 			false
 		);
 		?>
@@ -87,9 +90,9 @@ echo $scripts_for_layout;
 			<li class="nav-item">
 				<?php
 				if ($role == 0) {//means an administrator
-					echo $this->Html->link('<span><font>TEAMS</font></span>',
+					echo $this->Html->link('TEAMS',
 						array('controller' => 'accounts', 'action' => 'lstcompanies', 'id' => -1),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
@@ -100,14 +103,14 @@ echo $scripts_for_layout;
 				if ($role == 0) {//means an administrator
 					echo $this->Html->link('SELLERS',
 						array('controller' => 'accounts', 'action' => 'lstagents', 'id' => -1),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
 				if ($role == 1) {//means an office
 					echo $this->Html->link('SELLERS',
 						array('controller' => 'accounts', 'action' => 'lstagents', 'id' => $userinfo['id']),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
@@ -116,16 +119,16 @@ echo $scripts_for_layout;
 			<li class="nav-item">
 				<?php
 				if ($role == 0) {//means an administrator
-					echo $this->Html->link('STAFF',
+					echo $this->Html->link('NEW STAFF',
 						array('controller' => 'accounts', 'action' => 'lstnewmembers'),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
 				?>
 			</li>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" 
+				<a class="nav-link text-white font-weight-bold dropdown-toggle" 
 					href="#" id="navbarDropdownSite" 
 					role="button" data-toggle="dropdown" 
 					aria-haspopup="true" 
@@ -153,13 +156,13 @@ echo $scripts_for_layout;
 				<?php
 				echo $this->Html->link('STATS',
 					array('controller' => 'stats', 'action' => 'statscompany', 'clear' => -2),
-					array('class' => 'nav-link', 'escape' => false),
+					array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 					false
 				);
 				?>
 			</li>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" 
+				<a class="nav-link text-white font-weight-bold dropdown-toggle" 
 					href="#" id="navbarDropdown" 
 					role="button" data-toggle="dropdown" 
 					aria-haspopup="true" 
@@ -204,7 +207,7 @@ echo $scripts_for_layout;
 				/*
 				echo $this->Html->link('GET HELP',
 					array('controller' => 'accounts', 'action' => 'contactus'),
-					array('class' => 'nav-link', 'escape' => false),
+					array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 					false
 				);*/
 				?>
@@ -215,21 +218,21 @@ echo $scripts_for_layout;
 				if ($role == 0) {//means an administrator
 					echo $this->Html->link('ME',
 						array('controller' => 'accounts', 'action' => 'updadmin'),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
 				if ($role == 1) {//means an office
 					echo $this->Html->link('ME',
 						array('controller' => 'accounts', 'action' => 'updcompany', 'id' => $userinfo['id']),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
 				if ($role == 2) {//means an agent
 					echo $this->Html->link('ME',
 						array('controller' => 'accounts', 'action' => 'updagent', 'id' => $userinfo['id']),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
@@ -240,7 +243,7 @@ echo $scripts_for_layout;
 				if ($role == 0) {//means an administrator
 					echo $this->Html->link('ALERTS',
 						array('controller' => 'accounts', 'action' => 'addnews'),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				}
@@ -250,7 +253,7 @@ echo $scripts_for_layout;
 			if (FALSE && in_array($userinfo['id'], array(1, 2))) {//HARD CODE: means an administrator whoes id is 1 or 2
 			?>
 			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" 
+				<a class="nav-link text-white font-weight-bold dropdown-toggle" 
 					href="#" id="navbarDropdownLEADS" 
 					role="button" data-toggle="dropdown" 
 					aria-haspopup="true" 
@@ -279,7 +282,7 @@ echo $scripts_for_layout;
 				<?php
 					echo $this->Html->link('LEAVE',
 						array('controller' => 'accounts', 'action' => 'logout'),
-						array('class' => 'nav-link', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
 					);
 				?>
@@ -288,7 +291,7 @@ echo $scripts_for_layout;
 		</div>
 	</nav>
 	<div class="container-fluid">
-	<div class="text-left">
+	<div class="text-left font-weight-bold">
 		<?php
 		$title_for_page = "";
 		if (strpos($this->request->here, 'lstcompanies') !== false) {
@@ -354,9 +357,9 @@ echo $scripts_for_layout;
 		echo $title_for_page;
 		?>
 	</div>
-	<div class="badge badge-secondary text-left" style="width:5rem;">
+	<div class="rounded-pill bg-secondary text-left text-white font-weight-bold pl-2 pb-1" style="width:7rem;">
 		<?php
-		echo $userinfo['username'];
+		echo '<i class="icon-user"></i> ' . $userinfo['username'];
 		?>
 	</div>
 	</div>
