@@ -32,6 +32,7 @@ echo $this->Html->css('../fontawesome3.2.1/css/font-awesome.min');
 echo $this->Html->css('jQuery/Datepicker/dp_gray');
 echo $this->Html->script('jquery-ui.min');
 
+echo $this->Html->css('mine');
 ?>
 
 <?php 
@@ -54,6 +55,7 @@ echo $scripts_for_layout;
 ?>
 </head>
 <body style="background:white;">
+<div class="container-fluid p-0 zMaxWidth">
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-secondary">
@@ -280,7 +282,7 @@ echo $scripts_for_layout;
 			?>
 			<li class="nav-item">
 				<?php
-					echo $this->Html->link('LEAVE',
+					echo $this->Html->link('<i class="icon-signout"></i>' . 'LEAVE',
 						array('controller' => 'accounts', 'action' => 'logout'),
 						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 						false
@@ -561,5 +563,6 @@ echo $scripts_for_layout;
 	<?php
 		echo $this->Js->writeBuffer(); 
 	?>
+</div>
 </body>
 </html>
