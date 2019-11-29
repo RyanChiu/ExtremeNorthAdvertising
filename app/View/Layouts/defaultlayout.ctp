@@ -54,8 +54,8 @@ echo $scripts_for_layout;
 
 ?>
 </head>
-<body style="background:white;">
-<div class="container-fluid p-0 zMaxWidth">
+<body style="background:black;">
+<div class="container-fluid bg-light p-0 zMaxWidth">
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-secondary">
