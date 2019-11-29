@@ -141,7 +141,7 @@ if (!empty($rs)) {
 				break;
 		}
 		?>	
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.raws', 'Raws'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.raws', 'Raw'); ?></th>
 		<th <?php echo !in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php echo $this->ExPaginator->sort('ViewTStats.uniques', 'Uniques'); ?>
 		</th>
@@ -152,14 +152,14 @@ if (!empty($rs)) {
 		<?php //echo $this->ExPaginator->sort('Frauds', 'ViewTStats.frauds'); ?>
 		<?php
 			echo '<font size="1">'; 
-			echo $this->ExPaginator->sort('ViewTStats.frauds', 'Frauds');
+			echo $this->ExPaginator->sort('ViewTStats.frauds', 'Fraud');
 			echo '</font>';
 			echo '<br/><font size="1">(for revise)</font>';
 		?>
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php
-			echo $this->ExPaginator->sort('ViewTStats.chargebacks', 'Frauds');
+			echo $this->ExPaginator->sort('ViewTStats.chargebacks', 'Fraud');
 		?>
 		</th>
 		<?php
@@ -325,14 +325,16 @@ if (!empty($rs)) {
 							'agentid' => $r['ViewTStats']['agentid']
 						)
 					)
-					. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
+					//. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
 					. '</td>';
 				echo '<td>' . $r['ViewTStats']['officename'] . '</td>';
 				break;
 			case 3:
 				echo '<td>' . substr($r['ViewTStats']['trxtime'], 0, 10) . '</td>';
 				echo '<td>' . $r['ViewTStats']['officename'] . '</td>';
-				echo '<td>' . $r['ViewTStats']['username'] . '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')' . '</td>';
+				echo '<td>' . $r['ViewTStats']['username'] 
+					//. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')' 
+					. '</td>';
 				break;
 			default:
 				echo '<td></td>';
