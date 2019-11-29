@@ -116,50 +116,50 @@ if (!empty($rs)) {
 </div>
 <div class="table-responsive">
 <table class="table-sm table-striped w-100">
-	<thead>
+	<thead class="text-white">
 	<tr class="bg-dark">
 		<th><!-- numbered --></th>
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.trxtime', 'Date') . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.trxtime', 'Date', array('class' => 'text-reset')) . '</th>';
 				break;
 			case 1:
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team') . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team', array('class' => 'text-reset')) . '</th>';
 				break;
 			case 2:
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.username4m', 'Seller') . '</th>';
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team') . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.username4m', 'Seller', array('class' => 'text-reset')) . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team', array('class' => 'text-reset')) . '</th>';
 				break;
 			case 3:
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.trxtime', 'Date') . '</th>';
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team') . '</th>';
-				echo '<th>' . $this->ExPaginator->sort('ViewTStats.username4m', 'Seller') . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.trxtime', 'Date', array('class' => 'text-reset')) . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team', array('class' => 'text-reset')) . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.username4m', 'Seller', array('class' => 'text-reset')) . '</th>';
 				break;
 			default:
 				echo '<th></th>';
 				break;
 		}
 		?>	
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.raws', 'Raw'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.raws', 'Raw', array('class' => 'text-reset')); ?></th>
 		<th <?php echo !in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
-		<?php echo $this->ExPaginator->sort('ViewTStats.uniques', 'Uniques'); ?>
+		<?php echo $this->ExPaginator->sort('ViewTStats.uniques', 'Uniques', array('class' => 'text-reset')); ?>
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
-		<?php echo $this->ExPaginator->sort('ViewTStats.signups', 'Free*'); ?>
+		<?php echo $this->ExPaginator->sort('ViewTStats.signups', 'Free*', array('class' => 'text-reset')); ?>
 		</th>
 		<th class="naClassHide">
-		<?php //echo $this->ExPaginator->sort('Frauds', 'ViewTStats.frauds'); ?>
+		<?php //echo $this->ExPaginator->sort('Frauds', 'ViewTStats.frauds', array('class' => 'text-reset')); ?>
 		<?php
 			echo '<font size="1">'; 
-			echo $this->ExPaginator->sort('ViewTStats.frauds', 'Fraud');
+			echo $this->ExPaginator->sort('ViewTStats.frauds', 'Fraud', array('class' => 'text-reset'));
 			echo '</font>';
 			echo '<br/><font size="1">(for revise)</font>';
 		?>
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? '' : 'class="naClassHide"'; ?>>
 		<?php
-			echo $this->ExPaginator->sort('ViewTStats.chargebacks', 'Fraud');
+			echo $this->ExPaginator->sort('ViewTStats.chargebacks', 'Fraud', array('class' => 'text-reset'));
 		?>
 		</th>
 		<?php
@@ -170,73 +170,73 @@ if (!empty($rs)) {
 		?>
 		<th <?php echo count($typesv) > 10 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type10', (count($typesv) > 10 ? $typesv[10] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type10', (count($typesv) > 10 ? $typesv[10] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 9 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type9', (count($typesv) > 9 ? $typesv[9] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type9', (count($typesv) > 9 ? $typesv[9] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 8 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type8', (count($typesv) > 8 ? $typesv[8] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type8', (count($typesv) > 8 ? $typesv[8] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 7 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type7', (count($typesv) > 7 ? $typesv[7] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type7', (count($typesv) > 7 ? $typesv[7] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 6 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type6', (count($typesv) > 6 ? $typesv[6] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type6', (count($typesv) > 6 ? $typesv[6] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 5 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type5', (count($typesv) > 5 ? $typesv[5] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type5', (count($typesv) > 5 ? $typesv[5] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 4 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type4', (count($typesv) > 4 ? $typesv[4] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type4', (count($typesv) > 4 ? $typesv[4] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 3 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type3', (count($typesv) > 3 ? $typesv[3] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type3', (count($typesv) > 3 ? $typesv[3] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 2 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type2', (count($typesv) > 2 ? $typesv[2] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type2', (count($typesv) > 2 ? $typesv[2] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo count($typesv) > 1 ? '' : 'class="naClassHide"'; ?>>
 		<?php
-		echo $this->ExPaginator->sort('ViewTStats.sales_type1', (count($typesv) > 1 ? $typesv[1] : 'N/A'))
+		echo $this->ExPaginator->sort('ViewTStats.sales_type1', (count($typesv) > 1 ? $typesv[1] : 'N/A'), array('class' => 'text-reset'))
 		?>
 		
 		</th>
 		<th <?php echo in_array($selsite, array(-1, -2)) ? 'class="naClassHide"' : ''; // just do not show for the some site?>>
-		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Tot sale'); ?>
+		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Tot sale', array('class' => 'text-reset')); ?>
 		
 		</th>
 		<?php
 		if ($_show_pay_) {
 		?>
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.earnings', 'Earn'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Pay'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.earnings', 'Earn', array('class' => 'text-reset')); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Pay', array('class' => 'text-reset')); ?></th>
 		<?php
 		} else if ($userinfo['role'] == -1) {
 		?>
