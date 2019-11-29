@@ -283,6 +283,10 @@ echo $this->Form->create(
 			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:160px', 'value' => $enddate));
 		?>
 		</div>
+	</td>
+</tr>
+<tr>
+	<td>
 		<div style="width:110px;" class="float-left bg-transparent">
 			<b>Pay Period:</b>
 		</div>
@@ -300,10 +304,6 @@ echo $this->Form->create(
 		);
 		?>
 		</div>
-	</td>
-</tr>
-<tr>
-	<td>
 		<div style="width:110px;" class="float-left">
 			<b>&nbsp;</b>
 		</div>
