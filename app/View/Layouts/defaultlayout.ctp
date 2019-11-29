@@ -292,7 +292,7 @@ echo $scripts_for_layout;
 			</ul>
 		</div>
 	</nav>
-	<div class="container-fluid">
+	<div class="container-fluid p-0">
 		<div class="float-left">
 			<div class="text-left font-weight-bold">
 				<?php
