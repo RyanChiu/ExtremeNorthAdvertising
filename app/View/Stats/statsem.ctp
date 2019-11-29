@@ -379,17 +379,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Page Tot</td>';
+				echo '<td class="totals text-left">Page Tot</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Page Tot</td>';
+				echo '<td class="totals text-left">Page Tot</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Page Tot</td>';
+				echo '<td class="totals text-left">Page Tot</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Page Tot</td>';
+				echo '<td class="totals text-left">Page Tot</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
@@ -432,17 +432,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Over all Tot</td>';
+				echo '<td class="totals text-left">Over all Tot</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Over all Tot</td>';
+				echo '<td class="totals text-left">Over all Tot</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Over all Tot</td>';
+				echo '<td class="totals text-left">Over all Tot</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Over all Tot</td>';
+				echo '<td class="totals text-left">Over all Tot</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
@@ -485,17 +485,17 @@ if (!empty($rs)) {
 		<?php
 		switch ($bywhat) {
 			case 0:
-				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
+				echo '<td class="totals text-left">Unq to sale Ratio</td>';
 				break;
 			case 1:
-				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
+				echo '<td class="totals text-left">Unq to sale Ratio</td>';
 				break;
 			case 2:
-				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
+				echo '<td class="totals text-left">Unq to sale Ratio</td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
-				echo '<td class="totals" align="right">Unq to sale Ratio</td>';
+				echo '<td class="totals text-left">Unq to sale Ratio</td>';
 				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
