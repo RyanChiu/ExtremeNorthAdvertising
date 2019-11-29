@@ -311,7 +311,7 @@ echo $this->Form->create(
 		<?php
 		echo $this->Form->submit('G O',
 			array(
-				'style' => 'width:160px;font-weight:bold;', 'class' => 'btn btn-secondary text-dark',
+				'style' => 'width:160px;font-weight:bold;', 'class' => 'btn btn-secondary text-light',
 				'onclick' => 'javascript:if (jQuery("#StatsSiteid").val() == -1) {alert("Please choose a site, or the stats will not be loaded.");return false;} else return true;'
 			)
 		);
