@@ -129,6 +129,7 @@ if (!empty($rs)) {
 				break;
 			case 2:
 				echo '<th>' . $this->ExPaginator->sort('ViewTStats.username4m', 'Seller', array('class' => 'text-reset')) . '</th>';
+				echo '<th>' . $this->ExPaginator->sort('ViewTStats.ag1stname', 'Name', array('class' => 'text-reset')) . '</th>';
 				echo '<th>' . $this->ExPaginator->sort('ViewTStats.officename', 'Team', array('class' => 'text-reset')) . '</th>';
 				break;
 			case 3:
@@ -325,8 +326,9 @@ if (!empty($rs)) {
 							'agentid' => $r['ViewTStats']['agentid']
 						)
 					)
-					. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
+					//. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
 					. '</td>';
+				echo '<td>' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . '</td>';
 				echo '<td>' . $r['ViewTStats']['officename'] . '</td>';
 				break;
 			case 3:
@@ -387,6 +389,7 @@ if (!empty($rs)) {
 			case 2:
 				echo '<td class="totals text-left">Page Tot</td>';
 				echo '<td class="totals"></td>';
+				echo '<td class="totals"></td>';
 				break;
 			case 3:
 				echo '<td class="totals text-left">Page Tot</td>';
@@ -440,6 +443,7 @@ if (!empty($rs)) {
 			case 2:
 				echo '<td class="totals text-left">Over all Tot</td>';
 				echo '<td class="totals"></td>';
+				echo '<td class="totals"></td>';
 				break;
 			case 3:
 				echo '<td class="totals text-left">Over all Tot</td>';
@@ -492,6 +496,7 @@ if (!empty($rs)) {
 				break;
 			case 2:
 				echo '<td class="totals text-left">Unq to sale Ratio</td>';
+				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
@@ -558,6 +563,7 @@ if (!empty($rs)) {
 				break;
 			case 2:
 				echo '<td class="totals" align="right">Signup to Sale Ratio</td>';
+				echo '<td class="totals"></td>';
 				echo '<td class="totals"></td>';
 				break;
 			case 3:
