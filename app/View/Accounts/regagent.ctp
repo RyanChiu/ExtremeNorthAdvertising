@@ -24,7 +24,9 @@ if ($userinfo['role'] == 1) {
 	echo $this->Form->input('Requestchg.offiname', array('type' => 'hidden', 'value' => $curcom['Company']['officename']));
 }
 ?>
-<table style="width:100%;border:0;">
+
+<div class="table-responsive">
+<table class="w-100" style="border:0;">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
 		<td width="248" class="search-label">Team : </td>
@@ -230,7 +232,7 @@ if ($userinfo['role'] == 1) {
 					'default' => 'default',
 					'div' => array('style' => 'float:left;margin-right:15px;'),
 					'style' => 'width:112px;',
-					'class' => 'button',
+					'class' => 'btn btn-sm btn-secondary text-light',
 					'onclick' => 'javascript:__changeAction(\'frmReg\', \''
 						. $this->Html->url(array('controller' => 'accounts', 'action' => 'regagent', 'id' => -1))
 						. '\');' 
@@ -240,7 +242,7 @@ if ($userinfo['role'] == 1) {
 				array(
 					'div' => array('style' => 'float:left;margin-right:15px;'),
 					'style' => 'width:112px;',
-					'class' => 'button',
+					'class' => 'btn btn-sm btn-secondary text-light',
 					'onclick' => 'javascript:__changeAction(\'frmReg\', \''
 						. $this->Html->url(array('controller' => 'accounts', 'action' => 'regagent'))
 						. '\');'
@@ -258,6 +260,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 </table>
+</div>
 <script type="text/javascript"> 
 jQuery(":checkbox").attr({style: "border:0px;width:16px;vertical-align:middle;"});
 jQuery("#AccountUsername").keyup(function(){
