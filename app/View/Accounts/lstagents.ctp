@@ -143,10 +143,10 @@ echo $this->Form->create(
 		<td colspan="2"></td>
 		<td colspan="2">
 		<div style="float:left;width:112px;">
-		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'button')) ?>
+		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'btn btn-sm btn-secondary text-light')) ?>
 		</div>
 		<div style="float:left;">
-		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:96px;', 'class' => 'button', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
+		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:96px;', 'class' => 'btn btn-sm btn-secondary text-light', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
 		</div>
 		</td>
 	</tr>
@@ -209,11 +209,11 @@ function __checkAll() {
 <?php
 if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an office
 	//echo $this->Form->button($userinfo['role'] == 0 ? 'Add Agent' : 'Request New Agent',
-	echo $this->Form->button('Add Seller',
+	echo $this->Form->button('Add Seller...',
 		array(
 			'onclick' => 'javascript:location.href=\'' .
 				$this->Html->url(array('controller' => 'accounts', 'action' => 'regagent')) . '\'',
-			'style' => 'width:160px;', 'class' => 'button'
+			'class' => 'btn btn-link'
 		)
 	);
 }
