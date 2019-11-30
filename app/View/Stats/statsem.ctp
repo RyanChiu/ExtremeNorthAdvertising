@@ -363,7 +363,7 @@ if (!empty($rs)) {
 		if ($_show_pay_) {
 		?>
 		<td><?php echo '$' . $r['ViewTStats']['earnings']; ?></td>
-		<td><?php echo '$' . $r['ViewTStats']['payouts']; ?></td>
+		<td><?php echo '₱' . $r['ViewTStats']['payouts']; ?></td>
 		<?php
 		} else if ($userinfo['role'] == -1) {
 		?>
@@ -421,7 +421,7 @@ if (!empty($rs)) {
 		if ($_show_pay_) {
 		?>
 		<td class="totals"><?php echo '$' . sprintf('%.2f', $pagetotals['earnings']); ?></td>
-		<td class="totals"><?php echo '$' . sprintf('%.2f', $pagetotals['payouts']); ?></td>
+		<td class="totals"><?php echo '₱' . sprintf('%.2f', $pagetotals['payouts']); ?></td>
 		<?php
 		} else if ($userinfo['role'] == -1) {
 		?>
@@ -475,7 +475,7 @@ if (!empty($rs)) {
 		if ($_show_pay_) {
 		?>
 		<td class="totals"><?php echo '$' . sprintf('%.2f', $totals['earnings']); ?></td>
-		<td class="totals"><?php echo '$' . sprintf('%.2f', $totals['payouts']); ?></td>
+		<td class="totals"><?php echo '₱' . sprintf('%.2f', $totals['payouts']); ?></td>
 		<?php
 		} else if ($userinfo['role'] == -1) {
 		?>

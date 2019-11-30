@@ -19,8 +19,8 @@
 	<tr>
 		<td align="center"><?php echo $r['ViewType']['typename']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['url']; ?></td>
-		<td align="center"><?php echo $r['ViewType']['price']; ?></td>
-		<td align="center"><?php echo $r['ViewType']['earning']; ?></td>
+		<td align="center"><?php echo "₱" . $r['ViewType']['price']; ?></td>
+		<td align="center"><?php echo "$" . $r['ViewType']['earning']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['start']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['end']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['status'] == 0 ? 'Suspended' : 'Activated'; ?></td>
