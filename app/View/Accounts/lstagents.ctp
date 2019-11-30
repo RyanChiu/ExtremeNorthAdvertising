@@ -10,7 +10,8 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <?php
 /*searching part*/
 ?>
-<div style="width:100%;margin-top:5px;" id="search">
+
+<div class="w-100 mt-1">
 <?php
 echo $this->Form->create(
 	null, 
@@ -21,88 +22,123 @@ echo $this->Form->create(
 );
 ?>
 
-<table style="width:100%;border:0;">
-	<tr>
-		<td class="bg-warning font-weight-bold" style="width:105px;">Username:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php echo $this->Form->input('ViewAgent.username', array('label' => '', 'style' => 'width:260px;')); ?>
+<table class="w-100" style="border:0;">
+	<tr><td>
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>User:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.username', array('label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;'));
+			?>
+			</div>
 		</div>
-		</td>
 		<?php
 		if ($userinfo['role'] == 0) {
 		?>
-		<td class="bg-warning font-weight-bold" style="width:145px;">Team:</td>
-		<?php
-		} else {
-		?>
-		<td colspan="2" width="450px"></td>
-		<?php
-		}
-		if ($userinfo['role'] == 0) {
-			echo '<td>';
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Team:</b>
+			</div>
+			<div class="col">
+			<?php
 			echo $this->Form->input('Company.id',
 				array('label' => '', 'type' => 'select',
-					'options' => $coms,	'style' => 'width:260px;'
+					'options' => $coms,	'class' => 'form-contorl', 'style' => 'width:200px;'
 				)
 			);
-			echo '</td>';
+			?>
+			</div>
+		</div>
+		<?php
 		}
 		?>
-	</tr>
-	<tr>
-		<td class="bg-warning font-weight-bold" style="width:105px;">Last Name:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php echo $this->Form->input('ViewAgent.aglastname', array('label' => '', 'style' => 'width:260px;')); ?>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Last Name:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.aglastname', array('label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;'));
+			?>
+			</div>
 		</div>
-		</td>
-		<td class="bg-warning font-weight-bold">Campaign ID:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php echo $this->Form->input('AgentSiteMapping.campaignid', array('label' => '', 'style' => 'width:260px;')); ?>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>First Name:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.ag1stname', array('label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;'));
+			?>
+			</div>
 		</div>
-		</td>
-	</tr>
-	<tr>
-		<td class="bg-warning font-weight-bold" style="width:105px;">First Name:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php echo $this->Form->input('ViewAgent.ag1stname', array('label' => '', 'style' => 'width:260px;')); ?>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Offer ID:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('AgentSiteMapping.campaignid', array('label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;'));
+			?>
+			</div>
 		</div>
-		</td>
-		<td class="bg-warning font-weight-bold">Status:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php
-		echo $this->Form->input('ViewAgent.status',
-			array(
-				'label' => '', 'style' => 'width:260px;',
-				'type' => 'select', 'options' => (array('-1' => 'All') + $status)
-			)
-		);
-		?>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Email:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.email', array('label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;'));
+			?>
+			</div>
 		</div>
-		</td>
-	</tr>
-	<tr>
-		<td class="bg-warning font-weight-bold" style="width:105px;">Email:</td>
-		<td>
-		<div style="float:left;width:275px;">
-		<?php echo $this->Form->input('ViewAgent.email', array('label' => '', 'style' => 'width:260px;')); ?>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Suspended:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('SiteExcluding.siteid',
+				array('label' => '', 'type' => 'select',
+					'options' => $sites, 'class' => 'form-contorl', 'style' => 'width:200px;'
+				)
+			);
+			?>
+			</div>
 		</div>
-		</td>
-		<td class="bg-warning font-weight-bold">Suspended Site:</td>
-		<td>
-		<?php
-		echo $this->Form->input('SiteExcluding.siteid',
-			array('label' => '', 'type' => 'select',
-				'options' => $sites,	'style' => 'width:260px;'
-			)
-		);
-		?>
-		</td>
-	</tr>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Status:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.status',
+				array(
+					'label' => '', 'class' => 'form-contorl', 'style' => 'width:200px;',
+					'type' => 'select', 'options' => (array('-1' => 'All') + $status)
+				)
+			);
+			?>
+			</div>
+		</div>
+	</div>
+	</td></td>
+</table>
+
+<table class="w-100" style="border:0;">
+	
 	<tr>
 		<td colspan="2"></td>
 		<td colspan="2">
