@@ -27,23 +27,25 @@ if ($userinfo['role'] == 1) {
 
 <div class="table-responsive">
 <table class="w-100" style="border:0;">
-	<caption>Fields marked with an asterisk (*) are required.</caption>
+	<tr><td style="text-decoration:underline;font-weight:bold;" colspan=2 >
+	Fields marked with an asterisk (<font color="red">*</font>) are required.
+	</td></tr>
 	<tr>
-		<td width="248" class="search-label">Team : </td>
+		<td width="248" class="search-label">Team : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 0) {// means an administrator
 			echo $this->Form->input('Agent.companyid',
 				array('type' => 'select', 'options' => $cps,
-					'label' => '', 'style' => 'width:390px;'
+					'label' => '', 'style' => 'width:200px;'
 				)
 			);
 		} else if ($userinfo['role'] == 1) {// means an office
 			echo $this->Form->input('Agent.companyshadow',
 				array(
 					'label' => '',
-					'style' => 'width:390px;border:0px;background:transparent;',
+					'style' => 'width:200px;border:0px;background:transparent;',
 					'readonly' => 'readonly',
 					'value' => $cps[$userinfo['id']]
 				)
@@ -52,48 +54,48 @@ if ($userinfo['role'] == 1) {
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 		<!--  
 		<td rowspan="16" align="center"><?php //echo $this->Html->image('iconDollarsKey.png', array('width' => '160')); ?></td>
 		-->
 	</tr>
 	<tr>
-		<td class="search-label">First Name : </td>
+		<td class="search-label">First Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Last Name : </td>
+		<td class="search-label">Last Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Email : </td>
+		<td class="search-label">Email : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
 		<td class="search-label">
-		<div style="float:left">User : </div>
+		<div style="float:left">User : <font color="red">*</font></div>
 		<div style="float:left; display: none;">
 		<?php
 		echo '('
@@ -111,32 +113,32 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Pass : </td>
+		<td class="search-label">Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Confirm Pass : </td>
+		<td class="search-label">Confirm Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
@@ -144,7 +146,7 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.street', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.street', array('label' => '', 'value' => 'N/A', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -154,7 +156,7 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.city', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.city', array('label' => '', 'value' => 'N/A', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -164,42 +166,42 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.state', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.state', array('label' => '', 'value' => 'N/A', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Country : </td>
+		<td>Country : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->select('Agent.country', $cts, array('value' => 'PH', 'style' => 'width:390px;'));
+		echo $this->Form->select('Agent.country', $cts, array('value' => 'PH', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Instant Messenger Contact : <br/><small>(AIM, Yahoo, Skype, MSN, ICQ</small></td>
+		<td>Instant Messenger Contact : <font color="red">*</font><br/><small>(AIM, Yahoo, Skype, MSN, ICQ</small></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.im', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.im', array('label' => '', 'value' => 'N/A', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Cell NO. : </td>
+		<td>Cell NO. : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.cellphone', array('label' => '', 'value' => 'N/A', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.cellphone', array('label' => '', 'value' => 'N/A', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
