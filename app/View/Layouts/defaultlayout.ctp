@@ -457,6 +457,7 @@ echo $scripts_for_layout;
 	</div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
+</div>
 
 	<!-- for "agent must read" -->
 	<?php
@@ -565,6 +566,6 @@ echo $scripts_for_layout;
 	<?php
 		echo $this->Js->writeBuffer(); 
 	?>
-</div>
+
 </body>
 </html>

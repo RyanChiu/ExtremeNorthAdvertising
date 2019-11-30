@@ -325,7 +325,7 @@ if (!empty($rs)) {
 							'agentid' => $r['ViewTStats']['agentid']
 						)
 					)
-					//. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
+					. '&nbsp;(' . $r['ViewTStats']['ag1stname'] . '&nbsp;' . $r['ViewTStats']['aglastname'] . ')'
 					. '</td>';
 				echo '<td>' . $r['ViewTStats']['officename'] . '</td>';
 				break;
