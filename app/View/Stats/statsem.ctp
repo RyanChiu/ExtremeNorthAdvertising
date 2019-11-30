@@ -116,8 +116,8 @@ if (!empty($rs)) {
 </div>
 <div class="table-responsive">
 <table class="table-sm table-striped w-100">
-	<thead class="text-white">
-	<tr class="bg-dark">
+	<thead class="text-black">
+	<tr class="bg-warning">
 		<th><!-- numbered --></th>
 		<?php
 		switch ($bywhat) {
