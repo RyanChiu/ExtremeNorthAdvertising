@@ -20,9 +20,10 @@ echo $this->Form->create(
 	)
 );
 ?>
+
 <table style="width:100%;border:0;">
 	<tr>
-		<td class="search-label" style="width:105px;">Username:</td>
+		<td class="bg-warning font-weight-bold" style="width:105px;">Username:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php echo $this->Form->input('ViewAgent.username', array('label' => '', 'style' => 'width:260px;')); ?>
@@ -31,7 +32,7 @@ echo $this->Form->create(
 		<?php
 		if ($userinfo['role'] == 0) {
 		?>
-		<td class="search-label" style="width:145px;">Team:</td>
+		<td class="bg-warning font-weight-bold" style="width:145px;">Team:</td>
 		<?php
 		} else {
 		?>
@@ -50,13 +51,13 @@ echo $this->Form->create(
 		?>
 	</tr>
 	<tr>
-		<td class="search-label" style="width:105px;">Last Name:</td>
+		<td class="bg-warning font-weight-bold" style="width:105px;">Last Name:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php echo $this->Form->input('ViewAgent.aglastname', array('label' => '', 'style' => 'width:260px;')); ?>
 		</div>
 		</td>
-		<td class="search-label">Campaign ID:</td>
+		<td class="bg-warning font-weight-bold">Campaign ID:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php echo $this->Form->input('AgentSiteMapping.campaignid', array('label' => '', 'style' => 'width:260px;')); ?>
@@ -64,13 +65,13 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label" style="width:105px;">First Name:</td>
+		<td class="bg-warning font-weight-bold" style="width:105px;">First Name:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php echo $this->Form->input('ViewAgent.ag1stname', array('label' => '', 'style' => 'width:260px;')); ?>
 		</div>
 		</td>
-		<td class="search-label">Status:</td>
+		<td class="bg-warning font-weight-bold">Status:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php
@@ -85,13 +86,13 @@ echo $this->Form->create(
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label" style="width:105px;">Email:</td>
+		<td class="bg-warning font-weight-bold" style="width:105px;">Email:</td>
 		<td>
 		<div style="float:left;width:275px;">
 		<?php echo $this->Form->input('ViewAgent.email', array('label' => '', 'style' => 'width:260px;')); ?>
 		</div>
 		</td>
-		<td class="search-label">Suspended Site:</td>
+		<td class="bg-warning font-weight-bold">Suspended Site:</td>
 		<td>
 		<?php
 		echo $this->Form->input('SiteExcluding.siteid',
@@ -182,10 +183,12 @@ if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an of
 }
 ?>
 </div>
-<table style="width:100%" class="table">
-<thead class="thead-light">
-<tr>
-	<th><b>
+
+<div class="table-responsive">
+<table class="table-sm w-100">
+<thead class="bg-warning">
+<tr class="text-black">
+	<th class="text-black">#<b>
 	<?php
 	echo $this->Form->checkbox('',
 		array('id' => 'checkboxAll', 'value' => -1,
@@ -195,15 +198,15 @@ if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an of
 	);
 	?>
 	</b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.username4m', 'User'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.originalpwd', 'Pass'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.officename', 'Team'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.regtime', 'Registered'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.lastlogintime', 'Last Login'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.logintimes', 'Login Times'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.status', 'Status'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.campaigns', 'Campaigns'); ?></b></th>
-	<th><b>Operation</b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.username4m', 'User', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.originalpwd', 'Pass', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.officename', 'Team', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.regtime', 'Created', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.lastlogintime', 'Last Login', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.logintimes', 'Times', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.status', 'Status', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.campaigns', 'Offers', array('class' => 'text-reset')); ?></b></th>
+	<th class="text-black"><b>Action</b></th>
 	<th>
 	<?php
 	echo $this->Html->link(
@@ -305,6 +308,7 @@ $i++;
 endforeach;
 ?>
 </table>
+</div>
 
 <div style="margin-top:3px;">
 <font color="green">With selected :&nbsp;</font>
