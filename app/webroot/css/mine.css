@@ -15,3 +15,7 @@
 .naClassHide {
 	display: none;
 }
+.totals {
+	background: #fccf52;
+	font-weight: bold;
+}
