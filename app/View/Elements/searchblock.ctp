@@ -243,7 +243,7 @@ echo $this->Form->create(
 		else if ($userinfo['role'] == 1) {//means an office
 			echo $this->Form->input('Stats.companyid', array('type' => 'hidden', 'value' => $userinfo['id']));
 		?>
-		<div style="width:60px;" class="float-left bg-transparent">
+		<div style="width:110px;" class="float-left bg-transparent">
 			<b>Seller:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
