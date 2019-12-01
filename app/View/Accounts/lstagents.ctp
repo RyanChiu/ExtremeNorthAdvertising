@@ -224,7 +224,7 @@ if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an of
 <table class="table-sm w-100">
 <thead class="bg-warning">
 <tr class="text-black">
-	<th class="text-black">#<b>
+	<th class="text-black"><b>
 	<?php
 	echo $this->Form->checkbox('',
 		array('id' => 'checkboxAll', 'value' => -1,
@@ -233,7 +233,7 @@ if (in_array($userinfo['role'], array(0, 1))) {//means an administrator or an of
 		)
 	);
 	?>
-	</b></th>
+	#</b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.username4m', 'User', array('class' => 'text-reset')); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.originalpwd', 'Pass', array('class' => 'text-reset')); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewAgent.officename', 'Team', array('class' => 'text-reset')); ?></b></th>
