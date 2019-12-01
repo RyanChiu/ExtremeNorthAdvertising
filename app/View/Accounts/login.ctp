@@ -22,7 +22,7 @@
 	<div class="container-fluid">
 		<a href="mailto:jamesclarksantiago@gmail.com">jamesclarksantiago@gmail.com</a>
 	</div>
-	<div class="container-fluid" style="min-height:36px;">
+	<div class="container-fluid" style="min-height:12px;">
 	</div>
 </center>
 
