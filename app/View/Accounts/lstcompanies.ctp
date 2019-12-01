@@ -111,9 +111,10 @@ echo $this->Form->button('Add Team...',
 );
 ?>
 </div>
-<table style="width:100%" class="table">
-<thead class="thead-light">
-<tr>
+<div class="table-responsive">
+<table class="table-sm w-100">
+<thead class="bg-warning">
+<tr class="text-black">
 	<th><b>
 	<?php
 	echo $this->Form->checkbox('',
@@ -124,13 +125,13 @@ echo $this->Form->button('Add Team...',
 	);
 	?>
 	</b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.officename', 'Team'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.agenttotal', 'Total Sellers'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.username4m', 'User'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.originalpwd', 'Pass'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.manemail', 'Email'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.regtime', 'Registered'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.status', 'Status'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.officename', 'Team', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.agenttotal', 'Tot Sellers', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.username4m', 'User', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.originalpwd', 'Pass', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.manemail', 'Email', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.regtime', 'Created', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewCompany.status', 'Status', array('class' => 'text-reset')); ?></b></th>
 	<th><b>Action</b></th>
 </tr>
 </thead>
@@ -222,6 +223,7 @@ $i++;
 endforeach;
 ?>
 </table>
+</div>
 
 <div style="margin-top:3px;">
 <font color="green">With selected :&nbsp;</font>
