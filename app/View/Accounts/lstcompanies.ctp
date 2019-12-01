@@ -6,34 +6,55 @@
 /*searching part*/
 ?>
 
-<div class="container-fluid">
-	<?php
-	echo $this->Form->create(
-		null, 
-		array(
-			"url" => array('controller' => 'accounts', 'action' => 'lstcompanies'), '
-			id' => 'frmSearch'
-		)
-	);
-	?>
+<?php
+echo $this->Form->create(
+	null, 
+	array(
+		"url" => array('controller' => 'accounts', 'action' => 'lstcompanies'), '
+		id' => 'frmSearch'
+	)
+);
+?>
+<table class="w-100 my-2" style="border:0;">
+	<tr><td>
 	<div class="form-row">
-		<div class="form-group col-lg-1">
-		User:
+		<div class="form-inline">
+			<div class="font-weight-bold col">
+			User:
+			</div>
+			<div class="col">
+			<?php echo $this->Form->input('ViewCompany.username', array('label' => '', 'style' => 'width:260px;')); ?>
+			</div>
 		</div>
-		<div class="form-group col-lg-3">
-		<?php echo $this->Form->input('ViewCompany.username', array('label' => '', 'style' => 'width:260px;')); ?>
-		</div>
-		<div class="form-group col-lg-3">
-		<?php echo $this->Form->submit('Search', array('style' => 'float:left;width:96px;', 'class' => 'button')); ?>
-		</div>
-		<div class="form-group col-lg-3">
-		<?php echo $this->Form->submit('Clear', array('style' => 'float:left;width:64px;', 'class' => 'button', 'onclick' => 'javascript:__zClearForm("frmSearch");')); ?>
+		<div class="form-inline">
+			<div class="col">
+			<?php 
+			echo $this->Form->submit('Search', 
+				array(
+					'style' => 'float:left;width:96px;', 
+					'class' => 'btn btn-sm btn-secondary text-light'
+				)
+			); 
+			?>
+			</div>
+			<div class="col">
+			<?php 
+			echo $this->Form->submit('Clear', 
+				array(
+					'style' => 'float:left;width:64px;', 
+					'class' => 'btn btn-sm btn-secondary text-light', 
+					'onclick' => 'javascript:__zClearForm("frmSearch");'
+				)
+			); 
+			?>
+			</div>
 		</div>
 	</div>
-	<?php
-	echo $this->Form->end();
-	?>
-</div>
+	</td></tr>
+</table>
+<?php
+echo $this->Form->end();
+?>
 
 <?php
 /*showing the results*/
@@ -79,14 +100,13 @@ function __checkAll() {
 }
 </script>
 
-<br/>
 <div style="margin-bottom:3px">
 <?php
-echo $this->Form->button('Add Team',
+echo $this->Form->button('Add Team...',
 	array(
 		'onclick' => 'javascript:location.href=\''
 			. $this->Html->url(array('controller' => 'accounts', 'action' => 'regcompany')) . '\'',
-		'style' => 'width:160px;', 'class' => 'button'
+		'class' => 'btn btn-link'
 	)
 );
 ?>
