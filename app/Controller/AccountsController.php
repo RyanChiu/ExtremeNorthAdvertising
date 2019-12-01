@@ -1834,7 +1834,7 @@ class AccountsController extends AppController {
 		
 		$conditions = array('1' => '1');
 		if ($this->Auth->user('Account.role') == 1) {
-			$conditions = array('id' => $this->Auth->user("Account.id"));
+			$conditions = array('companyid' => $this->Auth->user("Account.id"));
 		}
 		$coms = $this->ViewCompany->find('list',
 			array(
@@ -2167,7 +2167,7 @@ class AccountsController extends AppController {
 		
 		$conditions = array('1' => '1');
 		if ($this->Auth->user('Account.role') == 1) {
-			$conditions = array('id' => $this->Auth->user('Account.id'));
+			$conditions = array('companyid' => $this->Auth->user('Account.id'));
 		}
 		$coms = $this->ViewCompany->find('list',
 			array(
