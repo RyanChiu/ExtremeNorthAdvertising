@@ -115,10 +115,10 @@ if (!empty($rs)) {
 
 </div>
 <div class="table-responsive">
-<table class="table-sm table-striped w-100">
+<table class="table-sm table-bordered table-striped w-100">
 	<thead class="text-black">
 	<tr class="bg-warning">
-		<th><!-- numbered --></th>
+		<th>#<!-- numbered --></th>
 		<?php
 		switch ($bywhat) {
 			case 0:
