@@ -164,7 +164,7 @@ Team:<?php echo $coms[$selcom]; ?>&nbsp;&nbsp;Seller:<?php echo $ags[$selagent];
 	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.username', 'Seller'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.sitename', 'Site'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.typename', 'Type'); ?></b></th>
-	<th><b>Link</b></th>
+	<!--<th><b>Link</b></th>-->
 	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.clicktime', 'Click Time'); ?></b></th>
 	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.fromip', 'IP From'); ?></b></th>
 	<th <?php echo $userinfo['role'] == 0 ? '' : 'class="naClassHide"'; // HARD CODES?>>
@@ -181,8 +181,9 @@ foreach ($rs as $r):
 	<td><?php echo $r['ViewClickout']['username']; ?></td>
 	<td><?php echo $r['ViewClickout']['sitename']; ?></td>
 	<td><?php echo $r['ViewClickout']['typename']; ?></td>
-	<td>
+	<!--<td>
 	<?php
+	/*
 		if ($r['ViewClickout']['typename'] != '') {
 			echo 'http://'. $_SERVER['HTTP_HOST']
 				. $this->Html->url(array('controller' => 'accounts', 'action' => 'go'))
@@ -192,8 +193,9 @@ foreach ($rs as $r):
 		} else {
 			echo '-';
 		}
+	*/
 	?>
-	</td>
+	</td>-->
 	<td><?php echo $r['ViewClickout']['clicktime']; ?></td>
 	<td>
 		<a href="http://whatismyipaddress.com/ip/<?php echo $r['ViewClickout']['fromip']; ?>" target="findip_window">
