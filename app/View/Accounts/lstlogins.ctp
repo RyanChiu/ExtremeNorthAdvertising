@@ -16,114 +16,144 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <?php
 echo $this->Form->create(null, array('url' => array('controller' => 'accounts', 'action' => 'lstlogins')));
 ?>
-	<div style="width:100%;margin-top:5px;">
-	<table style="width:100%">
-	<caption>
-	<?php echo $this->Html->image('iconSearch.png', array('style' => 'width:16px;height:16px;')) . 'Search'; ?>
-	</caption>
-	<tr>
-		<td class="search-label">Office:</td>
-		<td>
-			<div style="float:left;margin-right:20px;">
+<table class="table-borderless w-100 my-2">
+	<tr><td>
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date Start:</b>
+			</div>
+			<div class="col">
 			<?php
-				echo $this->Form->input('Stats.companyid',
-					array('label' => '',
-						'options' => $coms, 'type' => 'select',
-						'value' => $selcom,
-						'style' => 'width:110px;'
-					)
-				);
-				$this->Js->get("#StatsCompanyid")->event("change", $this->Js->request(
-					array(
-						'controller' => 'stats', 'action' => 'switchagent'
-					),
-					array(
-						'update' => '#ViewOnlineLogAgentid',
-						'before' => 'Element.hide(\'divAgentid\');Element.show(\'divAgentidLoading\');',
-						'complete' => 'Element.show(\'divAgentid\');Element.hide(\'divAgentidLoading\');',
-						'async' => true,
-						'dataExpression' => true,
-						'method' => 'post',
-						'data' => $this->Js->serializeForm(array('isForm' => false, 'inline' => true))
-					)
-				));
+			echo $this->Form->input('ViewOnlineLog.startdate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_start', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $startdate
+				)
+			);
 			?>
 			</div>
-		</td>
-		<td class="search-label">Agent:</td>
-		<td>
-			<div style="float:left;margin-right:20px;">
+		</div>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date End:</b>
+			</div>
+			<div class="col">
 			<?php
-				echo $this->Form->input('ViewOnlineLog.agentid',
-					array('label' => '',
-						'options' => $ags, 'type' => 'select',
-						'value' => $selagent,
-						'style' => 'width:110px;',
-						'div' => array('id' => 'divAgentid')
-					)
-				);
+			echo $this->Form->input('ViewOnlineLog.enddate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_end', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $enddate
+				)
+			);
+			?>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Team:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('Stats.companyid',
+				array('label' => '',
+					'options' => $coms, 'type' => 'select',
+					'value' => $selcom,
+					'class' => 'form-contorl', 'style' => 'width:200px;'
+				)
+			);
+			$this->Js->get("#StatsCompanyid")->event("change", $this->Js->request(
+				array(
+					'controller' => 'stats', 'action' => 'switchagent'
+				),
+				array(
+					'update' => '#ViewOnlineLogAgentid',
+					'before' => 'Element.hide(\'divAgentid\');Element.show(\'divAgentidLoading\');',
+					'complete' => 'Element.show(\'divAgentid\');Element.hide(\'divAgentidLoading\');',
+					'async' => true,
+					'dataExpression' => true,
+					'method' => 'post',
+					'data' => $this->Js->serializeForm(array('isForm' => false, 'inline' => true))
+				)
+			));
+			?>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Seller:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewOnlineLog.agentid',
+				array('label' => '',
+					'options' => $ags, 'type' => 'select',
+					'value' => $selagent,
+					'class' => 'form-contorl', 'style' => 'width:200px;',
+					'div' => array('id' => 'divAgentid')
+				)
+			);
 			?>
 			</div>
 			<div id="divAgentidLoading" style="float:left;width:100px;margin-right:20px;display:none;">
 			<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
 			</div>
-		</td>
-		<td class="search-label" style="width:65px;">IP:</td>
-		<td colspan="3">
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>IP:</b>
+			</div>
+			<div class="col">
 			<?php
 			echo $this->Form->input('ViewOnlineLog.inip',
 				array(
 					'label' => '',
 					'value' => $inip,
-					'style' => 'width: 130px;',
+					'class' => 'form-contorl', 'style' => 'width:200px;',
 					'div' => array('id' => 'divInip')
 				)
 			);
 			?>
-		</td>
-	</tr>
-	<tr>
-				<td class="search-label" style="width:65px;">Date:</td>
-		<td colspan="3">
-			<div style="float:left;width:50px;">
-				<b>Start:</b>
 			</div>
-			<div style="float:left;margin-right:20px;">
+		</div>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
 			<?php
-			echo $this->Form->input('ViewOnlineLog.startdate',
-				array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:110px;', 'value' => $startdate));
+			echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'btn btn-sm btn-secondary text-light'));
 			?>
 			</div>
-			<div style="float:left;width:40px;">
-				<b>End:</b>
-			</div>
-			<div style="float:left;margin-right:46px;">
+			<div class="col">
 			<?php
-			echo $this->Form->input('ViewOnlineLog.enddate',
-				array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:110px', 'value' => $enddate));
+			echo '';
 			?>
 			</div>
-		</td>
-		<td colspan="6">
-		<?php
-		echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'button'));
-		?>
-		</td>
-	</tr>
-	</table>
+		</div>
 	</div>
+
+	</td></tr>
+</table>
 <?php
 echo $this->Form->end();
 ?>
 
-<br/>
-<table style="width:100%">
-<thead>
-<tr>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.username', 'Username'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.inip', 'IP'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.intime', 'Login'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.outtime', 'Logout'); ?></b></th>
+<div class="table-responsive">
+<table class="table-sm w-100">
+<thead class="bg-warning">
+<tr class="text-black">
+	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.username', 'Username', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.inip', 'IP', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.intime', 'Login', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.outtime', 'Logout', array('class' => 'text-reset')); ?></b></th>
 </tr>
 </thead>
 <?php
@@ -145,6 +175,7 @@ $i++;
 }
 ?>
 </table>
+</div>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <?php
