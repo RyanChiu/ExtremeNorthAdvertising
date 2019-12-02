@@ -19,20 +19,23 @@ if ($userinfo['role'] == 1) {
 	echo $this->Form->input('Requestchg.offiname', array('type' => 'hidden', 'value' => $curcom['Company']['officename']));
 }
 ?>
-<table style="width:100%">
-	<caption>Fields marked with an asterisk (*) are required.</caption>
+<div class="table-responsive">
+<table style="width:100%;border:0">
+	<tr><td style="text-decoration:underline;font-weight:bold;" colspan=2 >
+	Fields marked with an asterisk (<font color="red">*</font>) are required.
+	</td></tr>
 	<tr>
-		<td width="248px" class="search-label">Team : </td>
+		<td width="232px" class="search-label">Team : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 0) {// means an administrator
-			echo $this->Form->select('Agent.companyid', $cps, array('style' => 'width:390px;'));
+			echo $this->Form->select('Agent.companyid', $cps, array('style' => 'width:200px;'));
 		} else if ($userinfo['role'] == 1 ) {// means an office
 			echo $this->Form->input('Agent.companyshadow',
 				array(
 					'label' => '',
-					'style' => 'width:390px;border:0px;background:transparent;',
+					'style' => 'width:200px;border:0px;background:transparent;',
 					'readonly' => 'readonly',
 					'value' => $cps[$results['Agent']['companyid']]
 				)
@@ -42,7 +45,7 @@ if ($userinfo['role'] == 1) {
 			echo $this->Form->input('Agent.companyshadow',
 				array(
 					'label' => '',
-					'style' => 'width:390px;border:0px;background:transparent;',
+					'style' => 'width:200px;border:0px;background:transparent;',
 					'readonly' => 'readonly',
 					'value' => $cps[$results['Agent']['companyid']]
 				)
@@ -51,92 +54,92 @@ if ($userinfo['role'] == 1) {
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 		<!--  
 		<td rowspan="16" align="center"><?php //echo $this->Html->image('iconDollarsKey.png', array('width' => '160')); ?></td>
 		-->
 	</tr>
 	<tr>
-		<td class="search-label">First Name : </td>
+		<td class="search-label">First Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 2) {//means an agent
-			echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:390px;border:0px;background:transparent;', 'readonly' => 'readonly'));
+			echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:200px;border:0px;background:transparent;', 'readonly' => 'readonly'));
 		} else {
-			echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:390px;'));
+			echo $this->Form->input('Agent.ag1stname', array('label' => '', 'style' => 'width:200px;'));
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Last Name : </td>
+		<td class="search-label">Last Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 2) {//means an agent
-			echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:390px;border:0px;background:transparent;', 'readonly' => 'readonly'));
+			echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:200px;border:0px;background:transparent;', 'readonly' => 'readonly'));
 		} else {
-			echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:390px;'));
+			echo $this->Form->input('Agent.aglastname', array('label' => '', 'style' => 'width:200px;'));
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Email : </td>
+		<td class="search-label">Email : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 2) {//means an agent
-			echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:390px;border:0px;background:transparent;', 'readonly' => 'readonly'));
+			echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:200px;border:0px;background:transparent;', 'readonly' => 'readonly'));
 		} else {
-			echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:390px;'));
+			echo $this->Form->input('Agent.email', array('label' => '', 'style' => 'width:200px;'));
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">User : </td>
+		<td class="search-label">User : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
 		if ($userinfo['role'] == 2) {//means an agent
-			echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:390px;border:0px;background:transparent;', 'readonly' => 'readonly'));
+			echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:200px;border:0px;background:transparent;', 'readonly' => 'readonly'));
 		} else {
-			echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:390px;'));
+			echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:200px;'));
 		}
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Pass : </td>
+		<td class="search-label">Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Confirm Pass : </td>
+		<td class="search-label">Confirm Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
@@ -144,7 +147,7 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.street', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.street', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -154,7 +157,7 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.city', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.city', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -164,13 +167,13 @@ if ($userinfo['role'] == 1) {
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.state', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.state', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Country : </td>
+		<td>Country : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
@@ -178,35 +181,35 @@ if ($userinfo['role'] == 1) {
 			'Agent.country', 
 			$cts, 
 			array(
-				'style' => 'width:390px;',
+				'style' => 'width:200px;',
 				'value'  => $results['Agent']['country']
 			)
 		);
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Instant Messenger Contact : <br/><font size="1">(AIM, Yahoo, Skype, MSN, ICQ)</font></td>
+		<td>Instant Messenger Contact : <font color="red">*</font><br/><font size="1">(AIM, Yahoo, Skype, MSN, ICQ)</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.im', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.im', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr style="display:none;">
-		<td>Cell NO. : </td>
+		<td>Cell NO. : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Agent.cellphone', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Agent.cellphone', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr> 
@@ -265,6 +268,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 	</tr>
 </table>
+</div>
 <script type="text/javascript"> 
 jQuery(":checkbox").attr({
 	style: "border: 0px; width: 16px; margin-left: 2px; vertical-align: middle;"

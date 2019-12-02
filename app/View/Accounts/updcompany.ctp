@@ -7,97 +7,100 @@ echo $this->Form->create(
 	)
 );
 ?>
+<div class="table-responsive">
 <table style="width:100%;border:0;">
-	<caption>Fields marked with an asterisk (*) are required.</caption>
+	<tr><td style="text-decoration:underline;font-weight:bold;" colspan=2 >
+	Fields marked with an asterisk (<font color="red">*</font>) are required.
+	</td></tr>
 	<tr>
-		<td width="222" class="search-label">Team Name : </td>
+		<td width="232" class="search-label">Team Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.officename', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.officename', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 		<!--  
 		<td rowspan="15" align="center"><?php //echo $this->Html->image('iconGiveDollars.png', array('width' => '160')); ?></td>
 		-->
 	</tr>
 	<tr>
-		<td class="search-label">Manager's First Name : </td>
+		<td class="search-label">Manager's First Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.man1stname', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.man1stname', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Manager's Last Name : </td>
+		<td class="search-label">Manager's Last Name : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.manlastname', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.manlastname', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Manager's Email : </td>
+		<td class="search-label">Manager's Email : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.manemail', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.manemail', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Skype / Telegram : </td>
+		<td class="search-label">Skype / Telegram : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.skypetelegram', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.skypetelegram', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">User : </td>
+		<td class="search-label">User : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Account.username', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Pass : </td>
+		<td class="search-label">Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.password', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">Confirm Pass : </td>
+		<td class="search-label">Confirm Pass : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:390px;', 'type' => 'password'));
+		echo $this->Form->input('Account.originalpwd', array('label' => '', 'style' => 'width:200px;', 'type' => 'password'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
@@ -105,7 +108,7 @@ echo $this->Form->create(
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.banknamebdo', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.banknamebdo', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -115,7 +118,7 @@ echo $this->Form->create(
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.bankaccount', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.bankaccount', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
@@ -125,27 +128,27 @@ echo $this->Form->create(
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.banknum', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.banknum', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
 		</td>
 	</tr>
 	<tr>
-		<td class="search-label">SWIFT Code : </td>
+		<td class="search-label">SWIFT Code : <font color="red">*</font></td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Company.swiftcode', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.swiftcode', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</div>
-		<div style="float:left"><font color="red">*</font></div>
+		
 		</td>
 	</tr>
 	<tr>
 		<td class="search-label">Routing # : </td>
 		<td>
 		<?php
-		echo $this->Form->input('Company.routingnum', array('label' => '', 'style' => 'width:390px;'));
+		echo $this->Form->input('Company.routingnum', array('label' => '', 'style' => 'width:200px;'));
 		?>
 		</td>
 	</tr>
@@ -199,11 +202,12 @@ echo $this->Form->create(
 		</td>
 		<td>
 		<?php
-		echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'button'));
+		echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'btn btn-sm btn-secondary text-light'));
 		?>
 		</td>
 	</tr>
 </table>
+</div>
 <script type="text/javascript">
 jQuery(":checkbox").attr({
 	style: "border: 0px; width: 16px; margin-left: 2px; vertical-align: middle;"
