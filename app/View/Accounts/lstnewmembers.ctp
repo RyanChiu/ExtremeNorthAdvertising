@@ -27,9 +27,11 @@ function __checkAll() {
 	}
 }
 </script>
-<table style="width: 100%;">
-<thead>
-<tr>
+
+<div class="table-responsive">
+<table class="table-sm w-100">
+<thead class="bg-warning">
+<tr class="text-black">
 	<th><b>
 	<?php
 	echo $this->Form->checkbox('',
@@ -40,10 +42,10 @@ function __checkAll() {
 	);
 	?>
 	</b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Account.username4m', 'User'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Account.role', 'Role'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Account.regtime', 'Registered'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('Account.status', 'Status'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('Account.username4m', 'User', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('Account.role', 'Role', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('Account.regtime', 'Registered', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('Account.status', 'Status', array('class' => 'text-reset')); ?></b></th>
 	<th><b>Allow</b></th>
 </tr>
 </thead>
@@ -64,7 +66,7 @@ foreach ($rs as $r):
 	?>
 	</td>
 	<td><?php echo $r['Account']['username']; ?></td>
-	<td><?php echo $r['Account']['role'] == 1 ? "Office manager" : "Agent"; ?></td>
+	<td><?php echo $r['Account']['role'] == 1 ? "Team Manager" : "Seller"; ?></td>
 	<td><?php echo $r['Account']['regtime']; ?></td>
 	<td><?php echo $status[$r['Account']['status']]; ?></td>
 	<td align="center">
@@ -83,6 +85,7 @@ $i++;
 endforeach;
 ?>
 </table>
+</div>
 
 <div style="margin-top:3px;">
 <font color="green">With selected :&nbsp;</font>

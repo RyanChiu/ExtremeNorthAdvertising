@@ -302,7 +302,7 @@ echo $scripts_for_layout;
 				} else if (strpos($this->request->here, 'lstagents') !== false) {
 					$title_for_page = "Sellers";
 				} else if (strpos($this->request->here, 'lstnewmembers') !== false) {
-					$title_for_page = "New members";
+					$title_for_page = "New Staff";
 				} else if (strpos($this->request->here, 'lstlinks') !== false) {
 					$title_for_page = "Link Codes";
 				} else if (strpos($this->request->here, 'statscompany') !== false) {
