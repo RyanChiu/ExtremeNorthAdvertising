@@ -66,7 +66,7 @@ echo $this->Form->create(
 <tr>
 	<td>
 	<div class="container-fluid row w-100">
-		<div class="float-left bg-transparent" style="width:110px;">
+		<div class="float-left bg-transparent" style="width:120px;">
 			<b>Offer:</b>
 		</div>
 		<div class="float-left" style="margin-right:20px;">
@@ -105,7 +105,7 @@ echo $this->Form->create(
 		));
 		?>
 		</div>
-		<div class="float-left bg-transparent" style="width:110px;">
+		<div class="float-left bg-transparent" style="width:120px;">
 			<b>Link Type:</b>
 		</div>
 		<div class="float-left" style="margin-right:20px;">
@@ -130,7 +130,7 @@ echo $this->Form->create(
 		<?php
 		if ($userinfo['role'] == 0) {//means an administrator
 		?>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Team:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -221,7 +221,7 @@ echo $this->Form->create(
 				}
 			});
 		</script>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Seller:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -243,7 +243,7 @@ echo $this->Form->create(
 		else if ($userinfo['role'] == 1) {//means an office
 			echo $this->Form->input('Stats.companyid', array('type' => 'hidden', 'value' => $userinfo['id']));
 		?>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Seller:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -265,7 +265,7 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Start Date:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -274,7 +274,7 @@ echo $this->Form->create(
 			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:160px;', 'value' => $startdate));
 		?>
 		</div>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>End Date:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -287,7 +287,7 @@ echo $this->Form->create(
 </tr>
 <tr>
 	<td>
-		<div style="width:110px;" class="float-left bg-transparent">
+		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Pay Period:</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">
@@ -304,7 +304,7 @@ echo $this->Form->create(
 		);
 		?>
 		</div>
-		<div style="width:110px;" class="float-left">
+		<div style="width:120px;" class="float-left">
 			<b>&nbsp;</b>
 		</div>
 		<div style="margin-right:20px;" class="float-left">

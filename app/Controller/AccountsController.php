@@ -2319,7 +2319,7 @@ class AccountsController extends AppController {
 	}
 	
 	function go() {
-		$this->layout = 'errorlayout';
+		$this->layout = 'emptylayout';
 		
 		/*
 		 * get referer URL and parse it

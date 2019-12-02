@@ -375,6 +375,7 @@ echo $scripts_for_layout;
 					onmouseout="jQuery('#divTimezoneTip').slideUp();" />
 				<div><font color="red">EST-EDT: Stats Time zone</font></div>
 				<div><a href="https://www.dateandtime.com">https://www.dateandtime.com</a></div>
+				<div id="divGetPaidInvisibleLine" class="float-right" style="width:280px;min-height:12px;background:black;"></div>
 			</div>
 			<div class="float-right mr-2 text-dark"
 				style="display:none;"
@@ -559,6 +560,57 @@ echo $scripts_for_layout;
 			//jQuery("a#attentions_link").click();
 		});
 	</script>
+
+		<?php /*show fake sellers get paid message block below */ ?>
+		<?php
+		if (strpos($this->request->here, 'stats') !== false) {
+		?>
+		<div id="divGetpaid" class="rounded p-0" style="border:6px solid black;width:260px;display:none;">
+			<div class="container-fluid row w-100">
+			<?php
+			echo $this->Html->image(
+				'PERSON-md.png', 
+				array(
+					'class' => 'float-left',
+					'style' => 'width:64px;'
+				)
+			);
+			?>
+			</div>
+			<div class="container-fluid row w-100">
+				<marquee class="w-100" scrollAmount=3 direction="left">
+				<div id="divMarquee" class="w-100">
+					
+				</div>
+				</marquee>
+			</div>
+		</div>
+		<script type="text/javascript">
+			jQuery("#divGetPaidInvisibleLine").click(function(){
+				var box = jQuery("#divGetpaid");
+				if(box != undefined){
+					box.addClass("wbx").css({
+						position:"absolute",
+						left:jQuery(this).offset().left,
+						top:jQuery(this).offset().top+jQuery(this).outerHeight()+6,
+						zIndex:100
+					});
+					//box.slideUp(200);
+					box.hide();
+					box.slideDown("slow");
+				}
+			});
+			function showGetPaid() {
+				jQuery("#divMarquee").load("/ENA/accounts/go");
+				jQuery("#divGetPaidInvisibleLine").click();
+			}
+			showGetPaid();
+			var t1 = window.setInterval(showGetPaid,20000);
+		</script>
+		<?php
+		}
+		?>
+
 	<?php
 	}
 	?>
