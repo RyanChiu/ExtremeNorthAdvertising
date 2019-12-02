@@ -171,11 +171,12 @@ echo $this->Form->end();
 <div style="margin-bottom:3px">
 <?php
 if (in_array($userinfo['role'], array(2))) {//means an agent
-	echo $this->Form->button('Submit Chat Log',
+	echo $this->Form->button('Submit Chat Log...',
 		array(
 			'onclick' => 'javascript:location.href="' .
 				$this->Html->url(array('controller' => 'accounts', 'action' => 'addchatlogs')) . '"',
-			'style' => 'width:160px;'
+			'style' => 'width:160px;',
+			'class' => 'btn btn-link'
 		)
 	);
 }
