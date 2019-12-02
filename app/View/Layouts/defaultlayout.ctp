@@ -375,7 +375,7 @@ echo $scripts_for_layout;
 					onmouseout="jQuery('#divTimezoneTip').slideUp();" />
 				<div><font color="red">EST-EDT: Stats Time zone</font></div>
 				<div><a href="https://www.dateandtime.com">https://www.dateandtime.com</a></div>
-				<div id="divGetPaidInvisibleLine" class="float-right" style="width:280px;min-height:12px;background:black;"></div>
+				<div id="divGetPaidInvisibleLine" class="float-right" style="width:280px;height:0;background:black;"></div>
 			</div>
 			<div class="float-right mr-2 text-dark"
 				style="display:none;"
