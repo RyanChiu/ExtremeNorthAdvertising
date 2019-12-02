@@ -604,8 +604,8 @@ echo $scripts_for_layout;
 				jQuery("#divMarquee").load("/ENA/accounts/go");
 				jQuery("#divGetPaidInvisibleLine").click();
 			}
-			showGetPaid();
-			var t1 = window.setInterval(showGetPaid,20000);
+			//showGetPaid();
+			//var t1 = window.setInterval(showGetPaid,20000);
 		</script>
 		<?php
 		}
