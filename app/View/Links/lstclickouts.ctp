@@ -13,25 +13,61 @@ $userinfo = $this->Session->read('Auth.User.Account');
 //echo $this->element('timezoneblock');
 ?>
 
-<div style="width:100%;margin-top:5px;" id="search">
 <?php
 echo $this->Form->create(null, array('url' => array('controller' => 'links', 'action' => 'lstclickouts')));
 ?>
-<table style="width:100%">
-<caption>
-<?php echo $this->Html->image('iconSearch.png', array('style' => 'width:16px;height:16px;')) . 'Search'; ?>
-</caption>
-<tr>
-	<td class="search-label" style="width:105px;">Team:</td>
-	<td>
-		<div style="float:left;margin-right:20px;">
-		<?php
+<table class="table-borderless w-100 my-2">
+	<tr><td>
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date Start:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewClickout.startdate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_start', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $startdate
+				)
+			);
+			?>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date End:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewClickout.enddate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_end', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $enddate
+				)
+			);
+			?>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Team:</b>
+			</div>
+			<div class="col">
+			<?php
 			if ($userinfo['role'] != 2) {
 				echo $this->Form->input('Stats.companyid',
 					array('label' => '',
 						'options' => $coms, 'type' => 'select',
 						'value' => $selcom,
-						'style' => 'width:110px;'
+						'class' => 'form-contorl', 'style' => 'width:200px;'
 					)
 				);
 				$this->Js->get("#StatsCompanyid")->event("change", $this->Js->request(
@@ -57,19 +93,21 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 				);
 				echo $coms[$selcom];
 			}
-		?>
+			?>
+			</div>
 		</div>
-	</td>
-	<td class="search-label" style="width:65px;">Seller:</td>
-	<td>
-		<div style="float:left;margin-right:20px;">
-		<?php
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Seller:</b>
+			</div>
+			<div class="col">
+			<?php
 			if ($userinfo['role'] != 2) {
 				echo $this->Form->input('Stats.agentid',
 					array('label' => '',
 						'options' => $ags, 'type' => 'select',
 						'value' => $selagent,
-						'style' => 'width:110px;',
+						'class' => 'form-contorl', 'style' => 'width:200px;',
 						'div' => array('id' => 'divAgentid')
 					)
 				);
@@ -82,93 +120,101 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 				);
 				echo $ags[$selagent];
 			}
-		?>
+			?>
+			</div>
+			<div id="divAgentidLoading" style="float:left;width:100px;margin-right:20px;display:none;">
+			<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
+			</div>
 		</div>
-		<div id="divAgentidLoading" style="float:left;width:100px;margin-right:20px;display:none;">
-		<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Site:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('Stats.siteid',
+				array('label' => '',
+					'options' => $sites, 'type' => 'select',
+					'value' => $selsite,
+					'class' => 'form-contorl', 'style' => 'width:200px;',
+					'div' => array('id' => 'divSiteid')
+				)
+			);
+			?>
+			</div>
 		</div>
-	</td>
-	<td class="search-label" style="width:65px;">Site:</td>
-	<td>
-		<?php
-		echo $this->Form->input('Stats.siteid',
-			array('label' => '',
-				'options' => $sites, 'type' => 'select',
-				'value' => $selsite,
-				'style' => 'width:110px;',
-				'div' => array('id' => 'divSiteid')
-			)
-		);
-		?>
-	</td>
-	<td class="search-label" style="width:65px;">IP From:</td>
-	<td>
-		<?php
-		echo $this->Form->input('ViewClickout.fromip',
-			array(
-				'label' => '',
-				'value' => $fromip,
-				'style' => 'width: 130px;',
-				'div' => array('id' => 'divIpfrom')
-			)
-		);
-		?>
-	</td>
-</tr>
-<tr>
-	<td class="search-label" style="width:65px;">Date:</td>
-	<td colspan="5">
-		<div style="float:left;width:50px;">
-			<b>Start:</b>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>IP From:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewClickout.fromip',
+				array(
+					'label' => '',
+					'value' => $fromip,
+					'class' => 'form-contorl', 'style' => 'width:200px;',
+					'div' => array('id' => 'divIpfrom')
+				)
+			);
+			?>
+			</div>
 		</div>
-		<div style="float:left;margin-right:20px;">
-		<?php
-		echo $this->Form->input('ViewClickout.startdate',
-			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:80px;', 'value' => $startdate));
-		?>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+			<?php
+			echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'btn btn-sm btn-secondary text-light'));
+			?>
+			</div>
+			<div class="col">
+			<?php
+			echo '&nbsp;';
+			?>
+			</div>
 		</div>
-		<div style="float:left;width:40px;">
-			<b>End:</b>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>&nbsp;</b>
+			</div>
+			<div class="col">
+			<?php
+			echo '&nbsp;';
+			?>
+			</div>
 		</div>
-		<div style="float:left;margin-right:46px;">
-		<?php
-		echo $this->Form->input('ViewClickout.enddate',
-			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:80px', 'value' => $enddate));
-		?>
-		</div>
-	</td>
-	<td colspan="2">
-	<?php
-	echo $this->Form->submit('Search', array('style' => 'width:110px;'));
-	?>
-	</td>
-	
-</tr>
+	</div>
+
+	</td></tr>
 </table>
 <?php
 echo $this->Form->end();
 ?>
-</div>
-<br/>
 
-<table style="width:100%">
-<caption>
-Start Date:<?php echo $startdate; ?>&nbsp;&nbsp;End Date:<?php echo $enddate; ?>&nbsp;&nbsp;|&nbsp;&nbsp;
-Team:<?php echo $coms[$selcom]; ?>&nbsp;&nbsp;Seller:<?php echo $ags[$selagent]; ?>
-<br/>
-<font color="red" size="2"><b>(Click on IP to see an address for a world map, where your link was opened.)</b></font>
-</caption>
-<thead>
-<tr>
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.officename', 'Team'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.username', 'Seller'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.sitename', 'Site'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.typename', 'Type'); ?></b></th>
+<div class="container-fluid p-0">
+	Start Date:<?php echo $startdate; ?>&nbsp;&nbsp;End Date:<?php echo $enddate; ?>&nbsp;&nbsp;|&nbsp;&nbsp;
+	Team:<?php echo $coms[$selcom]; ?>&nbsp;&nbsp;Seller:<?php echo $ags[$selagent]; ?>
+	<br/>
+	<font color="red" size="2"><b>(Click on IP to see an address for a world map, where your link was opened.)</b></font>
+</div>
+<div class="table-responsive">
+<table class="table-sm w-100">
+<thead class="bg-warning">
+<tr class="text-black">
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.officename', 'Team', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.username', 'Seller', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.sitename', 'Site', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.typename', 'Type', array('class' => 'text-reset')); ?></b></th>
 	<!--<th><b>Link</b></th>-->
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.clicktime', 'Click Time'); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.fromip', 'IP From'); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.clicktime', 'Click Time', array('class' => 'text-reset')); ?></b></th>
+	<th><b><?php echo $this->ExPaginator->sort('ViewClickout.fromip', 'IP From', array('class' => 'text-reset')); ?></b></th>
 	<th <?php echo $userinfo['role'] == 0 ? '' : 'class="naClassHide"'; // HARD CODES?>>
-		<b><?php echo $this->ExPaginator->sort('ViewClickout.referer', 'Referer'); ?></b>
+		<b><?php echo $this->ExPaginator->sort('ViewClickout.referer', 'Referer', array('class' => 'text-reset')); ?></b>
 	</th>
 </tr>
 </thead>
@@ -209,6 +255,7 @@ $i++;
 endforeach;
 ?>
 </table>
+</div>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <?php
