@@ -18,22 +18,58 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <?php
 echo $this->Form->create(null, array('url' =>  array('controller' => 'accounts', 'action' => 'lstchatlogs')));
 ?>
-<div style="width:100%;margin-top:5px;">
-<table style="width:100%">
-<caption>
-<?php echo $this->Html->image('iconSearch.png', array('style' => 'width:16px;height:16px;')) . 'Search'; ?>
-</caption>
-<tr>
-	<td class="search-label">Team:</td>
-	<td>
-		<div style="float:left;margin-right:20px;">
-		<?php
+<table class="table-borderless w-100">
+	<tr><td>
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date Start:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewChatLog.startdate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_start', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $startdate
+				)
+			);
+			?>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Date End:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewChatLog.enddate',
+				array(
+					'label' => '', 
+					'id' => 'datepicker_end', 
+					'class' => 'form-contorl', 'style' => 'width:200px;', 
+					'value' => $enddate
+				)
+			);
+			?>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Team:</b>
+			</div>
+			<div class="col">
+			<?php
 			if ($userinfo['role'] != 2) {
 				echo $this->Form->input('Stats.companyid',
 					array('label' => '',
 						'options' => $coms, 'type' => 'select',
 						'value' => $selcom,
-						'style' => 'width:110px;'
+						'class' => 'form-contorl', 'style' => 'width:200px;'
 					)
 				);
 				$this->Js->get("#StatsCompanyid")->event("change", $this->Js->request(
@@ -59,19 +95,21 @@ echo $this->Form->create(null, array('url' =>  array('controller' => 'accounts',
 				);
 				echo $coms[$selcom];
 			}
-		?>
+			?>
+			</div>
 		</div>
-	</td>
-	<td class="search-label">Seller:</td>
-	<td>
-		<div style="float:left;margin-right:20px;">
-		<?php
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Seller:</b>
+			</div>
+			<div class="col">
+			<?php
 			if ($userinfo['role'] != 2) {
 				echo $this->Form->input('ViewChatLog.agentid',
 					array('label' => '',
 						'options' => $ags, 'type' => 'select',
 						'value' => $selagent,
-						'style' => 'width:110px;',
+						'class' => 'form-contorl', 'style' => 'width:200px;',
 						'div' => array('id' => 'divAgentid')
 					)
 				);
@@ -84,57 +122,47 @@ echo $this->Form->create(null, array('url' =>  array('controller' => 'accounts',
 				);
 				echo $ags[$selagent];
 			}
-		?>
+			?>
+			</div>
+			<div id="divAgentidLoading" style="float:left;width:100px;margin-right:20px;display:none;">
+			<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
+			</div>
 		</div>
-		<div id="divAgentidLoading" style="float:left;width:100px;margin-right:20px;display:none;">
-		<?php echo $this->Html->image('iconAttention.gif') . '&nbsp;Loading...'; ?>
-		</div>
-	</td>
-	<td class="search-label">Site:</td>
-	<td>
-		<div style="float:left;margin-right:20px;">
-		</div>
-		<?php
+	</div>
+
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+				<b>Site:</b>
+			</div>
+			<div class="col">
+			<?php
 			echo $this->Form->input('ViewChatLog.siteid',
 				array('label' => '',
 					'options' => $sites, 'type' => 'select',
 					'value' => $selsite,
-					'style' => 'width:150px;'
+					'class' => 'form-contorl', 'style' => 'width:200px;'
 				)
 			);
-		?>
-	</td>
-</tr>
-<tr>
-	<td class="search-label" style="width:65px;">Date:</td>
-	<td colspan="3">
-		<div style="float:left;width:40px;">
-			<b>Start:</b>
+			?>
+			</div>
 		</div>
-		<div style="float:left;margin-right:20px;">
-		<?php
-		echo $this->Form->input('ViewChatLog.startdate',
-			array('label' => '', 'id' => 'datepicker_start', 'style' => 'width:110px;', 'value' => $startdate));
-		?>
+		<div class="form-inline">
+			<div class="bg-transparent col" style="width:120px;">
+			<?php
+			echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'btn btn-sm btn-secondary text-light'));
+			?>
+			</div>
+			<div class="col">
+			<?php
+			echo '';
+			?>
+			</div>
 		</div>
-		<div style="float:left;width:40px;">
-			<b>End:</b>
-		</div>
-		<div style="float:left;margin-right:46px;">
-		<?php
-		echo $this->Form->input('ViewChatLog.enddate',
-			array('label' => '', 'id' => 'datepicker_end', 'style' => 'width:110px', 'value' => $enddate));
-		?>
-		</div>
-	</td>
-	<td colspan="2">
-	<?php
-	echo $this->Form->submit('Search', array('style' => 'width:110px;', 'class' => 'button'));
-	?>
-	</td>
-</tr>
+	</div>
+
+	</td></td>
 </table>
-</div>
 <?php
 echo $this->Form->end();
 ?>
@@ -156,15 +184,16 @@ if (in_array($userinfo['role'], array(2))) {//means an agent
 <?php
 if (!empty($rs)) {
 ?>
-	<table style="width:100%">
-	<thead>
-	<tr>
-		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.officename', 'Team'); ?></b></th>
-		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.username4m', 'Seller'); ?></b></th>
-		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.sitename', 'Site'); ?></b></th>
-		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.clientusername', 'Client Name'); ?></b></th>
+	<div class="table-responsive">
+	<table class="table-sm w-100">
+	<thead class="bg-warning">
+	<tr class="text-black">
+		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.officename', 'Team', array('class' => 'text-reset')); ?></b></th>
+		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.username4m', 'Seller', array('class' => 'text-reset')); ?></b></th>
+		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.sitename', 'Site', array('class' => 'text-reset')); ?></b></th>
+		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.clientusername', 'Client Name', array('class' => 'text-reset')); ?></b></th>
 		<th><b><?php echo 'Conversation'; ?></b></th>
-		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.submittime', 'Submit Time'); ?></b></th>
+		<th><b><?php echo $this->ExPaginator->sort('ViewChatLog.submittime', 'Submit Time', array('class' => 'text-reset')); ?></b></th>
 	</tr>
 	</thead>
 	<?php
@@ -184,6 +213,7 @@ if (!empty($rs)) {
 	}
 	?>
 	</table>
+	</div>
 <?php
 }
 ?>
