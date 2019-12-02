@@ -263,7 +263,7 @@ if ($userinfo['role'] == 1) {
 		</td>
 		<td>
 		<?php
-		echo $this->Form->submit($submittxt, array('style' => 'width:112px;', 'class' => 'button'));
+		echo $this->Form->submit($submittxt, array('style' => 'width:112px;', 'class' => 'btn btn-sm btn-secondary text-light'));
 		?>
 		</td>
 	</tr>
