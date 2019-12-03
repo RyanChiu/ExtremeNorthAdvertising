@@ -9,8 +9,9 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <?php
 echo $this->Form->create(null, array('url' => array('controller' => 'links', 'action' => 'lstlinks')));
 ?>
-<table style="width:100%">
-<caption>
+<table class="table-sm w-100 table-borderless">
+<tr><td>
+	<div class="container-fluid">
 	<?php
 	if ($userinfo['role'] == 0) {//means an administrator
 		echo $this->Html->link(
@@ -19,53 +20,76 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 		);
 	}
 	?>
-	<br/>
-	<font style="color:red;">
+	</div>
 	<?php
 	if (!empty($suspsites)) {
+	?>
+	<div class="container-fluid text-danger">
+	<?php
 		echo '>>Site "' . implode(",", $suspsites) . '"' . (count($suspsites) > 1 ? ' are' : ' is')
 			. ' suspended for now.';
+	?>
+	</div>
+	<?php
 	}
 	?>
-	</font>
-</caption>
-<tr>
-	<td width="31%" align="right">
-		<div style="float:left;font-weight:bold;padding-left:12px;">Site:</div>
-		<div style="float:right;">
+</td></tr>
+<tr><td>
+	<div class="form-row">
+		<div class="form-inline">
+			<div class="col">
+				<b>Site:&nbsp;&nbsp;&nbsp;</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('Site.id',
+				array(
+					'options' => $sites, 
+					'class' => 'form-contorl', 
+					'label' => '', 
+					'type' => 'select'
+				)
+			);
+			?>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="col">
+				<b>Seller:</b>
+			</div>
+			<div class="col">
+			<?php
+			echo $this->Form->input('ViewAgent.id',
+				array(
+					'options' => $sags, 
+					'class' => 'form-contorl', 
+					'label' => '', 
+					'type' => 'select')
+			);
+			?>
+			</div>
+		</div>
+		<div class="form-inline">
 		<?php
-		echo $this->Form->input('Site.id',
-			array('options' => $sites, 'style' => 'width:230px;', 'label' => '', 'type' => 'select')
+		echo $this->Form->submit('Generate Link Codes', 
+			array(
+				'class' => 'btn btn-sm btn-secondary text-light ml-3'
+			)
 		);
 		?>
 		</div>
-	</td>
-	<td width="40%" align="center">
-		<div style="float:left;font-weight:bold;padding-left:12px;">Seller:</div>
-		<div style="float:right;">
-		<?php
-		echo $this->Form->input('ViewAgent.id',
-			array('options' => $sags, 'style' => 'width:290px;', 'label' => '', 'type' => 'select')
-		);
-		?>
-		</div>
-	</td>
-	<td width="29%" style="text-align:center;">
-	<?php
-	echo $this->Form->submit('Generate Link Codes', array('style' => 'width:180px;', 'class' => 'button'));
-	?>
-	</td>
-</tr>
+	</div>
+</td></tr>
 </table>
 <?php
 echo $this->Form->end();
 ?>
 
-<br/>
 <?php
 if (!empty($rs)) {
 ?>
-	<table style="width:100%;border:0;">
+	<div class="table-responsive">
+	<table class="w-100 table-contensed table-borderless">
 	<?php
 	foreach ($rs as $r):
 		if (array_key_exists('ViewLink', $r)) {
@@ -91,12 +115,13 @@ if (!empty($rs)) {
 			foreach ($types as $type) {
 	?>
 		<tr>
-			<td align="center">
+			<td>
 			<?php
 			/*
 			 * HARD CODE HERE, IN ORDER TO SHOW SOME SPECIAL INFO FOR CAMS2
 			 */
 			$typealias = "";
+			/*
 			if ($r['AgentSiteMapping']['siteid'] == 7) {
 				if ($i == 0) {
 					$typealias = "(Straight)";
@@ -108,16 +133,24 @@ if (!empty($rs)) {
 					$typealias = "(Straight)";
 				}
 			}
-			
-			echo $sites[$r['AgentSiteMapping']['siteid']] . '_' . $type['Type']['typealias'] 
-				. $typealias . ':&nbsp;&nbsp;&nbsp;';
-			echo '<b>';
-			echo $this->Html->url(array('controller' => 'accounts', 'action' => 'go'), true) . '/'
-				. $r['AgentSiteMapping']['siteid'] . '/'
-				. $type['Type']['id']. '/'
-				. $ags[$r['AgentSiteMapping']['agentid']];
-			echo '</b>';
+			*/
 			?>
+				<div class="container-fluid w-100 row">
+					<?php
+					echo $sites[$r['AgentSiteMapping']['siteid']] . '_' . $type['Type']['typealias'] 
+						. $typealias . ':';
+					?>
+				</div>
+				<div class="container-fluid w-100 row">
+					<?php
+					echo '<b>';
+					echo $this->Html->url(array('controller' => 'accounts', 'action' => 'go'), true) . '/'
+						. $r['AgentSiteMapping']['siteid'] . '/'
+						. $type['Type']['id']. '/'
+						. $ags[$r['AgentSiteMapping']['agentid']];
+					echo '</b>';
+					?>
+				</div>
 			</td>
 		</tr>
 	<?php
@@ -127,6 +160,7 @@ if (!empty($rs)) {
 	endforeach;
 	?>
 	</table>
+	</div>
 <?php
 }
 ?>
