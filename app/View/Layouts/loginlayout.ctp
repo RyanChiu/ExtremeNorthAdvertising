@@ -27,9 +27,10 @@ echo $scripts_for_layout;
 		<div style="text-align:center;width:100%;">
 			<?php 
 			echo $this->Html->image(
-				'ENAHEADER.png', 
+				'ENAHEADER01.png', 
 				array(
-					'class' => 'img-fluid'
+					'class' => 'img-fluid',
+					'style' => 'width:460px;'
 				)
 			);
 			?>
