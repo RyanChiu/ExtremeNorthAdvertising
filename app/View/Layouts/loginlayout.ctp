@@ -29,8 +29,7 @@ echo $scripts_for_layout;
 			echo $this->Html->image(
 				'ENAHEADER01.png', 
 				array(
-					'class' => 'img-fluid',
-					'style' => 'width:460px;'
+					'class' => 'img-fluid'
 				)
 			);
 			?>

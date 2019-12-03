@@ -59,16 +59,16 @@ echo $scripts_for_layout;
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-secondary">
+		<div id="divGetPaidInvisibleLine" class="float-right" style="width:280px;height:0px;background:black;"></div>
 		<div class="w-100 py-3">
-			<?php 
-			echo $this->Html->image(
-				'ENAHEADER01.png', 
-				array(
-					'class' => 'img-fluid',
-					'style' => 'width:460px;'
-				)
-			);
-			?>
+		<?php 
+		echo $this->Html->image(
+			'ENAHEADER01.png', 
+			array(
+				'class' => 'img-fluid'
+			)
+		);
+		?>
 		</div>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">		
@@ -376,7 +376,6 @@ echo $scripts_for_layout;
 					onmouseout="jQuery('#divTimezoneTip').slideUp();" />
 				<div><font color="red">EST-EDT: Stats Time zone</font></div>
 				<div><a href="https://www.dateandtime.com">https://www.dateandtime.com</a></div>
-				<div id="divGetPaidInvisibleLine" class="float-right" style="width:280px;height:0;background:black;"></div>
 			</div>
 			<div class="float-right mr-2 text-dark"
 				style="display:none;"
@@ -566,14 +565,14 @@ echo $scripts_for_layout;
 		<?php
 		if (strpos($this->request->here, 'stats') !== false) {
 		?>
-		<div id="divGetpaid" class="rounded p-0" style="border:6px solid black;width:260px;display:none;">
+		<div id="divGetpaid" class="rounded bg-light p-0" style="border:6px solid black;width:260px;display:none;">
 			<div class="container-fluid row w-100">
 			<?php
 			echo $this->Html->image(
 				'PERSON-md.png', 
 				array(
 					'class' => 'float-left',
-					'style' => 'width:64px;'
+					'style' => 'width:48px;'
 				)
 			);
 			?>
@@ -581,7 +580,6 @@ echo $scripts_for_layout;
 			<div class="container-fluid row w-100">
 				<marquee class="w-100" scrollAmount=3 direction="left">
 				<div id="divMarquee" class="w-100">
-					
 				</div>
 				</marquee>
 			</div>
@@ -593,7 +591,7 @@ echo $scripts_for_layout;
 					box.addClass("wbx").css({
 						position:"absolute",
 						left:jQuery(this).offset().left,
-						top:jQuery(this).offset().top+jQuery(this).outerHeight()+6,
+						top:jQuery(this).offset().top+jQuery(this).outerHeight()+5,
 						zIndex:100
 					});
 					//box.slideUp(200);
@@ -605,8 +603,8 @@ echo $scripts_for_layout;
 				jQuery("#divMarquee").load("/ENA/accounts/go");
 				jQuery("#divGetPaidInvisibleLine").click();
 			}
-			//showGetPaid();
-			//var t1 = window.setInterval(showGetPaid,20000);
+			showGetPaid();
+			var t1 = window.setInterval(showGetPaid,20000);
 		</script>
 		<?php
 		}
