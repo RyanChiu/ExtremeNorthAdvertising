@@ -292,7 +292,7 @@ echo $scripts_for_layout;
 			</ul>
 		</div>
 	</nav>
-	<div class="container-fluid p-0">
+	<div class="container-fluid px-2">
 		<div class="float-left">
 			<div class="text-left font-weight-bold">
 				<?php
@@ -438,7 +438,7 @@ echo $scripts_for_layout;
 		</div>
 
 	</div>
-	<div class="container-fluid p-0">
+	<div class="container-fluid px-2">
 		<center>
 			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
 		</center>
