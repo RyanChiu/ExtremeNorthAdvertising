@@ -59,7 +59,7 @@ echo $scripts_for_layout;
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
 	<div class="container-fluid bg-secondary">
-		<div style="text-align:center;width:100%;">
+		<div class="w-100 py-3">
 			<?php 
 			echo $this->Html->image(
 				'ENAHEADER01.png', 
