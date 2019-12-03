@@ -23,11 +23,11 @@ echo $scripts_for_layout;
 <div class="container-fluid p-0 zMaxWidth">
 	<div class="container-fluid bg-warning" style="min-height:18px;"></div>
 	<div class="container-fluid" style="min-height:8px;background:#f38332;"></div>
-	<div class="container-fluid bg-secondary">
-		<div style="text-align:center;width:100%;">
+	<div class="container-fluid text-center bg-secondary">
+		<div class="w-100">
 			<?php 
 			echo $this->Html->image(
-				'ENAHEADER01.png', 
+				'ENAHEADER-withfav.png', 
 				array(
 					'class' => 'img-fluid'
 				)

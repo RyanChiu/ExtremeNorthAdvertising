@@ -63,7 +63,7 @@ echo $scripts_for_layout;
 		<div class="w-100 py-3">
 		<?php 
 		echo $this->Html->image(
-			'ENAHEADER01.png', 
+			'ENAHEADER-withfav.png', 
 			array(
 				'class' => 'img-fluid'
 			)
@@ -565,7 +565,7 @@ echo $scripts_for_layout;
 		<?php
 		if (strpos($this->request->here, 'stats') !== false) {
 		?>
-		<div id="divGetpaid" class="rounded bg-light p-0" style="border:6px solid black;width:260px;display:none;">
+		<div id="divGetpaid" class="rounded bg-light p-0" style="border:6px solid black;width:270px;display:none;">
 			<div class="container-fluid row w-100">
 			<?php
 			echo $this->Html->image(
@@ -617,6 +617,5 @@ echo $scripts_for_layout;
 	<?php
 		echo $this->Js->writeBuffer(); 
 	?>
-
 </body>
 </html>
