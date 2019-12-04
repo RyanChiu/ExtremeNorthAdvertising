@@ -558,6 +558,27 @@ echo $scripts_for_layout;
 				'modal': true
 			});
 			//jQuery("a#attentions_link").click();
+
+			/*
+			jQuery(".navbar-nav li a").click(function() {
+				//alert(jQuery(this).html());
+				jQuery(this).removeClass("text-white").siblings().addClass("text-white");
+			})
+			*/
+
+			var urlName = window.location.pathname; 
+			jQuery(".navbar-nav li a").each(function() {   
+				var urlHref = jQuery(this).attr('href'); 
+				if (urlName.indexOf(urlHref)>=0) {
+					jQuery(this).removeClass("text-white");
+				} else {
+					if (urlName.indexOf('chatlogs') >= 0 || urlName.indexOf('clickouts') >= 0 || urlName.indexOf('logins') >= 0) {
+						jQuery("#navbarDropdown").removeClass("text-white");
+					} else if (urlName.indexOf('link') >= 0 || urlName.indexOf('site') >= 0) {
+						jQuery("#navbarDropdownSite").removeClass("text-white");
+					}
+				}
+			});
 		});
 	</script>
 
