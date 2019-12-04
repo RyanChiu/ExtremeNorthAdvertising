@@ -2421,7 +2421,8 @@ class AccountsController extends AppController {
 			array(
 				'conditions' => array(
 					'siteid' => $siteid,
-					'agentid' => $agentid
+					'agentid' => $agentid,
+					'flag' => 1
 				)
 			)
 		);
