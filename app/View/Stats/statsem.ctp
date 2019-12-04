@@ -114,6 +114,7 @@ if (!empty($rs)) {
     ?>
 
 </div>
+
 <div class="table-responsive">
 <table class="table-condensed table-bordered table-striped w-100">
 	<thead class="text-black">

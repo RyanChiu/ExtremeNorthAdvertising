@@ -579,6 +579,11 @@ echo $scripts_for_layout;
 					}
 				}
 			});
+
+			/* fix the bug that it will hide back whenever click the dropdown main menu */
+			jQuery('.nav-item,.dropdown').on('hidden.bs.dropdown', function () {
+				jQuery('.nav-item,.dropdown').show();
+			});
 		});
 	</script>
 
