@@ -63,7 +63,7 @@ echo $this->Form->create(
 	</th>
 </tr>
 </thead>
-<tr class="zTB-bordery">
+<tr>
 	<td>
 	<div class="container-fluid row w-100">
 		<div class="float-left bg-transparent" style="width:120px;">
@@ -124,7 +124,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr class="zTB-bordery">
+<tr>
 	<td>
 		<div class="float-left" style="margin-right:20px;">
 		<?php
@@ -263,7 +263,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr class="zTB-bordery">
+<tr>
 	<td>
 		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Start Date:</b>
@@ -285,7 +285,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr class="zTB-bordery">
+<tr>
 	<td>
 		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Pay Period:</b>
