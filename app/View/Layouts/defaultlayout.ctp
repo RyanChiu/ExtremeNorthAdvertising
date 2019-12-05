@@ -159,7 +159,7 @@ echo $scripts_for_layout;
 				<?php
 				echo $this->Html->link('STATS',
 					array('controller' => 'stats', 'action' => 'statscompany', 'clear' => -2),
-					array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
+					array('id' => 'navbarStats', 'class' => 'nav-link text-white font-weight-bold', 'escape' => false),
 					false
 				);
 				?>
@@ -574,8 +574,10 @@ echo $scripts_for_layout;
 				} else {
 					if (urlName.indexOf('chatlogs') >= 0 || urlName.indexOf('clickouts') >= 0 || urlName.indexOf('logins') >= 0) {
 						jQuery("#navbarDropdown").removeClass("text-white");
-					} else if (urlName.indexOf('link') >= 0 || urlName.indexOf('site') >= 0) {
+					} else if (urlName.indexOf('link') >= 0 || (urlName.indexOf('site') >= 0 && urlName.indexOf('siteid') < 0)) {
 						jQuery("#navbarDropdownSite").removeClass("text-white");
+					} else if (urlName.indexOf('stats') >= 0) {
+						jQuery("#navbarStats").removeClass("text-white");
 					}
 				}
 			});
