@@ -55,7 +55,7 @@ $_show_pay_ = ($userinfo['role'] == 0);
 if (!empty($rs)) {
 ?>
 <div>
-	<div class="text-danger font-weight-bold mt-2">
+	<div class="text-danger font-weight-bold mt-1" style="font-size:0.9rem;">
 	<?php
 	if ($startdate != $enddate) {
 	?>
@@ -116,7 +116,7 @@ if (!empty($rs)) {
 </div>
 
 <div class="table-responsive">
-<table class="table-condensed table-bordered table-striped w-100">
+<table class="table-condensed table-bordered table-striped w-100 mb-1">
 	<thead class="text-black">
 	<tr class="bg-warning">
 		<th>#<!-- numbered --></th>

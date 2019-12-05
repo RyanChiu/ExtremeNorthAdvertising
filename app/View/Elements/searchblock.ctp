@@ -24,7 +24,7 @@ echo $this->Form->create(
 ?>
 <table class='w-100'>
 <thead>
-<tr>
+<tr class="zBG-lessdark zTB-bordery">
 	<th>
 		<div style="float:left;margin-right:50px;">
 		<input type="radio" name="viewby" id="viewbydate" style="width:10px;border:0px;"
@@ -63,7 +63,7 @@ echo $this->Form->create(
 	</th>
 </tr>
 </thead>
-<tr>
+<tr class="zTB-bordery">
 	<td>
 	<div class="container-fluid row w-100">
 		<div class="float-left bg-transparent" style="width:120px;">
@@ -124,7 +124,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr>
+<tr class="zTB-bordery">
 	<td>
 		<div class="float-left" style="margin-right:20px;">
 		<?php
@@ -263,7 +263,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr>
+<tr class="zTB-bordery">
 	<td>
 		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Start Date:</b>
@@ -285,7 +285,7 @@ echo $this->Form->create(
 		</div>
 	</td>
 </tr>
-<tr>
+<tr class="zTB-bordery">
 	<td>
 		<div style="width:120px;" class="float-left bg-transparent">
 			<b>Pay Period:</b>

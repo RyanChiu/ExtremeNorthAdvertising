@@ -566,9 +566,9 @@ echo $scripts_for_layout;
 			})
 			*/
 
-			var urlName = window.location.pathname; 
+			var urlName = window.location.pathname;
 			jQuery(".navbar-nav li a").each(function() {   
-				var urlHref = jQuery(this).attr('href'); 
+				var urlHref = jQuery(this).attr('href');
 				if (urlName.indexOf(urlHref)>=0) {
 					jQuery(this).removeClass("text-white");
 				} else {
