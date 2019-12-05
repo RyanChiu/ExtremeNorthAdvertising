@@ -12,8 +12,8 @@ class AccountsController extends AppController {
 		'Link', 'Clickout', 'AgentSiteMapping', 'Type',
 		'Site', 'SiteExcluding', 'Stats',
 		'ViewAdmin', 'ViewCompany', 'ViewAgent', 'ViewLiteAgent',
-		'ViewStats', 'ViewMapping', 'SiteManual', 'Top10',
-		'FakeContactUs'
+		'ViewStats', 'ViewMapping', 'ViewNewMember',
+		'SiteManual', 'Top10', 'FakeContactUs'
 	);
 	var $components = array(
 		'Session',
@@ -1591,7 +1591,7 @@ class AccountsController extends AppController {
 				'status' => '-1'
 			);
 			$this->paginate = array(
-				'Account' => array(
+				'ViewNewMember' => array(
 					'conditions' => $conditions,
 					'limit' => $this->__limit,
 					'order' => 'username4m'
@@ -1600,7 +1600,7 @@ class AccountsController extends AppController {
 			$this->set('status', $this->Account->status);
 			$this->set('limit', $this->__limit);
 			$this->set('rs',
-				$this->paginate('Account')
+				$this->paginate('ViewNewMember')
 			);
 		}
 	}
