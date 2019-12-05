@@ -116,7 +116,7 @@ if (!empty($rs)) {
 </div>
 
 <div class="table-responsive">
-<table class="table-condensed table-bordered table-striped w-100 mb-1">
+<table class="table-condensed table-bordered w-100 mb-1">
 	<thead class="text-black">
 	<tr class="bg-warning">
 		<th>#<!-- numbered --></th>
@@ -277,7 +277,7 @@ if (!empty($rs)) {
 		$pagetotals['payouts'] += $r['ViewTStats']['payouts'];
 		$pagetotals['earnings'] += $r['ViewTStats']['earnings'];
 	?>
-	<tr<?php echo ($i % 2 == 0 ? '' : ' class="odd"'); ?>>
+	<tr<?php echo ($i % 2 == 0 ? ' class="zBG-lessdark"' : ' class="bg-light"'); ?>>
 		<td><?php echo ($i + 1 + $limit * ($this->Paginator->current() - 1)); ?></td>
 		<?php
 		switch ($bywhat) {
