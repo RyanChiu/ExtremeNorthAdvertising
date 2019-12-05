@@ -1,15 +1,20 @@
-<br/>
-<table style="width:100%">
-<caption>Host Name:<?php if (!empty($rs)) echo $rs[0]['ViewType']['hostname']; ?></caption>
-<thead>
-	<tr>
-		<th><?php echo $this->ExPaginator->sort('ViewType.typename', 'Type Name'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewType.url', 'Type URL'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewType.price', 'Payout'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewType.earning', 'Earning'); ?></th>
+<table class="table table-sm table-borderless font-weight-bold p-0 mb-1">
+	<tr><td>
+	Host Name:<?php if (!empty($rs)) echo $rs[0]['ViewType']['hostname']; ?>
+	</td></tr>
+</table>
+
+<div class="table-responsive">
+<table class="table-sm table-striped w-100">
+<thead class="bg-warning">
+	<tr class="text-black">
+		<th><?php echo $this->ExPaginator->sort('ViewType.typename', 'Type Name', array('class' => 'text-reset')); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewType.url', 'Type URL', array('class' => 'text-reset')); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewType.price', 'Payout', array('class' => 'text-reset')); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewType.earning', 'Earning', array('class' => 'text-reset')); ?></th>
 		<th>Start</th>
 		<th>End</th>
-		<th><?php echo $this->ExPaginator->sort('ViewType.status', 'Status'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewType.status', 'Status', array('class' => 'text-reset')); ?></th>
 		<th>Operation</th>
 	</tr>
 </thead>
@@ -39,3 +44,4 @@
 	endforeach;
 	?>
 </table>
+</div>

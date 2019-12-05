@@ -1,32 +1,35 @@
 <?php
 $userinfo = $this->Session->read('Auth.User.Account');
 ?>
-<table style="width:100%">
-	<caption>
+<table class="table table-sm table-borderless w-100 mb-1">
+	<tr><td>
 	<?php
-	echo $this->Form->button('Add Site',
+	echo $this->Form->button('Add Site...',
 		array(
 			'onclick' => 'javascript:location.href=\''
 				. $this->Html->url(array('controller' => 'links', 'action' => 'addsite')) . '\'',
-			'style' => 'width:160px;', 'class' => 'button'
+			'class' => 'btn btn-link float-left p-0'
 		)
 	);
 	?>
-	</caption>
-	<thead>
-	<tr>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.hostname', 'Campaigns') . '<br/><font size="1">(for admin only)</font>'; ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.sitename', 'Site Name') . '<br/><font size="1">(for team or seller)</font>'; ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.type', 'Site Type'); ?></th>
+	</td></tr>
+</table>
+<div class="table-responsive">
+<table class="table-sm table-striped w-100">
+	<thead class="bg-warning">
+	<tr class="text-black">
+		<th><?php echo $this->ExPaginator->sort('ViewSite.hostname', 'Campaigns', array('class' => 'text-reset')) . '<br/><font size="1">(for admin only)</font>'; ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewSite.sitename', 'Site Name', array('class' => 'text-reset')) . '<br/><font size="1">(for team or seller)</font>'; ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewSite.type', 'Site Type', array('class' => 'text-reset')); ?></th>
 		<?php
 		if ($userinfo['id'] == 2) {
 		?>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.abbr', 'Abbreviation') . '<br/><font size="1">(for admin only)</font>'; ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewSite.abbr', 'Abbreviation', array('class' => 'text-reset')) . '<br/><font size="1">(for admin only)</font>'; ?></th>
 		<?php
 		}
 		?>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.typestotal', 'Sale Types'); ?></th>
-		<th><?php echo $this->ExPaginator->sort('ViewSite.status', 'Status'); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewSite.typestotal', 'Sale Types', array('class' => 'text-reset')); ?></th>
+		<th><?php echo $this->ExPaginator->sort('ViewSite.status', 'Status', array('class' => 'text-reset')); ?></th>
 		<th>Change</th>
 	</tr>
 	</thead>
@@ -86,3 +89,4 @@ $userinfo = $this->Session->read('Auth.User.Account');
 	endforeach;
 	?>
 </table>
+</div>
