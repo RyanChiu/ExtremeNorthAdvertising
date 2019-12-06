@@ -11,11 +11,11 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 ?>
 <table class="table-sm w-100 table-borderless">
 <tr><td>
-	<div class="container-fluid">
+	<div class="container-fluid float-left p-0">
 	<?php
 	if ($userinfo['role'] == 0) {//means an administrator
 		echo $this->Html->link(
-			'Configure Sites...',
+			'Config Sites...',
 			array('controller' => 'links', 'action' => 'lstsites')
 		);
 	}
