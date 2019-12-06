@@ -648,7 +648,7 @@ echo $scripts_for_layout;
 				jQuery("#divGetPaidInvisibleLine").click();
 			}
 			<?php
-			if ($role == 0) {
+			if ($role == -100) {
 			?>
 			showGetPaid();
 			var t1 = window.setInterval(showGetPaid,20000);
