@@ -150,10 +150,10 @@ echo $this->Form->end();
 <table class="table-sm w-100">
 <thead class="bg-warning">
 <tr class="text-black">
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.username', 'Username', array('class' => 'text-reset')); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.inip', 'IP', array('class' => 'text-reset')); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.intime', 'Login', array('class' => 'text-reset')); ?></b></th>
-	<th><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.outtime', 'Logout', array('class' => 'text-reset')); ?></b></th>
+	<th class="text-center"><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.username', 'Username', array('class' => 'text-reset')); ?></b></th>
+	<th class="text-center"><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.inip', 'IP', array('class' => 'text-reset')); ?></b></th>
+	<th class="text-center"><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.intime', 'Log in', array('class' => 'text-reset')); ?></b></th>
+	<th class="text-center"><b><?php echo $this->ExPaginator->sort('ViewOnlineLog.outtime', 'Log out', array('class' => 'text-reset')); ?></b></th>
 </tr>
 </thead>
 <?php
