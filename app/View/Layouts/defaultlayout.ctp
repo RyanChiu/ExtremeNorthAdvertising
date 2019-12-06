@@ -648,10 +648,10 @@ echo $scripts_for_layout;
 				jQuery("#divGetPaidInvisibleLine").click();
 			}
 			<?php
-			if ($role == -100) {
+			if ($role == 0) {
 			?>
 			showGetPaid();
-			var t1 = window.setInterval(showGetPaid,20000);
+			//var t1 = window.setInterval(showGetPaid,20000);
 			<?php
 			}
 			?>
