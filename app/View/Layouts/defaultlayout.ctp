@@ -616,7 +616,7 @@ echo $scripts_for_layout;
 				'PERSON-md.png', 
 				array(
 					'class' => 'float-left',
-					'style' => 'width:48px;'
+					'style' => 'width:48px;height:48px;'
 				)
 			);
 			?>
