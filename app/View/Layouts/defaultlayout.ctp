@@ -447,7 +447,7 @@ echo $scripts_for_layout;
 		<center>
 			<b><font color="red"><?php echo $this->Session->flash(); ?> </font> </b>
 		</center>
-		<div>
+		<div class="w-100 p-0">
 
 			<?php echo $content_for_layout; ?>
 

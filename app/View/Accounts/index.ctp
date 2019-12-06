@@ -5,11 +5,12 @@ $userinfo = $this->Session->read('Auth.User.Account');
 <?php
 //echo $this->element('timezoneblock');
 ?>
-<table style="width:100%">
+<div class="table-responsive">
+<table class="w-100">
 <!-- <tr class="odd"> -->
 <tr>
 	<td>
-	<div style="margin:5px 20px 5px 20px;">
+	<div class="m-2">
 	<?php
 	//echo $this->Html->image('iconTopnotes.png');
 	//echo '<b><font size="3">News</font></b>';
@@ -36,6 +37,7 @@ if (!empty($notes)) {
 }
 ?>
 </table>
+</div>
 
 <!-- show the top selling list -->
 <?php
