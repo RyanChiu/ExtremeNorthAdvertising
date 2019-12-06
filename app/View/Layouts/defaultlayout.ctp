@@ -124,11 +124,16 @@ echo $scripts_for_layout;
 				if ($role == 0) {//means an administrator
 					echo $this->Html->link('NEW STAFF',
 						array('controller' => 'accounts', 'action' => 'lstnewmembers'),
-						array('class' => 'nav-link text-white font-weight-bold', 'escape' => false),
+						array('class' => 'nav-link text-white font-weight-bold float-left', 'escape' => false),
 						false
 					);
 				}
 				?>
+				<span id="spanNewStaff" class="badge badge-danger float-left">
+				<?php
+				echo $newCounts;
+				?>
+				</span>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link text-white font-weight-bold dropdown-toggle" 
@@ -586,12 +591,23 @@ echo $scripts_for_layout;
 			jQuery('.nav-item,.dropdown').on('hidden.bs.dropdown', function () {
 				jQuery('.nav-item,.dropdown').show();
 			});
+
+			/* blink the badge of the "new staff" numbers */
+			function blink(selector){
+				jQuery(selector).fadeOut(1200, function(){
+					jQuery(this).fadeIn(1200, function(){
+						blink(this);
+					});
+				});
+			}
+			blink("#spanNewStaff");
 		});
 	</script>
 
 		<?php /*show fake sellers get paid message block below */ ?>
 		<?php
-		if (strpos($this->request->here, 'stats') !== false) {
+		if (strpos($this->request->here, 'stats') !== false
+			|| $title_for_page === 'HOME') {
 		?>
 		<div id="divGetpaid" class="rounded bg-light p-0" style="border:6px solid black;width:270px;display:none;">
 			<div class="container-fluid row w-100">
@@ -631,8 +647,14 @@ echo $scripts_for_layout;
 				jQuery("#divMarquee").load("/ENA/accounts/slide");
 				jQuery("#divGetPaidInvisibleLine").click();
 			}
-			//showGetPaid();
-			//var t1 = window.setInterval(showGetPaid,20000);
+			<?php
+			if ($role == 0) {
+			?>
+			showGetPaid();
+			var t1 = window.setInterval(showGetPaid,20000);
+			<?php
+			}
+			?>
 		</script>
 		<?php
 		}
