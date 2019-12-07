@@ -645,13 +645,14 @@ echo $scripts_for_layout;
 			});
 			function showGetPaid() {
 				jQuery("#divMarquee").load("/ENA/accounts/slide");
-				jQuery("#divGetPaidInvisibleLine").click();
+				//jQuery("#divGetPaidInvisibleLine").click();
 			}
+			jQuery("#divGetPaidInvisibleLine").click();
 			<?php
 			if ($role == 0) {
 			?>
 			showGetPaid();
-			//var t1 = window.setInterval(showGetPaid,20000);
+			var t1 = window.setInterval(showGetPaid,20000);
 			<?php
 			}
 			?>
