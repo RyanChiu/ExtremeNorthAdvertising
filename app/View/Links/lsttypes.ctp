@@ -20,12 +20,24 @@
 </thead>
 	<?php
 	foreach ($rs as $r) :
+		$price = $r['ViewType']['price'];
+		$earning = $r['ViewType']['earning'];
+		if ($price == 0) {
+			$price = "--";
+		} else {
+			$price = "₱" . $price;
+		}
+		if ($earning != 1) {
+			$earning = "$" . $earning;
+		} else {
+			$earning = "1";
+		}
 	?>
 	<tr>
 		<td align="center"><?php echo $r['ViewType']['typename']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['url']; ?></td>
-		<td align="center"><?php echo "₱" . $r['ViewType']['price']; ?></td>
-		<td align="center"><?php echo "$" . $r['ViewType']['earning']; ?></td>
+		<td align="center"><?php echo $price; ?></td>
+		<td align="center"><?php echo $earning; ?></td>
 		<td align="center"><?php echo $r['ViewType']['start']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['end']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['status'] == 0 ? 'Suspended' : 'Activated'; ?></td>
