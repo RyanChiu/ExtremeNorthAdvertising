@@ -402,7 +402,7 @@ class LinksController extends AppController {
 						)
 					)
 				);
-				$types = $this->Type->find('all',
+				$types = $this->ViewType->find('all',
 					array(
 						'conditions' => array(
 							'AND' => array(

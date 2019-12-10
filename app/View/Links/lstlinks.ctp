@@ -117,7 +117,7 @@ if (!empty($rs)) {
 		<tr>
 			<td>
 			<?php
-			
+			if ($type['ViewType']['price'] != 0) {
 			?>
 				<div class="container-fluid w-100 row">
 					<?php
@@ -136,6 +136,9 @@ if (!empty($rs)) {
 					echo '</b>';
 					?>
 				</div>
+			<?php
+			}
+			?>
 			</td>
 		</tr>
 	<?php
