@@ -117,28 +117,13 @@ if (!empty($rs)) {
 		<tr>
 			<td>
 			<?php
-			/*
-			 * HARD CODE HERE, IN ORDER TO SHOW SOME SPECIAL INFO FOR CAMS2
-			 */
-			$typealias = "";
-			/*
-			if ($r['AgentSiteMapping']['siteid'] == 7) {
-				if ($i == 0) {
-					$typealias = "(Straight)";
-				} else if ($i == 1) {
-					$typealias = "(Gay)";
-				} else if ($i == 2) {
-					$typealias = "(Straight)";
-				} else if ($i == 3) {
-					$typealias = "(Straight)";
-				}
-			}
-			*/
+			
 			?>
 				<div class="container-fluid w-100 row">
 					<?php
-					echo $sites[$r['AgentSiteMapping']['siteid']] . '_' . $type['Type']['typealias'] 
-						. $typealias . ':';
+					echo $sites[$r['AgentSiteMapping']['siteid']] 
+						. '_' . $type['ViewType']['typealias'] 
+						. ':';
 					?>
 				</div>
 				<div class="container-fluid w-100 row">
@@ -146,7 +131,7 @@ if (!empty($rs)) {
 					echo '<b>';
 					echo $this->Html->url(array('controller' => 'accounts', 'action' => 'go'), true) . '/'
 						. $r['AgentSiteMapping']['siteid'] . '/'
-						. $type['Type']['id']. '/'
+						. $type['ViewType']['id']. '/'
 						. $ags[$r['AgentSiteMapping']['agentid']];
 					echo '</b>';
 					?>
