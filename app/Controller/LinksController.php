@@ -97,7 +97,8 @@ class LinksController extends AppController {
 		}
 		$this->paginate = array(
 			'ViewType' => array(
-				'conditions' => $conditions
+				'conditions' => $conditions,
+				'order' => 'id'
 				//'limit' => $this->__limit
 			)
 		);
@@ -409,7 +410,8 @@ class LinksController extends AppController {
 								'status' => '1',
 								'NOT' => array('url' => 'NULL')
 							)
-						)
+						),
+						'order' => 'id'
 					)
 				);
 				$this->set(compact('rs'));
