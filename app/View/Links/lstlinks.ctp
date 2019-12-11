@@ -38,9 +38,6 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 	<div class="form-row">
 		<div class="form-inline">
 			<div class="col">
-				<b>Site:&nbsp;&nbsp;&nbsp;</b>
-			</div>
-			<div class="col">
 			<?php
 			echo $this->Form->input('Site.id',
 				array(
@@ -52,11 +49,11 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 			);
 			?>
 			</div>
+			<div class="col">
+				<b>Site</b>
+			</div>
 		</div>
 		<div class="form-inline">
-			<div class="col">
-				<b>Seller:</b>
-			</div>
 			<div class="col">
 			<?php
 			echo $this->Form->input('ViewAgent.id',
@@ -68,10 +65,13 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 			);
 			?>
 			</div>
+			<div class="col">
+				<b>Seller</b>
+			</div>
 		</div>
 		<div class="form-inline">
 		<?php
-		echo $this->Form->submit('Generate Link Codes', 
+		echo $this->Form->submit('Generate Link', 
 			array(
 				'class' => 'btn btn-sm btn-secondary text-light ml-3'
 			)
@@ -116,9 +116,6 @@ if (!empty($rs)) {
 	?>
 		<tr>
 			<td>
-			<?php
-			if ($type['ViewType']['price'] != 0) {
-			?>
 				<div class="container-fluid w-100 row">
 					<?php
 					echo $sites[$r['AgentSiteMapping']['siteid']] 
@@ -136,9 +133,6 @@ if (!empty($rs)) {
 					echo '</b>';
 					?>
 				</div>
-			<?php
-			}
-			?>
 			</td>
 		</tr>
 	<?php
