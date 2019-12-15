@@ -46,7 +46,7 @@ echo $this->Form->create(
 	</tr>
 	<tr>
 		<td></td>
-		<td><?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'button')); ?></td>
+		<td><?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'btn btn-secondary text-light')); ?></td>
 	</tr>
 </table>
 <?php

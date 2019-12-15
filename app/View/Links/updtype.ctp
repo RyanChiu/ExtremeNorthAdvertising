@@ -78,7 +78,7 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 		?>
 		</td>
 		<td>
-		<?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'button')); ?>
+		<?php echo $this->Form->submit('Update', array('style' => 'width:112px;', 'class' => 'btn btn-secondary text-light')); ?>
 		</td>
 	</tr>
 </table>
