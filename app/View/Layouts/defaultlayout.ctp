@@ -630,6 +630,12 @@ echo $scripts_for_layout;
 		</div>
 		<script type="text/javascript">
 			jQuery("#divGetPaidInvisibleLine").click(function(){
+				if (isPC()) {
+					// do nothing
+				} else {
+					// move divGetPaidInvisibleLine to the top
+					jQuery("#divGetPaidInvisibleLine").css({"position":"absolute", "top":"0"});
+				}
 				var box = jQuery("#divGetpaid");
 				if(box != undefined){
 					box.addClass("wbx").css({
