@@ -20,7 +20,16 @@
 		<font class="text-dark font-weight-bold">JAMES SANTIAGO</font>
 	</div>
 	<div class="container-fluid">
-		<a href="mailto:jamesclarksantiago@gmail.com">jamesclarksantiago@gmail.com</a>
+		<a href="mailto:jamesclarksantiago@gmail.com"><b>jamesclarksantiago@gmail.com</b></a>
+	</div>
+	<div class="container-fluid">
+		Don't have an ENA account?
+	</div>
+	<div class="container-fluid">
+		Email <a href="mailto:jamesclarksantiago@gmail.com"><b>jamesclarksantiago@gmail.com</b></a> to create one.
+	</div>
+	<div class="container-fluid">
+		(Minimum 10 Agents per team required. to qualify for an account.)
 	</div>
 	<div class="container-fluid" style="min-height:12px;">
 	</div>
