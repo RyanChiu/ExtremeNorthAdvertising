@@ -29,7 +29,7 @@
 		Email <a href="mailto:jamesclarksantiago@gmail.com"><b>jamesclarksantiago@gmail.com</b></a> to create one.
 	</div>
 	<div class="container-fluid">
-		(Minimum 10 Agents per team required. to qualify for an account.)
+		(Minimum 10 Agents per team required. to qualify for an Office Account.)
 	</div>
 	<div class="container-fluid" style="min-height:12px;">
 	</div>
