@@ -37,6 +37,7 @@ echo $this->Form->end();
 	CKEDITOR.config.height = '500px';
 	CKEDITOR.config.width = '830px';
 	CKEDITOR.config.resize_maxWidth = '830px';
+	
 	CKEDITOR.config.toolbar =
 		[
 		    ['Source','-','NewPage','Preview','-','Templates'],
@@ -52,4 +53,5 @@ echo $this->Form->end();
 		    ['Styles','Format','Font','FontSize'],
 		    ['TextColor','BGColor']
 		];
+	
 </script>
