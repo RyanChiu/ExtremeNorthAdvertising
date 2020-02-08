@@ -3,7 +3,7 @@
 $userinfo = $this->Session->read('Auth.User.Account');
 echo $this->Form->create(null, array('url' => array('controller' => 'links', 'action' => 'updtype')));
 ?>
-<table style="width:100%">
+<table class="table-sm table-striped w-100">
 	<caption>Fields marked with an asterisk (*) are required.</caption>
 	<tr>
 		<td width="15%">Type Name:</td>
@@ -44,30 +44,40 @@ echo $this->Form->create(null, array('url' => array('controller' => 'links', 'ac
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	<!--
 	<tr>
-		<td width="15%">Payout:</td>
+		<td width="15%">Payout(₱):</td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Type.price', array('label' => '', 'style' => 'width:590px;'));
+		echo $this->Form->input('Fee.price', array('value' => $pep[0], 'label' => '', 'type' => 'number', 'style' => 'width:590px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
 	<tr>
-		<td width="15%">Earning:</td>
+		<td width="15%">Earning($):</td>
 		<td>
 		<div style="float:left">
 		<?php
-		echo $this->Form->input('Type.earning', array('label' => '', 'style' => 'width:590px;'));
+		echo $this->Form->input('Fee.earning', array('value' => $pep[1], 'label' => '', 'type' => 'number', 'style' => 'width:590px;'));
 		?>
 		</div>
 		<div style="float:left"><font color="red">*</font></div>
 		</td>
 	</tr>
-	-->
+	<tr>
+		<td width="15%">Start From:</td>
+		<td>
+		<div style="float:left">
+		<?php
+		echo $this->Form->input('Fee.start0', array('type' => 'hidden', 'value' => $start));
+		echo $this->Form->input('Fee.start', array('type' => 'text', 'value' => $start, 'label' => ''));
+		?>
+		</div>
+		<div style="float:left"><font color="red">*</font></div>
+		</td>
+	</tr>
 	<tr>
 		<td>
 		<?php

@@ -33,7 +33,7 @@
 			$earning = "1";
 		}
 	?>
-	<tr>
+	<tr <?php echo ($r['ViewType']['end'] == "3999-01-01 00:00:00") ? '' : 'class="text-black-50"'; ?>>
 		<td align="center"><?php echo $r['ViewType']['typename']; ?></td>
 		<td align="center"><?php echo $r['ViewType']['url']; ?></td>
 		<td align="center"><?php echo $price; ?></td>
@@ -43,12 +43,21 @@
 		<td align="center"><?php echo $r['ViewType']['status'] == 0 ? 'Suspended' : 'Activated'; ?></td>
 		<td align="center">
 		<?php
-		echo $this->Html->link(
-			$this->Html->image('iconEdit.png', array('border' => 0, 'width' => 16, 'height' => 16)) . '&nbsp;',
-			array('controller' => 'links', 'action' => 'updtype', 'id' => $r['ViewType']['id']),
-			array('title' => 'Click to edit this type.', 'escape' => false),
-			false
-		);
+		if ($r['ViewType']['end'] == "3999-01-01 00:00:00") {
+			echo $this->Html->link(
+				$this->Html->image('iconEdit.png', array('border' => 0, 'width' => 16, 'height' => 16)) . '&nbsp;',
+				array(
+					'controller' => 'links', 'action' => 'updtype', 
+					'id' => $r['ViewType']['id'], 
+					'payout' => $r['ViewType']['price'],
+					'earning' => $r['ViewType']['earning'],
+					'start' => $r['ViewType']['start'],
+					'end' => $r['ViewType']['end']
+				),
+				array('title' => 'Click to edit this type.', 'escape' => false),
+				false
+			);
+		}
 		?>
 		</td>
 	</tr>
