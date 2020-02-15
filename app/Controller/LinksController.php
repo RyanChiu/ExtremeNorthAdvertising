@@ -138,25 +138,33 @@ class LinksController extends AppController {
 			$pep[1] = $this->request->data['Fee']['earning'];
 			$start = $this->request->data['Fee']['start'];
 			$start0 = $this->request->data['Fee']['start0'];
-			if ($start <= $start0 ) {
+			$sqls = ['', ''];
+			$conn = new zmysqlConn();
+			if ($start < $start0) {
 				$this->Session->setFlash('New "Start From" time should not be earlier.NOTHING CHANGED!');
 				$this->redirect(array('controller' => 'links', 'action' => 'lsttypes', 'id' => $data['ViewType']['siteid']));
 				return;
+			} else if ($start > $start0) {
+				$end = date("Y-m-d H:i:s", strtotime("-1 seconds", strtotime($start)));
+				//1st, modify the last one to be "end with $start - 1sec"
+				$sqls[0] = "update fees set end = '$end'" 
+					. " where typeid = " . $this->request->data['Type']['id']
+					. " and end = '3999-01-01 00:00:00';";
+				//2nd, insert one with the new period from $start
+				$sqls[1] = 'insert into fees (typeid, price, earning, start, end) values ('
+					. $this->request->data['Type']['id'] . ', '
+					. $pep[0] . ', ' . $pep[1]
+					. ', "' . $start . '", "3999-01-01 00:00:00");';
+				$result = mysql_query($sqls[0], $conn->dblink);
+				$result = $result && mysql_query($sqls[1], $conn->dblink);
+			} else {
+				$sqls[0] = sprintf(
+					"update fees set price = %s, earning = %s" 
+					. " where typeid = " . $this->request->data['Type']['id'],
+					$pep[0], $pep[1]
+				);
+				$result = mysql_query($sqls[0], $conn->dblink);
 			}
-			$end = date("Y-m-d H:i:s", strtotime("-1 seconds", strtotime($start)));
-			//1st, modify the last one to be "end with $start - 1sec"
-			$sqls = ['', ''];
-			$sqls[0] = "update fees set end = '$end'" 
-				. " where typeid = " . $this->request->data['Type']['id']
-				. " and end = '3999-01-01 00:00:00';";
-			//2nd, insert one with the new period from $start
-			$sqls[1] = 'insert into fees (typeid, price, earning, start, end) values ('
-				. $this->request->data['Type']['id'] . ', '
-				. $pep[0] . ', ' . $pep[1]
-				. ', "' . $start . '", "3999-01-01 00:00:00");';
-			$conn = new zmysqlConn();
-			$result = mysql_query($sqls[0], $conn->dblink);
-			$result = $result && mysql_query($sqls[1], $conn->dblink);
 			
 			if ($this->Type->save($this->request->data) && $result !== false) {
 				$this->Session->setFlash('Type and Fee(s) saved.');
