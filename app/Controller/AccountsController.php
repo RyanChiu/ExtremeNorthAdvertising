@@ -66,7 +66,7 @@ class AccountsController extends AppController {
 		$this->redirect(array('controller' => 'accounts', 'action' => 'index'));
 	}
 	
-	function __handleAccess() {		
+	function __handleAccess() {
 		if ($this->Auth->user('Account.role') == 0) {//means an administrator
 			switch ($this->request->params['action']) {
 				case 'addnews':
