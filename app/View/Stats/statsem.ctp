@@ -50,8 +50,8 @@ $userinfo = $this->Session->read('Auth.User.Account');
 ?>
 
 <?php
-// $_show_pay_ = ($userinfo['role'] == 0 && in_array($userinfo['id'], array(1, 2, 3)));
-$_show_pay_ = ($userinfo['role'] == 0);
+$_show_pay_ = ($userinfo['role'] == 0 || $userinfo['role'] == 1);
+$_show_earn_ = ($userinfo['role'] == 0);
 if (!empty($rs)) {
 ?>
 <div>
@@ -234,9 +234,13 @@ if (!empty($rs)) {
 		<?php echo $this->ExPaginator->sort('ViewTStats.net', 'Tot sale', array('class' => 'text-reset')); ?>
 		
 		</th>
-		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Pay', array('class' => 'text-reset')); ?></th>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<th><?php echo $this->ExPaginator->sort('ViewTStats.payouts', 'Pay', array('class' => 'text-reset')); ?></th>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<th><?php echo $this->ExPaginator->sort('ViewTStats.earnings', 'Earn', array('class' => 'text-reset')); ?></th>
 		<?php
@@ -360,9 +364,13 @@ if (!empty($rs)) {
 		<td><?php echo $r['ViewTStats']['sales_type2']; ?></td>
 		<td><?php echo $r['ViewTStats']['sales_type1']; ?></td>
 		<td><?php echo $r['ViewTStats']['net']; ?></td>
-		<td><?php echo '₱' . $r['ViewTStats']['payouts']; ?></td>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<td><?php echo '₱' . $r['ViewTStats']['payouts']; ?></td>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<td><?php echo '$' . $r['ViewTStats']['earnings']; ?></td>
 		<?php
@@ -418,9 +426,13 @@ if (!empty($rs)) {
 		<td class="totals"><?php echo $pagetotals['sales_type2']; ?></td>
 		<td class="totals"><?php echo $pagetotals['sales_type1']; ?></td>
 		<td class="totals"><?php echo $pagetotals['net']; ?></td>
-		<td class="totals"><?php echo '₱' . sprintf('%.2f', $pagetotals['payouts']); ?></td>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<td class="totals"><?php echo '₱' . sprintf('%.2f', $pagetotals['payouts']); ?></td>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<td class="totals"><?php echo '$' . sprintf('%.2f', $pagetotals['earnings']); ?></td>
 		<?php
@@ -472,9 +484,13 @@ if (!empty($rs)) {
 		<td class="totals"><?php echo $totals['sales_type2']; ?></td>
 		<td class="totals"><?php echo $totals['sales_type1']; ?></td>
 		<td class="totals"><?php echo $totals['net']; ?></td>
-		<td class="totals"><?php echo '₱' . sprintf('%.2f', $totals['payouts']); ?></td>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<td class="totals"><?php echo '₱' . sprintf('%.2f', $totals['payouts']); ?></td>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<td class="totals"><?php echo '$' . sprintf('%.2f', $totals['earnings']); ?></td>
 		<?php
@@ -538,9 +554,13 @@ if (!empty($rs)) {
 		<td class="totals"></td>
 		<td class="totals"></td>
 		<td class="totals"></td>
-		<td class="totals"></td>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<td class="totals"></td>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<td class="totals"></td>
 		<?php
@@ -601,9 +621,13 @@ if (!empty($rs)) {
 		<td class="totals"></td>
 		<td class="totals"></td>
 		<td class="totals"></td>
-		<td class="totals"></td>
 		<?php
 		if ($_show_pay_) {
+		?>
+		<td class="totals"></td>
+		<?php
+		}
+		if ($_show_earn_) {
 		?>
 		<td class="totals"></td>
 		<?php
