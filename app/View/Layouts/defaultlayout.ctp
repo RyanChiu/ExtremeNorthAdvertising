@@ -127,13 +127,13 @@ echo $scripts_for_layout;
 						array('class' => 'nav-link text-white font-weight-bold float-left', 'escape' => false),
 						false
 					);
-				}
 				?>
 				<span id="spanNewStaff" class="badge badge-danger float-left">
-				<?php
-				echo $newCounts;
-				?>
+					<?php echo $newCounts;?>
 				</span>
+				<?php 
+				}
+				?>
 			</li>
 			<li class="nav-item dropdown">
 				<a class="nav-link text-white font-weight-bold dropdown-toggle" 
