@@ -606,8 +606,8 @@ echo $scripts_for_layout;
 
 		<?php /*show fake sellers get paid message block below */ ?>
 		<?php
-		if (strpos($this->request->here, 'stats') !== false
-			|| $title_for_page === 'HOME') {
+		if (false && (strpos($this->request->here, 'stats') !== false
+			|| $title_for_page === 'HOME')) {
 		?>
 		<div id="divGetpaid" class="rounded bg-light p-0" style="border:6px solid black;width:270px;display:none;">
 			<div class="container-fluid row w-100">
